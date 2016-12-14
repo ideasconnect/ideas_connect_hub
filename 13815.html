@@ -1,0 +1,1936 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="assets/img/whitelogo.jpg">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<title>Phase 2 of Regulation 138/15 </title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    
+    <link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/ct-paper.css" rel="stylesheet"/>
+    <link href="assets/css/demo.css" rel="stylesheet" /> 
+        
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <script src="jquery-3.1.1.js"></script>
+      <link rel="icon" 
+      type="image/png" 
+      href="/assets/img/final5.png" />   
+</head>
+
+<script>
+  $(document).ready(function() {
+        
+                
+	/*Menu-toggle*/
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+
+    /*Scroll Spy*/
+    $('body').scrollspy({ target: '#spy', offset:80});
+
+    /*Smooth link animation*/
+    $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+                return false;
+            }
+        }
+    });
+        
+        });	
+        
+$(document).ready(function(){
+     $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('#back-to-top').fadeIn();
+            } else {
+                $('#back-to-top').fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        $('#back-to-top').click(function () {
+            $('#back-to-top').tooltip('hide');
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+        
+        $('#back-to-top').tooltip('show');
+
+});
+
+$(document).ready(function () {
+  var trigger = $('.hamburger'),
+      overlay = $('.overlay'),
+     isClosed = false;
+
+    trigger.click(function () {
+      hamburger_cross();      
+    });
+
+    function hamburger_cross() {
+
+      if (isClosed == true) {          
+        overlay.hide();
+        trigger.removeClass('is-open');
+        trigger.addClass('is-closed');
+        isClosed = false;
+      } else {   
+        overlay.show();
+        trigger.removeClass('is-closed');
+        trigger.addClass('is-open');
+        isClosed = true;
+      }
+  }
+  
+  $('[data-toggle="offcanvas"]').click(function () {
+        $('#wrapper').toggleClass('toggled');
+  });  
+});
+
+</script>
+
+<style>
+
+.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display:none;
+}
+
+
+body {
+	margin-top: -40px;
+	height: 100%
+}
+
+footer {
+    width: 100%;
+   
+}
+
+#header {
+	margin-left: 20px;
+	text-align: center;
+}
+
+.navbar-fixed-top {
+    height: 60px; /* Whatever you want. */
+}
+
+/* .thumbnail {
+    border: 0 none;
+    box-shadow: none;
+} */ 
+
+ #wrapper {
+  padding-left: 250px;
+  transition: all 0.4s ease 0s;
+}
+
+.well {
+	width: 1150px;
+	margin: auto;
+	background-color: white;
+	border: 15px solid;
+}
+
+#welloutside{
+  border: 0px;
+}
+
+#sidebar-wrapper {
+  margin-left: -251px;
+  left: 250px;
+  width: 250px;
+  background: #000;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+}
+
+#wrapper.active {
+  padding-left: 0;
+}
+
+#wrapper.active #sidebar-wrapper {
+  left: 0;
+}
+
+#page-content-wrapper {
+  width: 100%;
+}
+
+#logo {
+  margin-left: -25px;
+  margin-top: -20px;
+}
+
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    position: relative; 
+    line-height: 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+.sidebar-nav li:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 3px;
+    background-color: #1c1c1c;
+    -webkit-transition: width .2s ease-in;
+      -moz-transition:  width .2s ease-in;
+       -ms-transition:  width .2s ease-in;
+            transition: width .2s ease-in;
+
+}
+
+.sidebar-nav li:nth-child(2):before {
+    background-color: #ec1b5a;   
+}
+.sidebar-nav li:nth-child(3):before {
+    background-color: #79aefe;   
+}
+.sidebar-nav li:nth-child(4):before {
+    background-color: #314190;   
+}
+.sidebar-nav li:nth-child(5):before {
+    background-color: #279636;   
+}
+.sidebar-nav li:nth-child(6):before {
+    background-color: #7d5d81;   
+}
+.sidebar-nav li:nth-child(7):before {
+    background-color: #ead24c;   
+}
+.sidebar-nav li:nth-child(8):before {
+    background-color: #2d2366;   
+}
+.sidebar-nav li:nth-child(9):before {
+    background-color: #35acdf;   
+}
+
+.sidebar-nav li:hover:before,
+.sidebar-nav li.open:hover:before {
+    width: 100%;
+    -webkit-transition: width .2s ease-in;
+      -moz-transition:  width .2s ease-in;
+       -ms-transition:  width .2s ease-in;
+            transition: width .2s ease-in;
+
+}
+
+.sidebar-nav li a {
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    padding: 10px 15px 10px 30px;    
+}
+
+
+.sidebar-nav li a:hover,
+.sidebar-nav li.active {
+  color: #fff;
+  background: rgba(255,255,255,0.2);
+  text-decoration: none;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  line-height: 60px;
+  font-size: 18px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+
+
+.content-header {
+  height: 65px;
+  line-height: 65px;
+}
+
+.content-header h1 {
+  margin: 0;
+  margin-left: 20px;
+  line-height: 65px;
+  display: inline-block;
+}
+
+#menu-toggle {
+
+}
+
+.btn-menu {
+  color: #000;
+} 
+
+.inset {
+  padding: 20px;
+}
+
+@media (max-width:767px) {
+
+#wrapper {
+  padding-left: 0;
+}
+
+#sidebar-wrapper {
+  left: 0;
+}
+
+#wrapper.active {
+  position: relative;
+  left: 250px;
+}
+
+#wrapper.active #sidebar-wrapper {
+  left: 250px;
+  width: 250px;
+  transition: all 0.4s ease 0s;
+}
+
+#menu-toggle {
+  display: inline-block;
+}
+
+.inset {
+  padding: 15px;
+}
+
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 3px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+#helpbtn {
+  margin-left: 65px;
+    width: 50%;
+}
+
+h2 {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 48px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+
+}
+
+</style>
+
+<body id="wrapper" data-spy="scroll" data-target="#spy" >
+  <div class="">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper" class="">
+        <nav id="spy">
+            <ul class="sidebar-nav nav">
+                <li class="sidebar-brand active">  <a href="" onclick="return false" disabled><img src="assets/img/phase213815.png" id ="logo" width="242" height="67" align="center"></a>
+
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">General: Interpretation<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#section1">General: Interpretation</a></li>
+              <li><a href="#section11">Table</a></li>
+            </ul>
+            </li>
+          <li><a href="#section2">Funding Agreements with First Nations</a></li>
+                <li><a href="#section3">Cost Sharing</a></li>
+          <li><a href="#section4">Financial Assistance for Parents</a></li>
+                <li><a href="#section5">Apportionment of Costs Among Municipalities</a></li>
+                <li><a href="#section6">Funding for Capital Project</a></li>
+                <li><a href="#section7">Transition and Commencement</a></li>
+         <li><a href="#reference">References</a></li>
+          
+          <li><a href="assets/pdf/13815.pdf"><font color="orange"><span class="glyphicon glyphicon-save"></span> Download PDF</font></a></li>
+          <li><a href="charts.html"><font color="orange"><span class="glyphicon glyphicon-align-justify"></span> Back to Charts</font></a></li>
+         <br><br>
+          
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" id="helpbtn">
+              Help Guide
+          </button>   <br><br>
+          <center><a href="/"> <img src="assets/img/drkgreenvariant.png" width="200" height="200"></a></center>
+      <!--    <a href ="http://www.eceprc.ca/contact-us.html"><button type="button" class="btn btn-warning " data-toggle="modal" data-target="#myModal" id="helpbtn">
+              Contact Us
+          </button></a>  --> 
+            </ul>
+        </nav>
+    </div>
+ 
+    
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Help Guide</h4>
+      </div>
+   
+      
+      <div class="modal-body">
+        <b>Difference between Act and Regulations:</b><br>
+        An <b>Act</b> is a legal document providing a general or broad description of legal policies.<br><br>
+
+        <b>Regulations</b> are guidelines associated with an Act that guide how provisions of an Act are applied and should be followed.
+       <br><br>
+      <b>Difference between Legislation and Regulation:</b><br>
+       <b>Legislation</b> is law passed by a legislative body.<br>
+<b>Regulation</b> is a set of rules or guidelines issued by an executive body such as government agencies or regulatory boards in compliance with the law. 
+<br><br>
+•	Parliaments pass laws. They are called legislation. <br>
+•	Then government regulators have to enforce the law. They look at the law and work out the nitty-gritty details that need to be followed in order for the law to be followed.
+
+ <hr>
+     
+     
+     
+        The original document can be viewed <a href="https://www.ontario.ca/laws/regulation/150138"><b>here</b></a>.
+        We also provide a downloadable PDF of this chart <a href="assets/pdf/13815.pdf"><b>here</b></a>. The PDF version will allow users to input their comments.
+        <br><b>Note:</b> To view headings in a PDF file click the ribbon icon on the left <img src="assets/img/bookmark.png">
+       <hr>
+     
+      
+      
+      The navigation bar on the left side is sectioned off in two parts. The white text allows users to instantly jump to the Parts found within the <i>Child Care and Early Years Act, 2014</i>. The orange text provides the reader with options to further aid them. <br>
+      <br>
+      Hyperlinks have been placed throughout the document that will link back to specific sections within the <i>Child Care and Early Years Act, 2014</i>. 
+      These links will be indicated by their <font color = #68B3C8><b>blue colouring and bold lettering.</b></font>
+       <hr>
+      
+      
+    
+     
+      <b>Windows:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!-- <b>Mac:</b> --> <br>  
+      Press <button type="button" class="btn btn-secondary">Ctrl</button> and <button type="button" class="btn btn-secondary">+</button> to zoom in. 	<!-- &nbsp;	&nbsp;Press <button type="button" class="btn btn-secondary">Cmd</button> and <button type="button" class="btn btn-secondary">+</button> to zoom in. --> <br><br>
+      Press <button type="button" class="btn btn-secondary">Ctrl</button> and <button type="button" class="btn btn-secondary">-</button> to zoom out. <!--	&nbsp; Press <button type="button" class="btn btn-secondary">Cmd</button> and <button type="button" class="btn btn-secondary">-</button> to zoom out. --> <br><br>
+      
+      <b>Mac:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!-- <b>Mac:</b> --> <br>  
+      Press <button type="button" class="btn btn-secondary">Cmd</button> and <button type="button" class="btn btn-secondary">+</button> to zoom in.<br><br>
+      Press <button type="button" class="btn btn-secondary">Cmd</button> and <button type="button" class="btn btn-secondary">-</button> to zoom out.  <br><br>
+      
+      
+      <!--
+      <div class="modal-body" id="mac">
+      <b>Mac:</b><br>  
+      Press the <button type="button" class="btn btn-secondary">Cmd</button> and <button type="button" class="btn btn-secondary">+</button> to zoom in. <br><br>
+      Press the <button type="button" class="btn btn-secondary">Cmd</button> and <button type="button" class="btn btn-secondary">-</button> to zoom out. <br><br>
+      </div>-->
+      
+      <b>Warning:</b> This may readjust and hide sections on the navigation bar to the left. If this occurs, the navigation bar becomes scrollable. You may also zoom out in order to see the rest of the navigation bar.
+       </div>
+    
+      <div class="modal-footer">
+      	<br>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <br><br>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- Page content -->
+    <div id="page-content-wrapper" class="">
+
+       
+<div class="page-header" id="header">
+  <div class="well" id="welloutside">
+	<div class ="well">
+     <h2>Full Phase 2 of Regulation 138/15<br><small>under Child Care and Early Years Act, 2014, S.O. 2014, c. 11, Sched. 1</small></h2>
+ </div>
+ </div>
+ </div>
+
+    
+<div id="section1" class="container-fluid">
+  
+<div class="panel panel-info">
+  <div class="panel-heading">
+  <h3>General: Interpretation</h3></div>
+<!-- <h3><a name ="part1"></a>Part I: Purposes and Interpretation</h3> -->
+    <table width="1440">
+        <thead>
+        <tr>
+            <td width="100">
+                <p><strong>Category </strong></p>
+            </td>
+            <td width="200">
+                <p><strong>Regulation/ Requirement</strong></p>
+            </td>
+            <td width="95">
+                <p><strong>Effective Date</strong></p>
+            </td>
+            <td width="200">
+                <p><strong>Points for Consideration</strong></p>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td width="108">
+                <p><strong>Definition</strong></p>
+            </td>
+            <td width="816">
+                <p>1. <a href="https://www.ontario.ca/laws/regulation/150138#BK1"><strong>(1)</strong></a> &ldquo;In this Regulation, &ldquo;Actual cost&rdquo; means the cost of a building project and includes, (a) fees payable for the services of an architect, professional engineer or other consultant, (b) the cost of purchasing and installing furnishings and equipment, (c) the cost of land surveys, soil tests, permits, licences and legal fees, (d) the cost of paving, sodding and landscaping, and (e) the cost of acquiring the land necessary for the building project</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="426">
+                <p>&ldquo;Actual cost&rdquo; means the cost of the entire building project. Fees for services, furnishings, soil testing, acquiring land, etc.</p>
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="108">
+                <p><strong>Definition</strong></p>
+            </td>
+            <td width="816">
+                <p>1. <a href="https://www.ontario.ca/laws/regulation/150138#BK1"><strong>(1)</strong></a> &ldquo;&ldquo;Adjusted income&rdquo; means adjusted income as defined in <a href="http://laws-lois.justice.gc.ca/eng/acts/i-3.3/page-124.html#h-37"><strong>section 122.6 of the <em>Income Tax</em><em>Act</em></strong></a> (Canada)</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="426">
+                <p>Adjusted income refers to the total of all amounts each of which would be the income for the year of the individual or of the person who was the individual&rsquo;s cohabiting spouse or common-law partner at the end of the year if in computing that income no amount was, (a) included, (i) under paragraph 56 (1) (q.1) or subsection 56 (6), (ii) in respect of any gain from a disposition of property to which section 79 applies, or (iii) in respect of a gain described in subsection 40 (3.21), or (b) deductible under paragraph 60 (y) or (z)</p>
+                <p><strong><a href="http://laws-lois.justice.gc.ca/eng/acts/i-3.3/">(Canada, Income Tax Act (R.S.C., 1985, c.1 (5th supp.)), 2016)</a></strong></p>
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="108">
+                <p><strong>Definition</strong></p>
+            </td>
+            <td width="816">
+                <p>1. <a href="https://www.ontario.ca/laws/regulation/150138#BK1"><strong>(1)</strong></a> &ldquo;Approved cost&rdquo; means that portion of the actual cost of a building project approved by the Minister</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="426">
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="108">
+                <p><strong>Definition</strong></p>
+            </td>
+            <td width="816">
+                <p>1. <a href="https://www.ontario.ca/laws/regulation/150138#BK1"><strong>(1)</strong></a> &ldquo;Architect&rdquo; means an architect who is a member in good standing of the Ontario Association of Architects</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="426">
+                <p>An architect is someone who designs buildings</p>
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="108">
+                <p><strong>Definition</strong></p>
+            </td>
+            <td width="816">
+                <p>1. <a href="https://www.ontario.ca/laws/regulation/150138#BK1"><strong>(1)</strong></a> &ldquo;Building project&rdquo; is a project composed of one or more of the following elements: 1. The purchase or other acquisition of all or any part of an existing building or buildings including the land contiguous to the building. 2. Any renovations or alterations to an existing building or buildings. 3. Additions to an existing building or buildings. 4. The purchase or other acquisition of vacant land for the purpose of constructing a building or buildings on it. 5. The erection of a new building or any part of a building. 6. The demolition of a building. 7. The installation of public utilities, sewers and items or services necessary for access to the land or building or buildings</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="426">
+                <p>&ldquo;Building project&rdquo; refers to the process of adding, erecting, renovating or removing anything to or from a building</p>
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="108">
+                <p><strong>Definition</strong></p>
+            </td>
+            <td width="816">
+                <p>1. <a href="https://www.ontario.ca/laws/regulation/150138#BK1"><strong>(1)</strong></a><strong> &ldquo;</strong>&ldquo;Children&rsquo;s recreation program&rdquo; means, (a) a program operated by a children&rsquo;s recreation service provider listed in the Schedule to <a href="https://www.ontario.ca/laws/regulation/900797"><strong>Regulation 797 of the Revised Regulations of Ontario, 1990</strong></a> (Recreation Programs) made under the <em>Ministry of Tourism and Recreation Act,</em> or (b) a program that meets the descriptions set out in <a href="https://www.ontario.ca/laws/statute/14c11#s6s4"><strong>subsection 6 (4) of the Act</strong></a></p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="426">
+                <p>Service Provider list:</p>
+                <p>Recreation committees, recreation camp organizations, sports organizations, Ministry agencies, and Ministry of Tourism agencies</p>
+                <p><a href="https://www.ontario.ca/laws/regulation/900797">(Ontario, R.R.O. 1990, Reg. 797: Recreation Programs, 2004)</a></p>
+                <p><strong>Impact on: recreation programs</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="108">
+                <p><strong>Definition</strong></p>
+            </td>
+            <td width="816">
+                <p>1. <a href="https://www.ontario.ca/laws/regulation/150138#BK1"><strong>(1)</strong></a> &ldquo;Child with special needs&rdquo; refers to a child whose cognitive, physical, social, emotional or communicative needs, or whose needs relating to overall development, are of such nature that additional supports are required for the child</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="426">
+                <p>Children who require additional support regarding their cognitive, physical, social, emotional or communicative development</p>
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="108">
+                <p><strong>Definition</strong></p>
+            </td>
+            <td width="816">
+                <p>1. <a href="https://www.ontario.ca/laws/regulation/150138#BK1"><strong>(1)</strong></a> &ldquo;Family support program&rdquo; has the same meaning as in <a href="https://www.ontario.ca/laws/regulation/150137"><strong>Ontario Regulation 137/15</strong></a> (General) made under the Act</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="426">
+                <p>Any of the following programs that receives funding from the Ministry of Education: 1. Child Care Resource Centres. 2. Better Beginnings Better Futures. 3. Ontario Early Years Centres. 4. Parenting and Family Literacy Centres.</p>
+                <p><a href="https://www.ontario.ca/laws/regulation/150137">(Ontario, O.Reg. 137/15: General, 2016)</a></p>
+                <p><strong>Impact on: family support programs</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="108">
+                <p><strong>Definition</strong></p>
+            </td>
+            <td width="816">
+                <p>1. <a href="https://www.ontario.ca/laws/regulation/150138#BK1"><strong>(1)</strong></a> &ldquo;Municipalities&rsquo; shared costs&rdquo; with respect to a service area, means that part of the costs shared by the Minister and service system managers with respect to services described in <a href="https://www.ontario.ca/laws/regulation/150138#s6s1"><strong>subsection 6 (1)</strong></a> that are incurred or to be incurred under this Regulation by all of the municipalities located in the service area</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="426">
+                <p>Cost shared between the Minister and service system managers</p>
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="108">
+                <p><strong>Definition</strong></p>
+            </td>
+            <td width="816">
+                <p>1. <a href="https://www.ontario.ca/laws/regulation/150138#BK1"><strong>(1)</strong></a> &ldquo;Net costs&rdquo; means operating cost less revenue from fees</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="426">
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="108">
+                <p><strong>Definition</strong></p>
+            </td>
+            <td width="816">
+                <p>1. <a href="https://www.ontario.ca/laws/regulation/150138#BK1"><strong>(1)</strong></a> &ldquo;Operating costs&rdquo; means the gross expenditure, including (a) administrative costs, (b) expenditures reasonable and necessary for providing child care at a child care centre, home child care or a children&rsquo;s recreation program described in paragraph 8 of <a href="https://www.ontario.ca/laws/regulation/150138#s6s1"><strong>subsection 6 (1)</strong></a>, less income other than revenue from fees, and (c) expenditures reasonable and necessary for providing a family support program described in paragraph 9 of subsection 6 (1)</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="426">
+                <p>Expenses for running a child care/ program</p>
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="108">
+                <p><strong>Definition</strong></p>
+            </td>
+            <td width="816">
+                <p>1. <a href="https://www.ontario.ca/laws/regulation/150138#BK1"><strong>(1)</strong></a> &ldquo;Professional engineer&rdquo; is a professional engineer who is a member in good standing of the Association of Professional Engineers of the Province of Ontario</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="426">
+                <p>Someone who designs, builds, and maintains machines, buildings, etc.</p>
+                <p><strong>Impact: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="108">
+                <p><strong>Definition</strong></p>
+            </td>
+            <td width="816">
+                <p>1. <a href="https://www.ontario.ca/laws/regulation/150138#BK1"><strong>(1)</strong></a> &ldquo;Provider enhancement grant&rdquo; is a grant for persons providing home child care</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="426">
+                <p><strong>Impact: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="108">
+                <p><strong>Definition</strong></p>
+            </td>
+            <td width="816">
+                <p>1. <a href="https://www.ontario.ca/laws/regulation/150138#BK1"><strong>(1)</strong></a> &ldquo;&ldquo;Wage subsidy&rdquo; means a subsidy for the enhancement of, (a) payments to home child care providers by home child care agencies; and (b) salaries and benefits for employees of child care centres, home child care agencies, resource centres described in paragraph 3 of <a href="https://www.ontario.ca/laws/regulation/150138#s6s1"><strong>subsection 6 (1)</strong></a> and agencies that provide staff, equipment, supplies or services for the purposes of paragraph 4 of subsection 6 (1)</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="426">
+                <p>Subsidy to enhance child care providers wage</p>
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="108">
+                <p><strong>Definition</strong></p>
+            </td>
+            <td width="816">
+                <p>1. <a href="https://www.ontario.ca/laws/regulation/150138#s1s2"><strong>(2)</strong></a> For greater certainty, a children&rsquo;s recreation program shall be considered to be a program described in paragraph 7 <a href="https://www.ontario.ca/laws/statute/14c11#s4s1"><strong>subsection 4 (1)</strong></a> of the Act only if it meets the requirements of that provision</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="426">
+                <p>The care or supervision is provided as part of a program that promotes recreational, artistic, musical or athletic skills or to provide religious, cultural or linguistic instruction.</p>
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="108">
+                <p><strong>Service areas</strong></p>
+            </td>
+            <td width="816">
+                <p><a href="https://www.ontario.ca/laws/regulation/150138#BK2"><strong>2</strong></a>. The geographic areas, as constituted from time to time, of the municipalities and district social services administration boards set out in Column 1 of the Table are designated as service areas and the entity set out opposite each service area in Column 2 of the Table is designated as the service system manager for that service area</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="426">
+                <p>The chart shows the service system managers for each service area</p>
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h4><a name= "section11"></a>Table</h4></div>
+        <table>
+            <thead>
+            <tr>
+                <td width="108">
+                    <p><strong>Item</strong></p>
+                </td>
+                <td width="666">
+                    <p><strong>Service Areas</strong></p>
+                </td>
+                <td width="666">
+                    <p><strong>Service System Manager</strong></p>
+                </td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td width="108">
+                    <p>1.</p>
+                </td>
+                <td width="666">
+                    <p>County of Dufferin</p>
+                </td>
+                <td width="666">
+                    <p>County of Dufferin</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>2.</p>
+                </td>
+                <td width="666">
+                    <p>Regional Municipality of Halton</p>
+                </td>
+                <td width="666">
+                    <p>Regional Municipality of Halton</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>3.</p>
+                </td>
+                <td width="666">
+                    <p>County of Lennox and Addington and County of Prince Edward</p>
+                </td>
+                <td width="666">
+                    <p>County of Lennox and Addington</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>4.</p>
+                </td>
+                <td width="666">
+                    <p>District Municipality of Muskoka</p>
+                </td>
+                <td width="666">
+                    <p>District Municipality of Muskoka</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>5.</p>
+                </td>
+                <td width="666">
+                    <p>City of Ottawa</p>
+                </td>
+                <td width="666">
+                    <p>City of Ottawa</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>6.</p>
+                </td>
+                <td width="666">
+                    <p>County of Renfrew, including the City of Pembroke</p>
+                </td>
+                <td width="666">
+                    <p>County of Renfrew</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>7.</p>
+                </td>
+                <td width="666">
+                    <p>The district for the Algoma District Services Administration Board, as described in Ontario Regulation 278/98 (General) made under the <em>District Social Services Administration Boards Act</em></p>
+                </td>
+                <td width="666">
+                    <p>Algoma District Services Administration Board</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>8.</p>
+                </td>
+                <td width="666">
+                    <p>City of Hamilton</p>
+                </td>
+                <td width="666">
+                    <p>City of Hamilton</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>9.</p>
+                </td>
+                <td width="666">
+                    <p>County of Lanark and Town of Smiths Falls</p>
+                </td>
+                <td width="666">
+                    <p>County of Lanark</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>10.</p>
+                </td>
+                <td width="666">
+                    <p>The district for the District of Parry Sound Social Services Administration Board, as described in Ontario Regulation 278/98</p>
+                </td>
+                <td width="666">
+                    <p>District of Parry Sound Social Services Administration Board</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>11.</p>
+                </td>
+                <td width="666">
+                    <p>County of Peterborough and City of Peterborough</p>
+                </td>
+                <td width="666">
+                    <p>City of Peterborough</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>12.</p>
+                </td>
+                <td width="666">
+                    <p>County of Simcoe, City of Barrie and City of Orillia</p>
+                </td>
+                <td width="666">
+                    <p>County of Simcoe</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>13.</p>
+                </td>
+                <td width="666">
+                    <p>City of Toronto</p>
+                </td>
+                <td width="666">
+                    <p>City of Toronto</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>14.</p>
+                </td>
+                <td width="666">
+                    <p>Regional Municipality of York</p>
+                </td>
+                <td width="666">
+                    <p>Regional Municipality of York</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>15.</p>
+                </td>
+                <td width="666">
+                    <p>County of Brant and City of Brantford</p>
+                </td>
+                <td width="666">
+                    <p>City of Brantford</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>16.</p>
+                </td>
+                <td width="666">
+                    <p>County of Bruce</p>
+                </td>
+                <td width="666">
+                    <p>County of Bruce</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>17.</p>
+                </td>
+                <td width="666">
+                    <p>Municipality of Chatham-Kent</p>
+                </td>
+                <td width="666">
+                    <p>Municipality of Chatham-Kent</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>18.</p>
+                </td>
+                <td width="666">
+                    <p>City of Cornwall and United Counties of Stormont, Dundas and Glengarry</p>
+                </td>
+                <td width="666">
+                    <p>City of Cornwall</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>19.</p>
+                </td>
+                <td width="666">
+                    <p>County of Grey</p>
+                </td>
+                <td width="666">
+                    <p>County of Grey</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>20.</p>
+                </td>
+                <td width="666">
+                    <p>County of Lambton</p>
+                </td>
+                <td width="666">
+                    <p>County of Lambton</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>21.</p>
+                </td>
+                <td width="666">
+                    <p>Regional Municipality of Niagara</p>
+                </td>
+                <td width="666">
+                    <p>Regional Municipality of Niagara</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>22.</p>
+                </td>
+                <td width="666">
+                    <p>County of Northumberland</p>
+                </td>
+                <td width="666">
+                    <p>County of Northumberland</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>23.</p>
+                </td>
+                <td width="666">
+                    <p>County of Oxford</p>
+                </td>
+                <td width="666">
+                    <p>County of Oxford</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>24.</p>
+                </td>
+                <td width="666">
+                    <p>United Counties of Prescott and Russell</p>
+                </td>
+                <td width="666">
+                    <p>United Counties of Prescott and Russell</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>25.</p>
+                </td>
+                <td width="666">
+                    <p>City of Greater Sudbury</p>
+                </td>
+                <td width="666">
+                    <p>City of Greater Sudbury</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>26.</p>
+                </td>
+                <td width="666">
+                    <p>Regional Municipality of Durham</p>
+                </td>
+                <td width="666">
+                    <p>Regional Municipality of Durham</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>27.</p>
+                </td>
+                <td width="666">
+                    <p>Norfolk County and Haldimand County</p>
+                </td>
+                <td width="666">
+                    <p>Norfolk County</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>28.</p>
+                </td>
+                <td width="666">
+                    <p>County of Hastings, City of Belleville and City of Quinte West</p>
+                </td>
+                <td width="666">
+                    <p>County of Hastings</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>29.</p>
+                </td>
+                <td width="666">
+                    <p>County of Huron</p>
+                </td>
+                <td width="666">
+                    <p>County of Huron</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>30.</p>
+                </td>
+                <td width="666">
+                    <p>City of Kingston and the service area of the Frontenac Management Board, as set out in paragraph 3.3 (b) of an Order made under section 25.2 of the <em>Municipal Act</em> on January 7, 1997 and published in <em>The Ontario Gazette</em> dated February 15, 1997</p>
+                </td>
+                <td width="666">
+                    <p>City of Kingston</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>31.</p>
+                </td>
+                <td width="666">
+                    <p>United Counties of Leeds and Grenville, City of Brockville, Town of Gananoque and Town of Prescott</p>
+                </td>
+                <td width="666">
+                    <p>United Counties of Leeds and Grenville</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>32.</p>
+                </td>
+                <td width="666">
+                    <p>City of London and County of Middlesex</p>
+                </td>
+                <td width="666">
+                    <p>City of London</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>33.</p>
+                </td>
+                <td width="666">
+                    <p>Regional Municipality of Peel</p>
+                </td>
+                <td width="666">
+                    <p>Regional Municipality of Peel</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>34.</p>
+                </td>
+                <td width="666">
+                    <p>County of Perth, City of Stratford and Town of St. Marys</p>
+                </td>
+                <td width="666">
+                    <p>City of Stratford</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>35.</p>
+                </td>
+                <td width="666">
+                    <p>City of St. Thomas and County of Elgin</p>
+                </td>
+                <td width="666">
+                    <p>City of St. Thomas</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>36.</p>
+                </td>
+                <td width="666">
+                    <p>City of Kawartha Lakes and County of Haliburton</p>
+                </td>
+                <td width="666">
+                    <p>City of Kawartha Lakes</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>37.</p>
+                </td>
+                <td width="666">
+                    <p>Regional Municipality of Waterloo</p>
+                </td>
+                <td width="666">
+                    <p>Regional Municipality of Waterloo</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>38.</p>
+                </td>
+                <td width="666">
+                    <p>County of Wellington and City of Guelph</p>
+                </td>
+                <td width="666">
+                    <p>County of Wellington</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>39.</p>
+                </td>
+                <td width="666">
+                    <p>City of Windsor, County of Essex and Township of Pelee</p>
+                </td>
+                <td width="666">
+                    <p>City of Windsor</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>40.</p>
+                </td>
+                <td width="666">
+                    <p>The district for the District of Cochrane Social Services Administration Board, as described in Ontario Regulation 278/98</p>
+                </td>
+                <td width="666">
+                    <p>District of Cochrane Social Services Administration Board</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>41.</p>
+                </td>
+                <td width="666">
+                    <p>The district for the Kenora District Services Board, as described in Ontario Regulation 278/98</p>
+                </td>
+                <td width="666">
+                    <p>Kenora District Services Board</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>42.</p>
+                </td>
+                <td width="666">
+                    <p>The district for the District of Nipissing Social Services Administration Board, as described in Ontario Regulation 278/98</p>
+                </td>
+                <td width="666">
+                    <p>District of Nipissing Social Services Administration Board</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>43.</p>
+                </td>
+                <td width="666">
+                    <p>The district for the Rainy River District Social Services Administration Board, as described in Ontario Regulation 278/98</p>
+                </td>
+                <td width="666">
+                    <p>Rainy River District Social Services Administration Board</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>44.</p>
+                </td>
+                <td width="666">
+                    <p>The district for the District of Sault Ste. Marie Social Services Administration Board, as described in Ontario Regulation 278/98</p>
+                </td>
+                <td width="666">
+                    <p>District of Sault Ste. Marie Social Services Administration Board</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>45.</p>
+                </td>
+                <td width="666">
+                    <p>The district for the Manitoulin-Sudbury District Services Board, as described in Ontario Regulation 278/98</p>
+                </td>
+                <td width="666">
+                    <p>Manitoulin-Sudbury District Services Board</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>46.</p>
+                </td>
+                <td width="666">
+                    <p>The district for the District of Thunder Bay Social Services Administration Board, as described in Ontario Regulation 278/98</p>
+                </td>
+                <td width="666">
+                    <p>District of Thunder Bay Social Services Administration Board</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="108">
+                    <p>47.</p>
+                </td>
+                <td width="666">
+                    <p>The district for the District of Timiskaming Social Services Administration Board, as described in Ontario Regulation 278/98</p>
+                </td>
+                <td width="666">
+                    <p>District of Timiskaming Social Services Administration Board</p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+ </div>
+ </div>
+<div id="section2" class="container-fluid">
+  
+  <div class="panel panel-info">
+  <div class="panel-heading">
+  
+      <h3>Funding Agreements with First Nations</h3> </div>
+      <table>
+          <thead>
+          <tr>
+              <td width="100">
+                  <p><strong>Category</strong></p>
+              </td>
+              <td width="200">
+                  <p><strong>Regulation/ Requirement</strong></p>
+              </td>
+              <td width="95">
+                  <p><strong>Effective Date</strong></p>
+              </td>
+              <td width="200">
+                  <p><strong>Points for Consideration</strong></p>
+              </td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <td width="113">
+                  <p><strong>Agreements with First Nations</strong></p>
+              </td>
+              <td width="816">
+                  <p><a href="https://www.ontario.ca/laws/regulation/150138#BK4"><strong>3</strong></a>. For the purposes of <a href="https://www.ontario.ca/laws/statute/14c11#s54s3"><strong>subsection 54 (3) of the Act</strong></a>, a First Nation is prescribed as a person with whom the Minister may enter into agreements under <a href="https://www.ontario.ca/laws/statute/14c11#s54s1"><strong>subsection 54 (1) of the Act</strong></a></p>
+              </td>
+              <td width="90">
+                  <p>31-Aug-15</p>
+              </td>
+              <td width="426">
+                  <p>54 (3): The Minister may enter into agreements with service system managers, or any other persons prescribed by the regulations, for the purposes of subsection (1)</p>
+                  <p><a href="https://www.ontario.ca/laws/statute/14c11">(Ontario, Child Care and Early Years Act, 2014, S.O. 2014, c. 11, Sched. 1, 2015)</a></p>
+                  <p><strong>Impact on: First Nations</strong></p>
+              </td>
+          </tr>
+          <tr>
+              <td width="113">
+                  <p><strong>Computation of provincial grant</strong></p>
+              </td>
+              <td width="816">
+                  <p>4. <a href="https://www.ontario.ca/laws/regulation/150138#s4s1"><strong>(1)</strong></a> Every First Nation claiming payment of funds under clause 54 (1) (a) of the Act pursuant to a funding agreement entered into under <a href="https://www.ontario.ca/laws/statute/14c11#s54s3"><strong>subsection 54 (3) of the Act</strong></a> shall, annually before a date fixed by a director in each year, prepare and submit to a director, on a form approved by the Minister, an estimate of the costs and revenue and of the amount the Minister is to pay for the next fiscal year. <a href="https://www.ontario.ca/laws/regulation/150138#s4s2"><strong>(2)</strong></a> A First Nation may at any time during the fiscal year after the estimate has been approved by a director submit an amendment to the estimate for the fiscal year. <a href="https://www.ontario.ca/laws/regulation/150138#s4s3"><strong>(3)</strong></a> The director may approve the amount of any estimate or amendment to it submitted under subsection (1) or (2) or the director may vary the amount of the estimate or the amendment and approve the amount as varied. <a href="https://www.ontario.ca/laws/regulation/150138#s4s4"><strong>(4)</strong></a> Subject to subsection (5), an amount payable to a First Nation shall be calculated in accordance with section 5 but the total amount payable shall not exceed the total amount of the estimate as finally approved by a director. <a href="https://www.ontario.ca/laws/regulation/150138#s4s5"><strong>(5)</strong></a> An amount paid under section 5 for a fiscal year may be adjusted upon receipt of the financial records of a First Nation referred to in <a href="https://www.ontario.ca/laws/regulation/150137#BK98"><strong>section 76 of Ontario Regulation 137/15</strong></a> (General) made under the Act. <a href="https://www.ontario.ca/laws/regulation/150138#s4s6"><strong>(6)</strong></a> The amount of an adjustment referred to in subsection (5) shall either be paid to the First Nation by Ontario or refunded by the First Nation to Ontario, as the case may be. <a href="https://www.ontario.ca/laws/regulation/150138#s4s7">(7)</a> The money paid under this section to a First Nation shall be expended by it in accordance with the estimate, as approved by the director</p>
+              </td>
+              <td width="90">
+                  <p>31-Aug-15</p>
+              </td>
+              <td width="426">
+                  <p>Calculation and estimation of funding under the funding agreement</p>
+                  <p>Section 76 of Ontario Regulation 137/15 (General) relates to financial records</p>
+                  <p><a href="https://www.ontario.ca/laws/regulation/150137">(Ontario, O.Reg. 137/15: General, 2016)</a></p>
+                  <p><strong>Impact on: First Nation</strong></p>
+              </td>
+          </tr>
+          <tr>
+              <td width="113">
+                  <p><strong>Amount for First Nation</strong></p>
+              </td>
+              <td width="816">
+                  <p>5. <a href="https://www.ontario.ca/laws/regulation/150138#s5s1"><strong>(1)</strong></a> Subject to subsection (2), the amount payable by the Minister to a First Nation under a funding agreement entered into under <a href="https://www.ontario.ca/laws/statute/14c11#s54s3"><strong>subsection 54 (3) of the Act</strong></a> is, (a) 80 per cent of the net cost of providing child care to children in attendance at child care centres operated by the First Nation; and (b) 80 per cent of the net cost incurred under agreements to provide child care at a child care centre or in home child care, or both, to children whose parents are eligible for assistance with the cost of the services under <a href="https://www.ontario.ca/laws/regulation/150138#s8s1"><strong>subsection 8 (1)</strong></a>. <a href="https://www.ontario.ca/laws/regulation/150138#s5s2"><strong>(2)</strong></a> The amount payable by the Minister to a First Nation under a funding agreement entered into under subsection 54 (3) of the Act in respect of children with special needs is, (a) 100 per cent of the net cost for the children with special needs who are five years old or older; and (b) 87 per cent of the operating costs for children with special needs who are under five years old or, if the fees payable by their parents exceed 13 per cent of those operating costs, the amount necessary to ensure that the sum of the amount payable under a funding agreement entered into under subsection 54 (3) of the Act and the fees payable by the parents equals those operating costs</p>
+              </td>
+              <td width="90">
+                  <p>31-Aug-15</p>
+              </td>
+              <td width="426">
+                  <p>Amounts payable to First Nations from the Minister</p>
+                  <p><strong>Impact on: First Nation</strong></p>
+              </td>
+          </tr>
+          </tbody>
+      </table>
+
+ </div>
+</div>
+
+    <div id="section3" class="container-fluid">
+<div class="panel panel-info">
+  <div class="panel-heading">
+<h3>Cost Sharing</h3></div>
+    <table>
+        <thead>
+        <tr>
+            <td width="100">
+                <p><strong>Category</strong></p>
+            </td>
+            <td width="200">
+                <p><strong>Regulation/ Requirement</strong></p>
+            </td>
+            <td width="95">
+                <p><strong>Effective Date</strong></p>
+            </td>
+            <td width="200">
+                <p><strong>Points for Consideration</strong></p>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td width="120">
+                <p><strong>Services</strong></p>
+            </td>
+            <td width="816">
+                <p>6. <a href="https://www.ontario.ca/laws/regulation/150138#s6s1"><strong>(1)</strong></a> The following are the services referred to in <a href="https://www.ontario.ca/laws/regulation/150138#BK9"><strong>sections 7</strong></a> and <a href="https://www.ontario.ca/laws/regulation/150138#BK11"><strong>8</strong></a>: 1. The provision of in-home services purchased for a child pursuant to an agreement between a service system manager and a person. 2. The provision of in-home services purchased for a child pursuant to an agreement between the Minister and a person. 3. The provision of resource centres that provide information, public education, consultation, supports and services to individuals, including parents, with respect to the care they give to children. 4. The provision of staff, equipment, supplies or services for children with special needs, (i) in a premises where home child care is provided, (ii) in a place where a children&rsquo;s recreation program described in paragraph 8 is provided, or (iii) in a child care centre. 5. The provision of child care by a child care centre. 6. The provision of home child care in a premises overseen by a home child care agency. 7. The provision of funding to participants in employment assistance activities under the <a href="https://www.ontario.ca/laws/statute/97o25a"><strong><em>Ontario Works Act, 1997</em></strong></a> for the temporary care for and supervision of a child where the care and supervision is provided to enable the participants to so participate. 8. The provision of children&rsquo;s recreation programs for children who are at least six years old that provide supervision for children and may include activities such as sport, recreation, fitness, arts and culture activities, youth leadership, camping and outdoor education. 9. The provision of a family support program. <a href="https://www.ontario.ca/laws/regulation/150138#s6s2"><strong>(2)</strong></a> The services set out in paragraphs 3,4,7 and 8 of subsection (1) are prescribed for the purposes of clauses 54 (1) (c) and 57 (1) (c) of the Act as programs and services, in addition to those set out in the Act, for which the Minister may provide funding and financial assistance</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-15</p>
+            </td>
+            <td width="426">
+                <p>Services that Sections 7 &amp; 8 refer to</p>
+                <p><strong>Impact on: in-home services, home child care, child care centres, recreational programs, etc. </strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Funding and cost sharing arrangements</strong></p>
+            </td>
+            <td width="816">
+                <p>7. <a href="https://www.ontario.ca/laws/regulation/150138#s7s1"><strong>(1)</strong></a> Any funding agreement entered into between the Minister and a service system manager or First Nation under <a href="https://www.ontario.ca/laws/statute/14c11#s54s3"><strong>subsection 54 (3) of the Act</strong></a> with respect to the funding of services described in <a href="https://www.ontario.ca/laws/regulation/150138#s6s1"><strong>subsection 6 (1)</strong></a> shall include the cost sharing arrangements set out in this section. <strong>(</strong><a href="https://www.ontario.ca/laws/regulation/150138#s7s2"><strong>2)</strong></a> The amount payable to a service system manager with respect to the services described in subsection 6 (1) is, (a) for those services that are provided in municipalities no less than, (i) 80 per cent of the total costs to be paid for the services, as set out in the agreement, and (ii) 50 per cent of the service system manager&rsquo;s costs of administration attributable to the agreement in respect the services, as approved by the director; and (b) for those services that are provided in territory without municipal organization, (i) 100 per cent of the total costs to be paid for the services, as set out in the agreement, and (ii) 100 per cent of the service system manager&rsquo;s costs of administration attributable to the agreement in respect of the services, as approved by the director. <a href="https://www.ontario.ca/laws/regulation/150138#s7s3"><strong>(3)</strong></a> Every service system manager claiming payment of funds under <a href="https://www.ontario.ca/laws/statute/14c11#s54s1"><strong>subsection 54 (1) of the Act</strong></a> pursuant to a funding agreement entered into under subsection 54 (3) of the Act shall, at the times and in the manner required by the Minister, provide such financial reports as the Minister may require. <a href="https://www.ontario.ca/laws/regulation/150138#s7s4"><strong>(4)</strong></a> The amount payable to a service system manager with respect to the services described in paragraphs 5 and 6 of subsection 6 (1) is, (a) for those services that are provided in municipalities, (i) 80 per cent of the net cost of providing the services, (ii) 50 per cent of the service system manager&rsquo;s costs of administration attributable to the purchase of the services, as approved by the director, (iii) 50 per cent of the costs incurred by the service system manager under the agreement with respect to determining whether parents are eligible for assistance with the cost of the services under <a href="https://www.ontario.ca/laws/regulation/150138#s8s1"><strong>subsection 8 (1)</strong>,</a> (iv) 80 per cent of the costs of providing wage subsidies or provider enhancement grants in relation to the services, and (v) 50 per cent of the service system manager&rsquo;s costs of administration attributable to the provision of wage subsidies or provider enhancement grants in relation to the services as approved by the director; and (b) for those services that are provided in territory without municipal organization, (i) 100 per cent of the net cost of providing the services, (ii) 100 per cent of the service system manager&rsquo;s costs of administration attributable to the purchase of the services, as approved by the director, (iii) 100 per cent of the costs incurred by the service system manager under the agreement with respect to determining whether parents are eligible for assistance with the cost of the services under subsection 8 (1), (iv) 100 per cent of the costs of providing wage subsidies or provider enhancement grants in relation to the services, and (v) 100 per cent of the service system manager&rsquo;s costs of administration attributable to the provision of wage subsidies or provider enhancement grants in relation to the services, as approved by the director. <a href="https://www.ontario.ca/laws/regulation/150138#s7s4"><strong>(5)</strong></a> In subsection (4), &ldquo;net cost&rdquo; does not include wage subsidies or provider enhancement grants. <a href="https://www.ontario.ca/laws/regulation/150138#s7s4"><strong>(6)</strong></a> The amount payable to a service system manager with respect to the service described in paragraph 8 of subsection 6 (1) is, (a) for those services that are provided in municipalities, (i) 80 per cent of the net costs of providing the service for children whose parents are eligible for assistance with the cost of the service under subsection 8 (1), (ii) 50 per cent of the service system manager&rsquo;s costs of administration attributable to the purchase of the service, as approved by the director, and (iii) 50 per cent of the costs incurred by the service system manager under the agreement with respect to determining whether parents are eligible for assistance with the cost of the service under subsection 8 (1); and (b) for those services that are provided in territory without municipal organization, (i) 100 per cent of the net cost of providing the service for children whose parents are eligible for assistance with the cost of the service under subsection 8 (1), (ii) 100 per cent of the service system manager&rsquo;s costs of administration attributable to the purchase of service, as approved by the director, and (iii) 100 per cent of the costs incurred by the service system manager under the agreement with respect to determining whether parents are eligible for assistance with the cost of the service under subsection 8 (1). <a href="https://www.ontario.ca/laws/regulation/150138#s7s7"><strong>(7)</strong></a> In this section, services provided in respect of the Town of Moosonee shall be considered as if they were provided in territory without municipal organization</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+                <p>(3)</p>
+                <p>29-Aug-16</p>
+                <p>(4), (5) &amp; (6) Revoked on</p>
+                <p>29-Aug-16</p>
+            </td>
+            <td width="426">
+                <p>Amounts payable in regards to the services in section 6 (1)</p>
+                <p><strong>Impact on: First Nation</strong></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div> 
+    </div>
+
+<div id="section4" class="container-fluid">
+<div class="panel panel-info">
+  <div class="panel-heading">  
+  
+<h3>Financial Assistance for Parents</h3></div>
+    <table>
+        <thead>
+        <tr>
+            <td width="100">
+                <p><strong>Category</strong></p>
+            </td>
+            <td width="200">
+                <p><strong>Regulation/ Requirement</strong></p>
+            </td>
+            <td width="95">
+                <p><strong>Effective Date</strong></p>
+            </td>
+            <td width="200">
+                <p><strong>Points for Consideration</strong></p>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td width="108">
+                <p><strong>Eligibility for assistance</strong></p>
+            </td>
+            <td width="816">
+                <p>8. <a href="https://www.ontario.ca/laws/regulation/150138#s8s1"><strong>(1)</strong></a> The following persons are eligible, as parents, for assistance with the cost of a service listed in paragraph 1, 2, 5, 6, 7 or 8 of <a href="https://www.ontario.ca/laws/regulation/150138#s6s1"><strong>subsection 6 (1)</strong></a>: 1. Persons eligible for income support under the <a href="https://www.ontario.ca/laws/statute/97o25b"><strong><em>Ontario Disability Support Program Act, 1997</em></strong></a><em>.</em> 2. Persons eligible for income assistance under the <a href="https://www.ontario.ca/laws/statute/97o25a"><strong><em>Ontario Works Act, 1997</em></strong></a> who are employed or participating in employment assistance activities under the Act or both. 3. Persons who are eligible for assistance on the basis of their adjusted income. <a href="https://www.ontario.ca/laws/regulation/150138#s8s2"><strong>(2)</strong></a> A parent described in paragraph 1 or 2 of subsection (1) who is the recipient of a subsidy, (a) shall, subject to clause (b), be fully subsidized for the cost of the service; or (b) shall be provided with the amount of funding for the service described in paragraph 7 of subsection 6 (1), if applicable. <a href="https://www.ontario.ca/laws/regulation/150138#s8s3"><strong>(3)</strong></a> A parent described in paragraph 3 of subsection (1) who is the recipient of a subsidy shall be provided with an amount of funding for the service determined under <a href="https://www.ontario.ca/laws/regulation/150138#s10s1"><strong>section 10</strong></a>. <a href="https://www.ontario.ca/laws/regulation/150138#s8s4"><strong>(4)</strong></a> The document entitled &ldquo;Policy Statement: Access to Subsidized Child Care,&rdquo; as amended from time to time, which is available on a Government of Ontario website, shall be referred to for the purposes of determining a person&rsquo;s eligibility for financial assistance under this section and <a href="https://www.ontario.ca/laws/regulation/150138#s9s1"><strong>sections 9</strong></a> to <a href="https://www.ontario.ca/laws/regulation/150138#s12s1"><strong>12</strong></a></p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="426">
+                <p>Parents who are eligible for assistance with the cost of services listed in paragraph 1, 2, 5, 6, 7 or 8 of subsection 6 (1)</p>
+                <p><strong>Impact on: parents of children in care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="108">
+                <p><strong>Application for assistance</strong></p>
+            </td>
+            <td width="816">
+                <p>9. <a href="https://www.ontario.ca/laws/regulation/150138#s9s1"><strong>(1)</strong></a> Every year parents can apply to a service system manager for assistance with the cost of a service referred to in <a href="https://www.ontario.ca/laws/regulation/150138#s8s1"><strong>subsection 8 (1)</strong></a>. <a href="https://www.ontario.ca/laws/regulation/150138#s9s2"><strong>(2)</strong></a> Subject to subsection (3), parents applying for assistance with the cost of a service referred to in subsection 8 (1) on the basis of their adjusted income shall file with the service system manager,</p>
+                <p>(a) a copy of their Notice of Assessment or Canada Child Tax Benefit Notice for the previous year; or (b) if their Notice of Assessment or Canada Tax Benefit Notice for the previous year is not available, a copy of their most recent available Notice of Assessment or Canada Tax Benefit Notice. <a href="https://www.ontario.ca/laws/regulation/150138#s9s3"><strong>(3)</strong></a> Parents who are applying for assistance with the cost of a service referred to in subsection 8 (1) on the basis of their adjusted income that were non-residents in Canada in the previous year are not required to file the documents referred to in subsection (2) and their adjusted income is deemed to be $0 for the purpose of their application for assistance. <a href="https://www.ontario.ca/laws/regulation/150138#s9s4"><strong>(4)</strong></a> The adjusted income of a person for the purpose of this Regulation shall be determined by an administrator appointed under the <a href="https://www.ontario.ca/laws/statute/97o25a"><strong><em>Ontario Works Act, 1997</em></strong></a>, a director or such person as the director approves</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="426">
+                <p>Parents applying for assistance with the cost of a service must ensure they have their Notice of Assessment or Canada Child Tax Benefit Notice</p>
+                <p><strong>Impact on: parents of children in care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="108">
+                <p><strong>Amount of subsidy</strong></p>
+            </td>
+            <td width="816">
+                <p>10. <a href="https://www.ontario.ca/laws/regulation/150138#s10s1">(1)</a> The amount of the subsidy for a service referred to in <a href="https://www.ontario.ca/laws/regulation/150138#s8s1"><strong>subsection 8 (1)</strong></a> for which a parent is eligible on the basis of their adjusted income is calculated as follows: 1. Determine the amount the parent would pay for the service if the parent did not receive any subsidy. 2. Determine the amount the parent shall pay as calculated under subsection (2), (3) or (4). 3. Subtract the number determined under paragraph 2 from the number determined under paragraph 1. <a href="https://www.ontario.ca/laws/regulation/150138#s10s2"><strong>(2)</strong></a> A parent shall not pay any of the cost of the service for their children if the parent, (a) has a total adjusted income of $20,000 or less; or (b) the amount the parent would contribute on the basis of their adjusted income for each month of child care, as calculated under subsection (3), is less than $10. <a href="https://www.ontario.ca/laws/regulation/150138#s10s3"><strong>(3)</strong></a> If a parent has a total adjusted income of more than $20,000 and the child is in receipt of the service on a full-time basis, the service system manager shall calculate a monthly amount that the parent shall pay, as follows [(A x 0.10) + (B x 0.30)] &divide;12 where, A is the amount by which their adjusted income exceeds $20,000 but is not more than $40,000, and B is the amount by which their adjusted income exceeds $40,000. <a href="https://www.ontario.ca/laws/regulation/150138#s10s4"><strong>(4)</strong></a> If a parent has a total adjusted income of more than $20,000 and the child is in receipt of the service on a part-time basis, the service system manager shall calculate a daily amount that the parent shall pay as follows: A &divide; (B x 4.35) where, A is the monthly amount paid by the parent for the service determined under subsection (3), and B is the number of days per week the child is in receipt of the services</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="426">
+                <p>How the amount of subsidy is calculated</p>
+                <p><strong>Impact on: parents of children in care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="108">
+                <p><strong>Reductions in adjusted income</strong></p>
+            </td>
+            <td width="816">
+                <p>11. <a href="https://www.ontario.ca/laws/regulation/150138#s11s1"><strong>(1)</strong></a> Despite the definition of &ldquo;adjusted income&rdquo; in subsection (1), if a parent of a child has a disability or the child is a child with special needs, the service system manager shall reduce the adjusted income of the parent by the amount of any expenses related to the parent&rsquo;s disability or to the child&rsquo;s special needs for which the parent is not reimbursed and for which there are no deductions under the <a href="http://laws-lois.justice.gc.ca/eng/acts/I-3.3/"><strong><em>Income Tax Act</em></strong><strong> (Canada)</strong></a> and the reduced adjusted income shall be treated as the parent&rsquo;s adjusted income for the purposes of section 10. <a href="https://www.ontario.ca/laws/regulation/150138#s11s2"><strong>(2)</strong></a> For the purposes of this section, a parent has a disability if, (a) the person has a substantial physical or mental impairment that is continuous or recurrent and that is expected to last one year or more; and (b) the direct and cumulative effect of the impairment on the person&rsquo;s ability to attend to his or her personal care, function in the community and function in a workplace results in a substantial restriction in one or more of these activities of daily living. <a href="https://www.ontario.ca/laws/regulation/150138#s11s3"><strong>(3)</strong></a>For the purposes of this section, a determination regarding whether a person has a disability or a child is a child with special needs may only be made by a health practitioner whose profession is regulated under the <a href="https://www.ontario.ca/laws/statute/91r18"><strong><em>Regulated Health Professions Act, 1991</em></strong></a> and who is acting within the scope of his or her practice</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="426">
+                <p>Reducing the amount of the adjusted income based on if the parents have a disability or the child has special needs; the parent is not reimbursed</p>
+                <p><strong>Impact on: parents of children in care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="108">
+                <p><strong>Changes to amount of financial assistance</strong></p>
+            </td>
+            <td width="816">
+                <p>12. <a href="https://www.ontario.ca/laws/regulation/150138#BK15"><strong>(1)</strong></a> A parent may apply to the service system manager during the year for a reduction in the amount he or she pays for the cost of a service referred to in <a href="https://www.ontario.ca/laws/regulation/150138#s8s1"><strong>subsection 8 (1)</strong></a> if the parent has a reduction in their adjusted income of 20 per cent or more during the year compared to their adjusted income, (a) in the previous year; or (b) in the year before the previous year, if proof of their adjusted income is not available for the previous year. <a href="https://www.ontario.ca/laws/regulation/150138#s12s2"><strong>(2)</strong></a> In applying for a reduction under subsection (1), the parent shall provide satisfactory evidence of the amount of the reduction in income to the service system manager. <a href="https://www.ontario.ca/laws/regulation/150138#s12s3"><strong>(3)</strong></a> If a service system manager is satisfied that there has been a reduction of 20 per cent or more in adjusted income, the service system manager shall re-calculate the amount that the parent pays for the service using the reduced adjusted income as the basis of the calculation under <a href="https://www.ontario.ca/laws/regulation/150138#BK13"><strong>section 10</strong></a></p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="426">
+                <p>A parent may apply for a reduction in the amount he or she pays for the cost of a service referred to in section 8 (1).</p>
+                <p><strong>Impact on: parents of children in care</strong></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+<div id="section5" class="container-fluid">
+<div class="panel panel-info">
+  <div class="panel-heading">  
+  
+<h3>Apportionment of Costs Among Municipalities</h3></div>
+    <table>
+        <thead>
+        <tr>
+            <td width="100">
+                <p><strong>Category</strong></p>
+            </td>
+            <td width="200">
+                <p><strong>Regulation/ Requirement</strong></p>
+            </td>
+            <td width="95">
+                <p><strong>Effective Date</strong></p>
+            </td>
+            <td width="200">
+                <p><strong>Points for Consideration</strong></p>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td width="129">
+                <p><strong>Apportionment</strong></p>
+            </td>
+            <td width="809">
+                <p><a href="https://www.ontario.ca/laws/regulation/150138#BK17"><strong>13</strong></a>. If a service area includes more than one municipality, the apportionment among the municipalities of the service system manager&rsquo;s costs incurred pursuant to a cost sharing arrangement included in an agreement under <a href="https://www.ontario.ca/laws/statute/14c11#s54s3"><strong>subsection 54 (3) of the Act</strong></a> shall be in accordance with, (a) an agreement entered into by the municipalities under <a href="https://www.ontario.ca/laws/regulation/150138#BK18"><strong>section 14</strong></a>; (b) if there is no agreement, an award given pursuant to an arbitration under <a href="https://www.ontario.ca/laws/regulation/150138#BK20"><strong>section 16</strong></a>, <a href="https://www.ontario.ca/laws/regulation/150138#BK21"><strong>17</strong></a>, <a href="https://www.ontario.ca/laws/regulation/150138#BK22"><strong>18</strong></a> or <a href="https://www.ontario.ca/laws/regulation/150138#BK23"><strong>19</strong></a>; or (c) an agreement or arbitration award that continues pursuant to <a href="https://www.ontario.ca/laws/regulation/150138#BK24"><strong>section 20</strong></a></p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="422">
+                <p>If there is more than one municipality in a service area, the municipalities&rsquo; must come to an agreement on the apportionment</p>
+                <p><strong>Impact on: service system managers and municipalities </strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="129">
+                <p><strong>Agreement</strong></p>
+            </td>
+            <td width="809">
+                <p>14. <a href="https://www.ontario.ca/laws/regulation/150138#BK18"><strong>(1)</strong></a> The municipalities included in a service area may enter into an agreement under which the municipalities&rsquo; shared costs payable or to be payable under this Regulation are apportioned among the municipalities. <a href="https://www.ontario.ca/laws/regulation/150138#s14s2"><strong>(2)</strong></a> The agreement becomes effective on the day it is made. <a href="https://www.ontario.ca/laws/regulation/150138#s14s3"><strong>(3)</strong></a> The agreement may be effective with respect to a period before it is made and, in that case, shall provide for a monetary reconciliation among the parties</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="422">
+                <p>Municipalities may enter into an agreement with a service area and the agreement is effective the day it is made</p>
+                <p><strong>Impact on: service system managers and municipalities</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="129">
+                <p><strong>District social services administration board</strong></p>
+            </td>
+            <td width="809">
+                <p><a href="https://www.ontario.ca/laws/regulation/150138#BK19"><strong>15</strong></a>. <a href="https://www.ontario.ca/laws/regulation/150138#BK20"><strong>Sections 16</strong></a> to <a href="https://www.ontario.ca/laws/regulation/150138#BK23"><strong>19</strong></a> do not apply with respect to a service area whose service system manager is a district social services administration board</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="422">
+                <p>Initial arbitrations, new arbitrations, and termination of agreement</p>
+                <p><strong>Impact on: service system managers and</strong><strong>district social services administration board </strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="129">
+                <p><strong>Initial arbitrations</strong></p>
+            </td>
+            <td width="809">
+                <p><a href="https://www.ontario.ca/laws/regulation/150138#BK20"><strong>16</strong></a>. Arbitrations under <a href="https://www.ontario.ca/laws/regulation/150138#BK21"><strong>sections 17</strong></a> and <a href="https://www.ontario.ca/laws/regulation/150138#BK22"><strong>18</strong></a> are governed by the <a href="https://www.ontario.ca/laws/statute/91a17"><strong><em>Arbitration Act, 1991</em></strong></a><em>,</em> subject to those sections and to the following rules: 1. The parties may jointly appoint a single arbitrator on or after the day the arbitration is commenced. 2. If the parties have not appointed an arbitrator, the Superior Court of Justice may make the appointment on a party&rsquo;s application under <a href="https://www.ontario.ca/laws/statute/91a17#BK14"><strong>section 10 of the <em>Arbitration Act, 1991</em></strong></a><em>.</em> 3. The arbitrator shall make a final award that disposes of the issue, within three months after being appointed. 4. The date by which the arbitrator is required to make an award shall not be extended by a court, despite <a href="https://www.ontario.ca/laws/statute/91a17#BK46"><strong>section 39 of the <em>Arbitration Act, 1991</em></strong></a><em>.</em> However, that date may be extended by agreement of the parties. 5. The final award shall apportion among the parties the municipalities&rsquo; shared costs. 6. The final award may be effective with respect to a period before it is made and, in that case, shall provide for a monetary reconciliation among the parties. 7. A party may appeal the final award to the Superior Court of Justice only on a question of law, with leave, which the court shall grant only if it is satisfied that the conditions in clauses 45 (1) (a) and (b) of the <em>Arbitration Act, 1991 </em>are met. No appeal lies on a question of fact or of mixed law and fact, despite any agreement by the parties. 8. The arbitrator shall provide a copy of the final award to the Minister as soon as possible after it is made. 9. At any time during the arbitration, the parties may enter into an agreement <a href="https://www.ontario.ca/laws/regulation/150138#BK18"><strong>section 14</strong></a> that includes an agreement apportioning the costs of the arbitration, in which case the arbitration terminates. 10. The parties may, at any time, amend the final award by agreement or replace the award with an agreement under section 14</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="422">
+                <p>Arbitrations under sections 17 and 18 are governed by the <em>Arbitration Act, 1991</em></p>
+                <p><strong>Impact on: any parties involved</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="129">
+                <p><strong>New arbitration</strong></p>
+            </td>
+            <td width="809">
+                <p>17. <a href="https://www.ontario.ca/laws/regulation/150138#BK21"><strong>(1)</strong></a> If a final award has been in effect for at least two years, a party may, by serving a notice on the other parties, commence a new arbitration to deal with the apportionment among the parties of the municipalities&rsquo; shared costs. <a href="https://www.ontario.ca/laws/regulation/150138#s17s2"><strong>(2)</strong></a> The rules set out in <a href="https://www.ontario.ca/laws/regulation/150138#BK20"><strong>section 16</strong></a> and the following rule apply to an arbitration under subsection (1): 1. The final award shall come into effect and supersede the previous award or be deemed to have come into effect and superseded the previous award on the later of the day that is three years after the effective date of the last award and the day the notice is served</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="422">
+                <p>If a final award has been in effect for at least two years, a party may commence a new arbitration to deal with the apportionment among the parties of the municipalities&rsquo; shared costs.</p>
+                <p><strong>Impact on: any parties involved</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="129">
+                <p><strong>Termination of agreement</strong></p>
+            </td>
+            <td width="809">
+                <p>18. <a href="https://www.ontario.ca/laws/regulation/150138#BK22"><strong>(1)</strong></a> If an agreement described in <a href="https://www.ontario.ca/laws/regulation/150138#BK18"><strong>section 14</strong></a> expires or is terminated in accordance with the agreement and the parties have not entered into a new agreement, they shall be deemed to have commenced, on the day of expiry or termination, an arbitration of the apportionment among them of the municipalities&rsquo; shared costs. <a href="https://www.ontario.ca/laws/regulation/150138#s18s2"><strong>(2)</strong></a> The date of expiry or termination of the agreement, (a) shall be the date determined in accordance with the agreement or notice of termination, if that date is the last day of a month; or (b) otherwise, shall be deemed to be the last day of the month in which that date falls. <a href="https://www.ontario.ca/laws/regulation/150138#s18s3"><strong>(3)</strong></a> A party may commence an arbitration of the apportionment by serving a notice on the other parties, (a) if a notice of termination of the agreement is served, on or after the day it is served; or (b) otherwise, at any time during the 12 months preceding the date of expiry of an agreement. <a href="https://www.ontario.ca/laws/regulation/150138#s18s4"><strong>(4)</strong></a> The rules set out in <a href="https://www.ontario.ca/laws/regulation/150138#BK20"><strong>section 16</strong></a> and the following rules apply to an arbitration under this section: 1. Subject to paragraph 2, the final award shall come into effect or be deemed to have come into effect on the day the agreement expires or is terminated. 2. If the agreement expires or is terminated before the final award is made, (i) the agreement shall be deemed to be in effect until the final award is made, and (ii) the final award shall provide for a monetary reconciliation among the parties</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="422">
+                <p>Section 14 - municipalities may enter into an agreement with a service area and the agreement is effective the day it is made</p>
+                <p><strong>Impact on: any parties involved; municipalities and service system managers</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="129">
+                <p><strong>Multiple arbitrations</strong></p>
+            </td>
+            <td width="809">
+                <p>19. <a href="https://www.ontario.ca/laws/regulation/150138#BK23"><strong>(1)</strong></a> If an arbitration is commenced or deemed to have been commenced under this Regulation and an arbitration involving the same parties is also commenced under a regulation made under provisions listed in subsection (2) but an arbitrator has not yet been appointed for any of the arbitrations, (a) one arbitrator shall be appointed for all of the arbitrations; and (b) the arbitrations shall be held as one arbitration. <a href="https://www.ontario.ca/laws/regulation/150138#s19s2"><strong>(2)</strong></a> Subsection (1) applies with respect to an arbitration commenced under any of the following provisions or a regulation made under the provision: 1. Clause 22 (1) (e.2) and paragraph 2 of <a href="https://www.ontario.ca/laws/statute/90a19#s22s2p1"><strong>subsection 22 (2.1) of the <em>Ambulance Act</em></strong></a>. 2. Clause 22 (1) (e.5) and paragraph 2 of <a href="https://www.ontario.ca/laws/statute/90a19#s22s2p3"><strong>subsection 22 (2.3) of the <em>Ambulance Act</em></strong></a><em>.</em> 3. <a href="https://www.ontario.ca/laws/statute/90a19#s22p0p1s1">Subsection 22.0.1 (1)</a>, clause 22.0.1 (2) (b) and paragraph 2 of <a href="https://www.ontario.ca/laws/statute/90a19#s22p0p1s2p1"><strong>subsection 22.0.1 (2.1) of the <em>Ambulance Act</em></strong></a>. 4. Paragraph 42 of <a href="https://www.ontario.ca/laws/statute/97o25b#BK59"><strong>subsection 55 (1)</strong></a> and paragraph 2 of <a href="https://www.ontario.ca/laws/statute/97o25b#s55s8"><strong>subsection 55 (8) of the <em>Ontario Disability Support Program Act, 1997</em></strong></a>. 5. Paragraph 38 of <a href="https://www.ontario.ca/laws/statute/97o25a#BK79"><strong>subsection 74 (1)</strong></a> and paragraph 2 of <a href="https://www.ontario.ca/laws/statute/97o25a#s74s7"><strong>subsection 74 (7) of the <em>Ontario Works Act</em></strong></a><em>, 1997</em>. 6. <a href="https://www.ontario.ca/laws/statute/11h06#s111s3"><strong>Subsections 111 (3)</strong></a> and <a href="https://www.ontario.ca/laws/statute/11h06#s112s3"><strong>112 (3)</strong></a> and paragraph 2 of <a href="https://www.ontario.ca/laws/statute/11h06#BK140"><strong>section 113 of the <em>Housing Services Act, 2011</em></strong></a>. <a href="https://www.ontario.ca/laws/regulation/150138#s19s3">(3)</a> An arbitration under this section is governed by the <em>Arbitration Act, 1991,</em> subject to the following rules: 1. The parties may jointly appoint a single arbitrator on or after the day the arbitrations are consolidated. 2. If the parties are entitled to appoint an arbitrator jointly but have not done so, the Superior Court of Justice may make the appointment on a party&rsquo;s application under <a href="https://www.ontario.ca/laws/statute/91a17#BK14"><strong>section 10 of the <em>Arbitration Act, 1991</em></strong></a>. 3. The arbitrator shall make a final award that disposes of the issue within three months after being appointed. 4. The date by which the arbitrator is required to make an award shall not be extended by a court, despite <a href="https://www.ontario.ca/laws/statute/91a17#BK46"><strong>section 39 of the <em>Arbitration Act, 1991</em></strong></a>. However, that date may be extended by agreement of the parties. 5. The final award shall apportion among the parties the municipalities&rsquo; shared costs. 6. The final award may be effective with respect to a period or periods before it is made and, in that case, shall provide for a monetary reconciliation among the parties. 7. A party may appeal the final award to the Superior Court of Justice only on a question of law, with leave, which the court shall grant only if it is satisfied that the conditions in clauses 45 (1) (a) and (b) of the <em>Arbitration Act, 1991</em> are met. No appeal lies on a question of fact or of mixed law and fact, despite any agreement by the parties. 8. The arbitrator shall provide a copy of the final award to the Minister as soon as possible after it is made. 9. At any time during the arbitration, the parties may enter into an agreement under <a href="https://www.ontario.ca/laws/regulation/150138#BK18"><strong>section 14</strong></a> that includes an agreement apportioning among the parties that part of the costs of the arbitration attributable to the municipalities&rsquo; shared costs, in which case that part of the arbitration terminates. 10. The parties may at any time amend that part of the final award concerning the municipalities&rsquo; shared costs by agreement or replace that part of the award with an agreement under section 14. 11. That part of the final award in the consolidated arbitration attributable to the municipalities&rsquo; shared costs comes into effect in accordance with <a href="https://www.ontario.ca/laws/regulation/150138#s17s2"><strong>subsection 17 (2)</strong></a> or <a href="https://www.ontario.ca/laws/regulation/150138#s18s4"><strong>18 (4)</strong></a>, as the case may be</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="422">
+                <p>When there are multiple arbitrations, one arbitrator must be appointed for all of the arbitrations</p>
+                <p><strong>Impact on: any parties involved</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="129">
+                <p><strong>Transition, agreements and arbitrations under the <em>Day Nurseries Act</em></strong></p>
+            </td>
+            <td width="809">
+                <p>20. <a href="https://www.ontario.ca/laws/regulation/150138#BK24"><strong>(1)</strong></a> An agreement dealing with the apportionment of a service system manager&rsquo;s costs that was made before the <a href="https://www.ontario.ca/laws/regulation/900262"><strong><em>Day Nurseries Act</em></strong></a> was repealed and that was still in effect when the <em>Day Nurseries Act</em> was repealed continues as an agreement for the purposes of clause 13 (c). <a href="https://www.ontario.ca/laws/regulation/150138#s20s2"><strong>(2)</strong></a> An arbitration award dealing with the apportionment of a service system manager&rsquo;s costs that was made before the <em>Day Nurseries Act</em> was repealed and that was still in effect when the <em>Day Nurseries Act</em> was repealed continues as an award for the purposes of clause 13 (c). <a href="https://www.ontario.ca/laws/regulation/150138#s20s3"><strong>(3)</strong></a> An arbitration to deal with the apportionment of a service system manager&rsquo;s costs that was commenced before the <em>Day Nurseries Act</em> was repealed and that had not yet concluded when the <em>Day Nurseries Act</em> was repealed shall be continued and <a href="https://www.ontario.ca/laws/regulation/150138#BK20"><strong>section 16</strong></a> applies with respect to the arbitration and, for greater certainty, the final award may be effective with respect to a period before that section came into force and may provide for a monetary reconciliation with respect to such a period.</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="422">
+                <p><strong>Impact on: any parties involved; service system managers </strong></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+    <div id="section6" class="container-fluid">
+<div class="panel panel-info">
+  <div class="panel-heading">  
+  
+<h3>Funding for Capital Project</h3></div>
+    <table>
+        <thead>
+        <tr>
+            <td width="100">
+                <p><strong>Category</strong></p>
+            </td>
+            <td width="200">
+                <p><strong>Regulation/ Requirement</strong></p>
+            </td>
+            <td width="95">
+                <p><strong>Effective Date</strong></p>
+            </td>
+            <td width="200">
+                <p><strong>Points for Consideration</strong></p>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td width="120">
+                <p><strong>Funds provided pursuant to funding agreements</strong></p>
+            </td>
+            <td width="810">
+                <p><a href="https://www.ontario.ca/laws/regulation/150138#BK26"><strong>21</strong></a>. Every funding agreement entered into under <a href="https://www.ontario.ca/laws/statute/14c11#s54s3"><strong>subsection 54 (3) of the Act</strong></a> that relates to a building project shall include the requirements set out in <a href="https://www.ontario.ca/laws/statute/14c11#BK24"><strong>sections 22</strong></a> to <a href="https://www.ontario.ca/laws/statute/14c11#BK29"><strong>27</strong></a> of this Regulation respecting funds provided under clause 54 (1) (a) of the Act pursuant to the funding agreement</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="420">
+                <p>Application for funds, payments for building project, restrictions regarding use of funds, capital expenditures</p>
+                <p>Inventory and condition of a capital grant</p>
+                <p><a href="https://www.ontario.ca/laws/statute/14c11">(Ontario, Child Care and Early Years Act, 2014, S.O. 2014, c. 11, Sched. 1, 2015)</a></p>
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Application for funds</strong></p>
+            </td>
+            <td width="810">
+                <p>22. <a href="https://www.ontario.ca/laws/regulation/150138#BK27"><strong>(1)</strong></a> An application for funds described in <a href="https://www.ontario.ca/laws/regulation/150138#BK26"><strong>section 21</strong></a> for a building project shall be made to the Minister on a form provided by the Minister. <a href="https://www.ontario.ca/laws/regulation/150138#s22s2"><strong>(2)</strong></a> An applicant who applies under subsection (1) shall file with the Minister two copies of a site plan showing the location of the building or buildings, if any, on the site and, in the case of a building project with one or more of the elements referred to in paragraph 1, 2, 5 or 7 of the definition of &ldquo;building project&rdquo; in <a href="https://www.ontario.ca/laws/regulation/150138#BK1"><strong>subsection 1 (1)</strong></a>, (a) building plans and specifications prepared by an architect or professional engineer showing the structure, fixtures and arrangements of the building or buildings and describing the areas of the building or buildings to be used for the purposes of the Act; or (b) where the Minister approves, structural sketched and specifications prepared by a person other than an architect or professional engineer describing the building or buildings and the areas of the building or buildings or contiguous to the building or buildings to be used for the purposes of the Act. <a href="https://www.ontario.ca/laws/regulation/150138#s22s3"><strong>(3)</strong></a> The applicant shall not proceed with the building project unless the site plan, the building plans and specifications or the structural sketches and specifications, as the case may be, are approved by the Minister. <a href="https://www.ontario.ca/laws/regulation/150138#s22s4"><strong>(4)</strong></a> No plan, specification or structural sketch filed with the Minister shall be amended or altered without the approval of the Minister</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="420">
+                <p>The application for funds described in section 21 must be made to the Minister and have the necessary information on the form</p>
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Payments for building project</strong></p>
+            </td>
+            <td width="810">
+                <p>23. <a href="https://www.ontario.ca/laws/regulation/150138#BK28"><strong>(1)</strong></a> No funds described in <a href="https://www.ontario.ca/laws/regulation/150138#BK26"><strong>section 21</strong></a> f for a building project may be provided except where, (a) the building project has been approved by the Minister; (b) the approved cost has been determined; and (c) the approvals of the Minister under <a href="https://www.ontario.ca/laws/regulation/150138#s22s3"><strong>subsections 22 (3)</strong></a> and <a href="https://www.ontario.ca/laws/regulation/150138#s22s4"><strong>(4)</strong></a> and <a href="https://www.ontario.ca/laws/regulation/150138#BK29"><strong>section 24</strong></a> have been obtained. <a href="https://www.ontario.ca/laws/regulation/150138#s23s2"><strong>(2)</strong></a> An approval of a building project by the Minister referred to in subsection (1) expires on the first anniversary of the date upon which the approval is given unless the building project has been commenced before that anniversary date. <a href="https://www.ontario.ca/laws/regulation/150138#s23s3"><strong>(3)</strong></a> Funds described in section 21 may be paid as a single payment or in two or more installments and, except where the Minister directs otherwise, the aggregate of the amounts of the payments made at any point in time shall not exceed the greater of, (a) an amount that bears the same proportion to the estimated total payment as the amount of progress made at the time towards completion of the project bears to the total estimated amount of work required for completion; and (b) an amount that bears the same proportion to the estimated total payment as the amount of cost incurred at the time bears to the total estimated cost of the project. <a href="https://www.ontario.ca/laws/regulation/150138#s23s4"><strong>(4)</strong></a> A single payment or, in the case of payment in two or more installments, the final payment of an amount payable for a building project, shall not be made until, (a) an architect or professional engineer certifies, or the Minister is otherwise satisfied, that the building project has been completed in accordance with the plans filed under clause 22 (2) (a) or the sketches of the plans approved by the Minister under clause 22 (2) (b) and the building or addition is ready for use and occupancy; and (b) the applicant for the payment submits a report stating, (i) the actual cost of the building project, (ii) that the total of the unpaid accounts applicable to the building project does not exceed the amount of the grant remaining to be paid, (iii) that the amount of the grant remaining to be paid will be applied first to the payment of the unpaid accounts, and (iv) that all refundable sales tax has been taken into account</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="420">
+                <p>No funds will be provided until the Minister has approved the building project</p>
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Restrictions regarding use of funds</strong></p>
+            </td>
+            <td width="810">
+                <p><a href="https://www.ontario.ca/laws/regulation/150138#BK29"><strong>24</strong></a>. No applicant for or recipient of funds described in <a href="https://www.ontario.ca/laws/regulation/150138#BK26"><strong>section 21</strong></a> for a building project shall, without the approval of the Minister, (a) acquire a building or land for the building project; (b) call tenders for the building project; (c) commence construction of the building project; or (d) erect any temporary or permanent sign, tablet or plaque on the site of the building project</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="420">
+                <p>An applicant or recipient of funds described in section 21 cannot begin acquiring a building or land, construction, or call tenders for the building project until approval from the Minister is acquired</p>
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Capital expenditures</strong></p>
+            </td>
+            <td width="810">
+                <p>25. <a href="https://www.ontario.ca/laws/regulation/150138#BK30"><strong>(1)</strong></a> Expenditures incurred by a municipality or First Nation that meet the criteria set out in subsection (2) are capital expenditures for which funds described in <a href="https://www.ontario.ca/laws/regulation/150138#BK26"><strong>section 21</strong></a> may be provided, upon application by the municipality or First Nation, in an amount equal to 80 per cent of the approved expenditures incurred. <a href="https://www.ontario.ca/laws/regulation/150138#s25s2"><strong>(2)</strong></a> Expenditures referred to in subsection (1) are expenditures that, (a) are for furnishings or equipment that are not replacements or are for repairs to or maintenance of a capital asset; (b) are approved by the Minister as capital expenditures; (c) are, in the opinion of the Minister, necessary for the efficient operation of the child care centre and the cost of which is not excessive for the purpose; and (d) are in excess of $1,000</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="420">
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Inventory</strong></p>
+            </td>
+            <td width="810">
+                <p><a href="https://www.ontario.ca/laws/regulation/150138#BK31"><strong>26</strong></a>. Every municipality or First Nation that receives funds described in <a href="https://www.ontario.ca/laws/regulation/150138#BK26"><strong>section 21</strong></a> shall keep and maintain a current inventory of all furnishings and equipment acquired by it and the inventory shall set forth each addition to or removal from inventory and the reasons for the addition or removal and shall be prepared in such manner as a director may require</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="420">
+                <p><strong>Impact on: municipalities and First Nation</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Condition of a capital grant</strong></p>
+            </td>
+            <td width="810">
+                <p><a href="https://www.ontario.ca/laws/regulation/150138#BK32"><strong>27</strong></a>. It is a term and condition of a payment of funds described in <a href="https://www.ontario.ca/laws/regulation/150138#BK26"><strong>section 21</strong></a> in respect of a building, buildings or land forming part of a building project that the applicant for payment shall enter into an agreement with the Minister in which the applicant shall, (a) agree not to change the site, structure, use of or sell, agree to sell, lease, mortgage, encumber, donate, or otherwise dispose of all or any part of the building, buildings or land without the approval of the Minister; (b) agree not to demolish or make alterations or additions to all or any part of the building or buildings without the approval of the Minister; and (c) agree to reimburse the Ministry in the same ratio as the Ministry&rsquo;s contribution to the acquisition of the building, buildings or land, the construction of the building, buildings or the renovations upon termination of the agreement or where there is contravention of any term of the agreement or where a circumstance set out in clause (a) or (b) takes place</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="420">
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+        <div id="section7" class="container-fluid">
+<div class="panel panel-info">
+  <div class="panel-heading">  
+  
+<h3>Transition and Commencement</h3></div>
+    <table>
+        <tbody>
+        <tr>
+            <td width="100">
+                <p><strong>Category</strong></p>
+            </td>
+            <td width="200">
+                <p><strong>Regulation/ Requirement</strong></p>
+            </td>
+            <td width="95">
+                <p><strong>Effective Date</strong></p>
+            </td>
+            <td width="200">
+                <p><strong>Points for Consideration</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Transition</strong></p>
+            </td>
+            <td width="810">
+                <p>28. (1) An agreement entered into under section 7.2 or <a href="https://www.ontario.ca/laws/regulation/900262/#s8s1"><strong>8 of the <em>Day Nurseries Act</em></strong></a> between the Minister and any other person that is in respect of anything the Minister is authorized to do under <a href="https://www.ontario.ca/laws/statute/14c11#s54s1"><strong>subsection 54 (1) of the <em>Child Care and Early Years Act, 2014</em></strong></a> is continued as an agreement entered into under <a href="https://www.ontario.ca/laws/statute/14c11#s54s3"><strong>subsection 54 (3) of the <em>Child Care and Early Years Act, 2014</em></strong></a>. <a href="https://www.ontario.ca/laws/regulation/150138#s28s2"><strong>(2)</strong></a> A person who has special needs is deemed to be a child for the purposes of <a href="https://www.ontario.ca/laws/statute/14c11#BK54"><strong>Part VI of the Act</strong></a> until the day the person attains the age of 18 if, before August 31, 2017, (a) the person was in receipt of a service set out in <a href="https://www.ontario.ca/laws/regulation/900262#s66p1s2"><strong>subsection 66.1 (2) of Regulation 262 of the Revised Regulations of Ontario, 1990</strong></a> (General) made under the <em>Day Nurseries Act</em>; or (b) the individual&rsquo;s parent was in receipt of financial assistance for care for the individual under that Regulation</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-15</p>
+            </td>
+            <td width="420">
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Transition</strong></p>
+            </td>
+            <td width="810">
+                <p>29. Omitted</p>
+            </td>
+            <td width="90">
+                <p>31-Aug-2015</p>
+            </td>
+            <td width="420">
+                <p>Provides for coming into force of provisions of this Regulation</p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+</div>
+
+
+      <div id="reference" class="container-fluid">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3>References</h3> </div>
+        <table>
+            <td>
+                <p>&nbsp Ontario, G. o. (2015, December 3). <em>Child Care and Early Years Act, 2014, S.O. 2014, c. 11, Sched. 1.</em> Retrieved July 9, 2016, from Government of Ontario: https://www.ontario.ca/laws/statute/14c11
+
+                </p>
+                <p>&nbsp Ontario, G. o. (2016, May 9). O.Reg. 138/15: Funding, Cost Sharing and Financial Assistance<em>.</em> Retrieved from Government of Ontario: https://www.ontario.ca/laws/regulation/150138</p>
+
+                <p>&nbsp Ontario, G. o. (2016, July 1). <em>O.Reg. 137/15: General.</em> Retrieved July 9, 2016, from Government of Ontario: https://www.ontario.ca/laws/regulation/150137
+
+                </p>
+                <p>&nbsp Canada, G. o. (2016, July 7). Income Tax Act (R.S.C., 1985, c.1 (5th supp.)). Ottawa, Ontario, Canada. Retrieved July 12, 2016, from http://laws-lois.justice.gc.ca/eng/acts/i-3.3/
+
+                </p>
+                </p>
+                <p>&nbsp Ontario, G. o. (2004, December 16). <em>R.R.O. 1990, Reg. 797: Recreation Programs.</em> Retrieved July 9, 2016, from Government of Ontario: https://www.ontario.ca/laws/regulation/900797
+
+                </p>
+
+            </td>
+        </table>
+    </div>
+      </div>
+    </div>
+<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+	    
+          
+  
+<footer>
+  <p><br><b>Created as partial fulfillment of the SSHRC project; by Bachelor of Early Program Development Students & Bachelor of Health Information Science Students, January-December 2016</p>
+  <br>Page Author: Tommy Le</b></p>
+</footer> 
+</div>
+</body>
+
+    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+
+	<script src="bootstrap3/js/bootstrap.js" type="text/javascript"></script>
+	
+	<!--  Plugins -->
+	<script src="assets/js/ct-paper-checkbox.js"></script>
+	<script src="assets/js/ct-paper-radio.js"></script>
+	<script src="assets/js/bootstrap-select.js"></script>
+	<script src="assets/js/bootstrap-datepicker.js"></script>
+	
+	<script src="assets/js/ct-paper.js"></script>    
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CCEYA Charts </title>
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="jquery-3.1.1.js"></script>
+
+<link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/ct-paper.css" rel="stylesheet"/>
+    <link href="assets/css/demo.css" rel="stylesheet" /> 
+        
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <script src="jquery-3.1.1.js"></script>
+    
+<link rel="icon" 
+      type="image/png" 
+      href="/assets/img/final5.png" />   
+    </head>
+<style>
+    body {
+    position: relative;
+    overflow-x: hidden;
+ 
+}
+body,
+html { height: 100%;}
+.nav .open > a, 
+.nav .open > a:hover, 
+.nav .open > a:focus {background-color: transparent;}
+
+
+
+/*-------------------------------*/
+/*           Wrappers            */
+/*-------------------------------*/
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 220px;
+}
+
+.alert {
+  margin-top: -75px;
+  
+}
+
+
+.well {
+  background: #F1E2C5;
+  margin-top: -50px;
+  
+}
+
+#well2 {
+    background: rgb(255, 255, 255);
+    margin-top: -50px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    left: 220px;
+    width: 0;
+    height: 100%;
+    margin-left: -220px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #1a1a1a;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#sidebar-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 220px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    padding-top: 70px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -220px;
+}
+
+/*-------------------------------*/
+/*            Overlay            */
+/*-------------------------------*/
+
+.overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(250,250,250,.8);
+    z-index: 1;
+}
+
+
+#logo {
+    margin-top: -14px;
+}
+
+#home {
+    margin-top: 4px;
+}
+
+#cceyawell {
+    background-color: #FFFFFF;
+}
+
+#cceyacharthead, #IDEASCONNECT {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 48px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+
+}
+
+.image_off, #home:hover .image_on{
+   display:none;
+   margin-top: -14px;
+}
+.image_on, #home:hover .image_off{
+   display:block;
+   margin-top: -14px;
+}
+#cceya {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 36px;
+	text-align: center;
+}
+
+#full13715 {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 36px;
+	text-align: center;
+}
+
+#full13815{
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 36px;
+	text-align: center;
+}
+
+#changes13715{
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 36px;
+	text-align: center;
+}
+
+#changes13815{
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 36px;
+	text-align: center;
+}
+
+#changes22111{
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 36px;
+	text-align: center;
+}
+
+.jumbotron {
+    color: black;
+    background-color: white;
+}
+
+</style>
+
+
+<script>
+ 
+  $('[data-toggle="offcanvas"]').click(function () {
+        $('#wrapper').toggleClass('toggled');
+  });  
+
+$(document).ready(function(){
+    $('[data-toggle="cceyapic2"]').cceyapic2();
+});
+
+</script>
+
+    <body>
+        
+        
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<nav class="navbar navbar-inverse navbar-fixed-top" id="header" role="navigation">
+				<div class="navbar-header">
+					 
+				
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+					    
+					 <li>   <a id="home" href="index.html"><img class="image_on" src="assets/img/test5.png" alt=logo width="35" height="35" /><img class="image_off" src="assets/img/final4.png" alt="logo" width="35" height="35"/></a> </li>
+					  	    
+					<!--    <li> <a class="navbar-brand" a href="index.html" class="navbar-left"><img src="assets/img/test5.png" width = "50" height = "50" id="logo"></a></li> -->
+						
+						<li>
+							<a href="index.html" style="font-family:Century Gothic;">Home</a>
+						</li>
+						
+						<li class="active">
+							<a href="charts.html" style="font-family:Century Gothic;" onclick="return false">CCEYA Charts</a>
+						</li>
+						<li>
+							<a href="CCEYA2014.1/index.html" style="font-family:Century Gothic;">Planning and Design for Child Care Centres</a>
+						</li>
+							<li>
+							    <a href="http://www.eceprc.ca" style="font-family:Century Gothic;">Professional Resource Centre</a>
+							</li>
+						
+					<!--	<li>
+							<a href="https://www.ontario.ca/laws/statute/14c11" style="font-family:Century Gothic;">Original Act</a>
+						</li> -->
+						
+						<li>
+						    <a href="http://www.eceprc.ca/current-documents.html" style="font-family:Century Gothic;">Current Documents</a>
+						</li>
+						
+							<li>
+						    <a href="HDLH.html" style="font-family:Century Gothic;">HDLH</a>
+						</li>
+					
+					<li><a href="http://www.eceprc.ca/contact.html" style="font-family:Century Gothic;">Contact Us</a></li>
+						
+					</ul>
+				
+			</nav></div>
+
+
+			<div class="jumbotron">
+			 <div class="page-header">
+				 <br>
+			     <center><h2 style="font-family:Century Gothic;">CCEYA Charts</h2></center><br>
+			 </div>   
+			 </div>
+<div class="well">
+  These charts have been summarized and formatted into different categories and columns: Category of Act, Regulation, Points for Consideration and Effective Date if applicable. 
+
+<br>Hyperlinks have been placed throughout the document that will link back to specific sections within the Child Care and Early Years Act, 2014. These links will be indicated by their <font color =  #32cdcd><b>blue colouring and bold lettering.</b></font>
+<br><br>
+<b>Difference between Act and Regulations:</b><br>
+        An <b>Act</b> is a legal document providing a general or broad description of legal policies.<br><br>
+
+        <b>Regulations</b> are guidelines associated with an Act that guide how provisions of an Act are applied and should be followed.
+       <br><br>
+      <b>Difference between Legislation and Regulation:</b><br>
+       <b>Legislation</b> is law passed by a legislative body.<br>
+<b>Regulation</b> is a set of rules or guidelines issued by an executive body such as government agencies or regulatory boards in compliance with the law. 
+<br><br>
+•	Parliaments pass laws. They are called legislation. <br>
+•	Then government regulators have to enforce the law. They look at the law and work out the nitty-gritty details that need to be followed in order for the law to be followed.
+<br><br>
+</div>  <br><br>
+<div class="well" id="well2">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="thumbnail">
+					<!--	<img alt="Bootstrap Thumbnail First" src="assets/img/cceyapic2.jpg" data-toggle="cceyapic2" title="Education. Photography. Britannica ImageQuest. Encyclopædia Britannica, Inc., 25 May 2016.
+http://quest.eb.com/search/158_2480512/1/158_2480512/cite. Accessed 15 Nov 2016."> -->
+
+						<h2 id="cceya">Child Care and Early<br>Years Act</h2>
+						<div class="caption">
+							
+							<!-- <p>
+								On August 31, 2015, the <em>Child Care and Early Years Act, 2014 (CCEYA)</em> came into effect. This new legislation replaces the <em>Day Nurseries Act</em>.
+								</p> -->
+							<div align="center">
+								<a class="btn btn-success" href="CCEYA2014.html" >Summary</a> <a class="btn btn-primary" href="https://www.ontario.ca/laws/statute/14c11">Original</a>
+						
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<!-- <img alt="Bootstrap Thumbnail Second" src="assets/img/library.jpg" data-toggle="cceyapic2" title="Library. Photograph. Britannica ImageQuest. Encyclopædia Britannica, Inc., 25 May 2016.
+http://quest.eb.com/search/111_1503204/1/111_1503204/cite. Accessed 15 Nov 2016."> -->
+						<h2 id="full13715">Full Phase 2 of Ontario Regulation 137/15: General</h2>
+						<div class="caption">
+							
+						
+						<!--	Ontario Regulation 137/15 is associated with the <em>CCEYA</em>
+							 that guides how provisions of the Act are applied and should be followed.
+							</p> -->
+							<div align="center">
+								<a class="btn btn-success" href="13715.html">Summary</a> <a class="btn btn-primary" href="https://www.ontario.ca/laws/regulation/150137">Original</a>
+						
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+					<!--	<img alt="Bootstrap Thumbnail Third" src="assets/img/conference.jpg" data-toggle="cceyapic2" title="The House-Senate Conference Committee on financial regulation wraps up debate for week. (June 17, 2010), , Barney Frank. Photography. Britannica ImageQuest. Encyclopædia Britannica, Inc., 25 May 2016.
+http://quest.eb.com/search/142_2295480/1/142_2295480/cite. Accessed 15 Nov 2016."> -->
+							<h2 id="full13815">Full Phase 2 of Ontario Regulation 138/15: Funding</h2>
+							<div class="caption">
+						
+						<!--	<p>
+							Ontario Regulation 138/15 is associated with the <em>CCEYA</em>
+							 that guides how provisions of the Act are applied and should be followed.</p> -->
+							<div align="center">
+								<a class="btn btn-success" href="#" disabled data-toggle="tooltip" title="In Development">Summary</a> <a class="btn btn-primary" href="https://www.ontario.ca/laws/regulation/150138">Original</a>
+						
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="thumbnail">
+					<!--	<img alt="Bootstrap Thumbnail First" src="assets/img/chalk.jpg"data-toggle="cceyapic2" title="Updating Blood Inventory on Chalkboard. Photograph. Britannica ImageQuest. Encyclopædia Britannica, Inc., 25 May 2016.
+http://quest.eb.com/search/107_285993/1/107_285993/cite. Accessed 15 Nov 2016."> -->
+						<h2 id="changes13715">Summary of Most Recent Changes to Regulation 137/15</h2>
+						<div class="caption">
+						
+							
+							<div align="center">
+								<a class="btn btn-success" href="changes13715.html" data-toggle="tooltip" title="In Development">Open</a>
+						
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+					<!--	<img alt="Bootstrap Thumbnail Second" src="assets/img/money.jpg" data-toggle="cceyapic2" title="Edmonton, Alberta, Canada; Bags Of Money On A Farm Field. Photograph. Britannica ImageQuest. Encyclopædia Britannica, Inc., 25 May 2016.
+http://quest.eb.com/search/312_674907/1/312_674907/cite. Accessed 15 Nov 2016."> -->
+						<h2 id="changes13815">Summary of Most Recent Changes to Regulation 138/15</h2>
+						<div class="caption">
+						
+							
+							<div align="center">
+								<a class="btn btn-success" href="changes13815.html" data-toggle="tooltip" title="In Development">Open</a>
+						
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+					<!--	<img alt="Bootstrap Thumbnail Third" src="assets/img/bus.jpg" data-toggle="cceyapic2" title="School Bus. Photography. Britannica ImageQuest. Encyclopædia Britannica, Inc., 25 May 2016.
+http://quest.eb.com/search/139_1950376/1/139_1950376/cite. Accessed 15 Nov 2016.">-->
+						<h2 id="changes22111">Summary of Most Recent Changes to Regulation 221/11</h2>
+						<div class="caption">
+							
+						
+							<div align="center">
+								<a class="btn btn-success" href="changes22111.html" data-toggle="tooltip" title="In Development">Open</a>
+						
+							</div>
+					</div>
+				</div>
+			</div>
+</div>
+			</div>
+			<div>
+<footer><center><font color="black">
+  <p><br><b>Created as partial fulfillment of the SSHRC project; by Conestoga College's Bachelor of Early Learning Program Development Students & Bachelor of Health Information Science Students
+</font></center></footer>
+</div>
+        </div>
+
+    
+    </body>
+    
+    
+</html>

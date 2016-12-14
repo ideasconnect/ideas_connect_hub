@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Payroll Calculator</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
+    <link href="css/ct-paper.css" rel="stylesheet"/>
+    <link href="css/demo.css" rel="stylesheet" />
+
+    <link rel="icon"
+          type="image/png"
+          href="../assets/img/final5.png" />
+
+</head>
+<style>
+    @import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
+    /* HERE STARTS THE MAGIC */
+    header {
+        text-align: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        margin: auto;
+        background-image: url("assets/img/mount.jpeg");
+
+        position: fixed;
+        width:100%;
+        z-index: 1;
+        height: 88%;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+    }
+
+    .content-wrapper{
+        background-color: white;
+        top: 87%;
+        min-height: 12%;
+        position:absolute;
+        z-index: 2;
+        width: 100%;
+    }
+    /* HERE ENDS THE MAGIC */
+    header .container {
+        padding-top: 150px;
+        padding-bottom: 50px;
+    }
+
+    header img {
+        display: block;
+        margin: 0 auto 20px;
+    }
+
+    header .intro-text .name {
+        display: block;
+        text-transform: uppercase;
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 2em;
+        font-weight: 700;
+    }
+
+    header .intro-text .skills {
+        font-size: 1.25em;
+        font-weight: 300;
+    }
+
+    section {
+        padding: 100px 0;
+        width: 100%;
+    }
+
+    section h2 {
+        margin: 0;
+        font-size: 3em;
+    }
+    hr.star-light,
+    hr.star-primary {
+        margin: 25px auto 30px;
+        padding: 0;
+        max-width: 250px;
+        border: 0;
+        border-top: solid 5px;
+        text-align: center;
+    }
+
+    hr.star-light:after,
+    hr.star-primary:after {
+        content: "\f005";
+        display: inline-block;
+        position: relative;
+        top: -.8em;
+        padding: 0 .25em;
+        font-family: FontAwesome;
+        font-size: 2em;
+    }
+    body {
+        overflow-x: hidden;
+        background: white; /* For browsers that do not support gradients */
+        background: -webkit-linear-gradient(lightblue, white); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(lightblue, white); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(lightblue, white); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(lightblue, white); /* Standard syntax (must be last) */
+        background-repeat: no-repeat;
+    }
+
+    #info {
+        background-color: #F1E2C5;
+        color: black;
+    }
+
+    #partnership {
+        color: black;
+    }
+
+    section.success{
+        background-color: #18bc9c;
+        color: #fff;
+    }
+    .overlay {
+        display: none;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(250,250,250,.8);
+        z-index: 1;
+    }
+    #jumbotron {
+        background-image: url("assets/img/mountsm.jpg");
+        background-repeat: no-repeat;
+        background-size:cover;
+        color: white;
+        margin: auto;
+        margin-top: -90px;
+    }
+
+    .jumbotron {
+        background-color: white;
+    }
+
+    #logo {
+        margin-top: -14px;
+    }
+
+    #home {
+        margin-top: 4px;
+    }
+
+    .image_off, #home:hover .image_on{
+        display:none;
+        margin-top: -14px;
+    }
+    .image_on, #home:hover .image_off{
+        display:block;
+        margin-top: -14px;
+    }
+
+    .container-full {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    img {
+        margin: 0 auto;
+        border:0;
+    }
+
+    .imgContainer{
+        float:left;
+    }
+
+    .thumbnail {
+        border: 0px solid;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .container-full {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    #menudown {
+        text-align: center;
+    }
+
+    .hr {
+        border-color: black;
+    }
+
+
+    #cal {
+        margin-top:75px;
+    }
+
+    h2 {
+        font-family:Century Gothic;
+    }
+</style>
+
+<body>
+<div class="row">
+    <div class="col-md-12">
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="header" role="navigation">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+
+                        <li>   <a id="home"><img class="image_on" src="test5.png" alt=logo width="35" height="35" /><img class="image_off" src="final4.png" alt="logo" width="35" height="35"/></a> </li>
+
+                        <li>
+                            <a href="../index.html" style="font-family:Century Gothic;">Home</a>
+                        </li>
+
+                        <!--    <li> <a class="navbar-brand" a href="index.html" class="navbar-left"><img src="assets/img/test5.png" width = "50" height = "50" id="logo"></a></li> -->
+
+                        <li>
+                            <a href="../charts.html" style="font-family:Century Gothic;">CCEYA Charts</a>
+                        </li>
+
+                        <li class="active" onclick="return false;">
+                            <a href="planning.html" style="font-family:Century Gothic;">Planning and Design for Child Care Centres</a>
+                        </li>
+                        <li>
+                            <a href="http://www.eceprc.ca" style="font-family:Century Gothic;">Professional Resource Centre</a>
+                        </li>
+
+                        <!--	<li>
+                                <a href="https://www.ontario.ca/laws/statute/14c11" style="font-family:Century Gothic;">Original Act</a>
+                            </li> -->
+
+                        <li><a href="http://www.eceprc.ca/contact.html" style="font-family:Century Gothic;">Contact Us</a></li>
+
+                    </ul>
+                </div>
+        </nav>
+    </div>
+
+<div class="container" id="cal">
+    <div class="container">
+     <h2>Planning and Design for Child Care Centres&nbsp;</h2>
+<ul class="nav nav-tabs">
+  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" >Space Requirement<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="classroomspc.html" style="color:white">Classroom Space</a></li>
+          <li><a href="outdoorspc.html" style="color:white">Outdoor Space</a></li>
+        </ul>
+      </li>
+  <li role="presentation"><a href="rent.1.html">Rent</a></li>
+  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" >Children to Staff Ratio<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="ratio1.html" style="color:white">Infant</a></li>
+          <li><a href="ratio2.html" style="color:white">Toddler</a></li>
+          <li><a href="ratio3.html" style="color:white">Preschooler</a></li>
+        </ul>
+      </li>
+
+  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" >Family Age Grouping<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="age1.html" style="color:white">Younger than 12 months</a></li>
+          <li><a href="age2.html" style="color:white">12 months and older but <br>younger than 24 months</a></li>
+          <li><a href="age3.html" style="color:white">24 months and older but <br>younger than 13 years</a></li>
+        </ul>
+      </li>
+  <li role="presentation" class="active"><a href="staff.html">Payroll Calculator</a></li>
+</ul>
+
+        <div class="well">
+
+            <div class="media">
+                <div class="media-left">
+                    <a href="http://www.cra-arc.gc.ca/esrvc-srvce/tx/bsnss/pdoc-eng.html">
+                        <img class="media-object" src="cra.jpg" alt="cra" width="125px" height="75px">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading"> <a href="http://www.cra-arc.gc.ca/esrvc-srvce/tx/bsnss/pdoc-eng.html">Payroll Deductions Online Calculator</a></h4>
+                    Use the Payroll Deductions Online Calculator (PDOC) to calculate federal, provincial (except for Quebec), and territorial payroll deductions. It will confirm the deductions you include on your official statement of earnings. This is an official application that the Canada Revenue Agency provides free for use.
+                </div>
+                <br>
+                <div class="media">
+                    <div class="media-left">
+                        <a href="../assets/pdf/Final%20Planning%20and%20Design%20for%20Child%20Care%20Centres%20Checklist.xlsx">
+                            <img class="media-object" src="excel2.png" alt="excel2" width="125px" height="75px">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a href="../assets/pdf/Final%20Planning%20and%20Design%20for%20Child%20Care%20Centres%20Checklist.xlsx">Staff Payroll Calculator - Excel File</a></h4>
+                        We provide an Excel file that includes a staff payroll calculator as well as all the other ones. This calculator will allow you to input multiple staff members to provide a better overview of payroll deductions. Note that this require Microsoft Excel or a similar spreadsheet application.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

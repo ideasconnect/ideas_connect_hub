@@ -1,0 +1,3316 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="assets/img/whitelogo.jpg">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<title>Phase 2 of Regulation 137/15 </title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    
+    <link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/ct-paper.css" rel="stylesheet"/>
+    <link href="assets/css/demo.css" rel="stylesheet" /> 
+        
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <script src="jquery-3.1.1.js"></script>
+      <link rel="icon" 
+      type="image/png" 
+      href="/assets/img/final5.png" />   
+</head>
+
+<script>
+  $(document).ready(function() {
+        
+                
+	/*Menu-toggle*/
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+
+    /*Scroll Spy*/
+    $('body').scrollspy({ target: '#spy', offset:80});
+
+    /*Smooth link animation*/
+    $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+                return false;
+            }
+        }
+    });
+        
+        });	
+        
+$(document).ready(function(){
+     $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('#back-to-top').fadeIn();
+            } else {
+                $('#back-to-top').fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        $('#back-to-top').click(function () {
+            $('#back-to-top').tooltip('hide');
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+        
+        $('#back-to-top').tooltip('show');
+
+});
+
+$(document).ready(function () {
+  var trigger = $('.hamburger'),
+      overlay = $('.overlay'),
+     isClosed = false;
+
+    trigger.click(function () {
+      hamburger_cross();      
+    });
+
+    function hamburger_cross() {
+
+      if (isClosed == true) {          
+        overlay.hide();
+        trigger.removeClass('is-open');
+        trigger.addClass('is-closed');
+        isClosed = false;
+      } else {   
+        overlay.show();
+        trigger.removeClass('is-closed');
+        trigger.addClass('is-open');
+        isClosed = true;
+      }
+  }
+  
+  $('[data-toggle="offcanvas"]').click(function () {
+        $('#wrapper').toggleClass('toggled');
+  });  
+});
+
+</script>
+
+<style>
+
+.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display:none;
+}
+
+
+body {
+	margin-top: -40px;
+	height: 100%
+}
+
+footer {
+    width: 100%;
+   
+}
+
+#header {
+	margin-left: 20px;
+	text-align: center;
+}
+
+.navbar-fixed-top {
+    height: 60px; /* Whatever you want. */
+}
+
+/* .thumbnail {
+    border: 0 none;
+    box-shadow: none;
+} */ 
+
+ #wrapper {
+  padding-left: 250px;
+  transition: all 0.4s ease 0s;
+}
+
+.well {
+	width: 1150px;
+	margin: auto;
+	background-color: white;
+	border: 15px solid;
+}
+
+#welloutside{
+  border: 0px;
+}
+
+#sidebar-wrapper {
+  margin-left: -251px;
+  left: 250px;
+  width: 250px;
+  background: #000;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+}
+
+#wrapper.active {
+  padding-left: 0;
+}
+
+#wrapper.active #sidebar-wrapper {
+  left: 0;
+}
+
+#page-content-wrapper {
+  width: 100%;
+}
+
+#logo {
+  margin-left: -25px;
+  margin-top: -20px;
+}
+
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    position: relative; 
+    line-height: 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+.sidebar-nav li:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 3px;
+    background-color: #1c1c1c;
+    -webkit-transition: width .2s ease-in;
+      -moz-transition:  width .2s ease-in;
+       -ms-transition:  width .2s ease-in;
+            transition: width .2s ease-in;
+
+}
+
+.sidebar-nav li:nth-child(2):before {
+    background-color: #ec1b5a;   
+}
+.sidebar-nav li:nth-child(3):before {
+    background-color: #79aefe;   
+}
+.sidebar-nav li:nth-child(4):before {
+    background-color: #314190;   
+}
+.sidebar-nav li:nth-child(5):before {
+    background-color: #279636;   
+}
+.sidebar-nav li:nth-child(6):before {
+    background-color: #7d5d81;   
+}
+.sidebar-nav li:nth-child(7):before {
+    background-color: #ead24c;   
+}
+.sidebar-nav li:nth-child(8):before {
+    background-color: #2d2366;   
+}
+.sidebar-nav li:nth-child(9):before {
+    background-color: #35acdf;   
+}
+
+.sidebar-nav li:hover:before,
+.sidebar-nav li.open:hover:before {
+    width: 100%;
+    -webkit-transition: width .2s ease-in;
+      -moz-transition:  width .2s ease-in;
+       -ms-transition:  width .2s ease-in;
+            transition: width .2s ease-in;
+
+}
+
+.sidebar-nav li a {
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    padding: 10px 15px 10px 30px;    
+}
+
+
+.sidebar-nav li a:hover,
+.sidebar-nav li.active {
+  color: #fff;
+  background: rgba(255,255,255,0.2);
+  text-decoration: none;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  line-height: 60px;
+  font-size: 18px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+
+
+.content-header {
+  height: 65px;
+  line-height: 65px;
+}
+
+.content-header h1 {
+  margin: 0;
+  margin-left: 20px;
+  line-height: 65px;
+  display: inline-block;
+}
+
+#menu-toggle {
+
+}
+
+.btn-menu {
+  color: #000;
+} 
+
+.inset {
+  padding: 20px;
+}
+
+@media (max-width:767px) {
+
+#wrapper {
+  padding-left: 0;
+}
+
+#sidebar-wrapper {
+  left: 0;
+}
+
+#wrapper.active {
+  position: relative;
+  left: 250px;
+}
+
+#wrapper.active #sidebar-wrapper {
+  left: 250px;
+  width: 250px;
+  transition: all 0.4s ease 0s;
+}
+
+#menu-toggle {
+  display: inline-block;
+}
+
+.inset {
+  padding: 15px;
+}
+
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 3px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+#helpbtn {
+  margin-left: 65px;
+    width: 50%;
+}
+
+h2 {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 48px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+
+}
+
+</style>
+
+<body id="wrapper" data-spy="scroll" data-target="#spy" >
+  <div class="">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper" class="">
+        <nav id="spy">
+            <ul class="sidebar-nav nav">
+                <li class="sidebar-brand active">  <a href="" onclick="return false" disabled><img src="assets/img/changes13715.png" id ="logo" width="242" height="67" align="center"></a>
+
+		<li><a href="#section1">Part I: Interpretation and Application of Act</a></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Part II: Operation of Child Care Centres and Home Child Care<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#section2">General</a></li>
+              <li><a href="#section21">Ratios of Employees to <br>Child and Group Size</a></li>
+              <li><a href="#section22">Building, Equipment and <br>Playground - Child Care <br>Centre</a></li>
+              <li><a href="#section23">Building, Equipment and <br>Playground - Home Child <br>Care</a></li>
+              <li><a href="#section24">Health and Medical<br> Supervision</a></li>
+              <li><a href="#section25">Nutrition</a></li>
+              <li><a href="#section26">Program for Children</a></li>
+              <li><a href="#section27">Staff Qualifications</a></li>
+              <li><a href="#section28">Staff Screening Measures<br> and Criminal Reference <br>Checks</a></li>
+              <li><a href="#section29">Emergency Preparedness</a></li>
+              <li><a href="#section221">Administrative Matters</a></li>
+            </ul>
+            </li>
+        	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Part III Adminstrative Penalties<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#section3">Administrative Penalties</a></li>
+              <li><a href="#section31">Table 1</a></li>
+              <li><a href="#section32">Table 2</a></li>
+            </ul>
+            </li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Part IV: Miscellaneous<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#section4">Child Care License Fees</a></li>
+              <li><a href="#section41">Home Child Care License<br> Fees</a></li>
+              <li><a href="#section42">Schedule 1</a></li>
+             </ul>
+            </li>
+
+         <li><a href="#reference">References</a></li>
+          
+          <li><a href="assets/pdf/changes13715.pdf"><font color="orange"><span class="glyphicon glyphicon-save"></span> Download PDF</font></a></li>
+          <li><a href="charts.html"><font color="orange"><span class="glyphicon glyphicon-align-justify"></span> Back to Charts</font></a></li>
+         <br><br>
+          
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" id="helpbtn">
+              Help Guide
+          </button>   <br><br>
+          <center><a href="/"> <img src="assets/img/drkgreenvariant.png" width="200" height="200"></a></center>
+      <!--    <a href ="http://www.eceprc.ca/contact-us.html"><button type="button" class="btn btn-warning " data-toggle="modal" data-target="#myModal" id="helpbtn">
+              Contact Us
+          </button></a>  --> 
+            </ul>
+        </nav>
+    </div>
+ 
+    
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Help Guide</h4>
+      </div>
+   
+      
+      <div class="modal-body">
+        <b>Difference between Act and Regulations:</b><br>
+        An <b>Act</b> is a legal document providing a general or broad description of legal policies.<br><br>
+
+        <b>Regulations</b> are guidelines associated with an Act that guide how provisions of an Act are applied and should be followed.
+       <br><br>
+      <b>Difference between Legislation and Regulation:</b><br>
+       <b>Legislation</b> is law passed by a legislative body.<br>
+<b>Regulation</b> is a set of rules or guidelines issued by an executive body such as government agencies or regulatory boards in compliance with the law. 
+<br><br>
+•	Parliaments pass laws. They are called legislation. <br>
+•	Then government regulators have to enforce the law. They look at the law and work out the nitty-gritty details that need to be followed in order for the law to be followed.
+
+ <hr>
+     
+     
+     
+        The original document can be viewed <a href="https://www.ontario.ca/laws/regulation/150137"><b>here</b></a>.
+        We also provide a downloadable PDF of this chart <a href="assets/pdf/changes13715.pdf"><b>here</b></a>. The PDF version will allow users to input their comments.
+        <br><b>Note:</b> To view headings in a PDF file click the ribbon icon on the left <img src="assets/img/bookmark.png">
+       <hr>
+     
+      
+      
+      The navigation bar on the left side is sectioned off in two parts. The white text allows users to instantly jump to the Parts found within the <i>Child Care and Early Years Act, 2014</i>. The orange text provides the reader with options to further aid them. <br>
+      <br>
+      Hyperlinks have been placed throughout the document that will link back to specific sections within the <i>Child Care and Early Years Act, 2014</i>. 
+      These links will be indicated by their <font color = #68B3C8><b>blue colouring and bold lettering.</b></font>
+       <hr>
+      
+      
+    
+     
+      <b>Windows:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!-- <b>Mac:</b> --> <br>  
+      Press <button type="button" class="btn btn-secondary">Ctrl</button> and <button type="button" class="btn btn-secondary">+</button> to zoom in. 	<!-- &nbsp;	&nbsp;Press <button type="button" class="btn btn-secondary">Cmd</button> and <button type="button" class="btn btn-secondary">+</button> to zoom in. --> <br><br>
+      Press <button type="button" class="btn btn-secondary">Ctrl</button> and <button type="button" class="btn btn-secondary">-</button> to zoom out. <!--	&nbsp; Press <button type="button" class="btn btn-secondary">Cmd</button> and <button type="button" class="btn btn-secondary">-</button> to zoom out. --> <br><br>
+      
+      <b>Mac:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!-- <b>Mac:</b> --> <br>  
+      Press <button type="button" class="btn btn-secondary">Cmd</button> and <button type="button" class="btn btn-secondary">+</button> to zoom in.<br><br>
+      Press <button type="button" class="btn btn-secondary">Cmd</button> and <button type="button" class="btn btn-secondary">-</button> to zoom out.  <br><br>
+      
+      
+      <!--
+      <div class="modal-body" id="mac">
+      <b>Mac:</b><br>  
+      Press the <button type="button" class="btn btn-secondary">Cmd</button> and <button type="button" class="btn btn-secondary">+</button> to zoom in. <br><br>
+      Press the <button type="button" class="btn btn-secondary">Cmd</button> and <button type="button" class="btn btn-secondary">-</button> to zoom out. <br><br>
+      </div>-->
+      
+      <b>Warning:</b> This may readjust and hide sections on the navigation bar to the left. If this occurs, the navigation bar becomes scrollable. You may also zoom out in order to see the rest of the navigation bar.
+       </div>
+    
+      <div class="modal-footer">
+      	<br>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <br><br>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- Page content -->
+    <div id="page-content-wrapper" class="">
+
+       
+<div class="page-header" id="header">
+  <div class="well" id="welloutside" id="section1">
+	<div class ="well">
+     <h2>Summary of Most Recent Changes to Phase 2 of the Child Care Early Years Act, 2014<br><small>Ontario Regulation 137/15: General</small></h2>
+ </div>
+ </div>
+ </div>
+
+    
+<div id="section1" class="container-fluid">
+  
+<div class="panel panel-info">
+  <div class="panel-heading">
+  <h3>Part I: Interpretation and Application of Act</h3></div> 
+<!-- <h3><a name ="part1"></a>Part I: Purposes and Interpretation</h3> -->
+    <table width="1444">
+        <thead>
+        <tr>
+            <td width="100">
+                <p><strong>Category in Regulation</strong></p>
+            </td>
+            <td width="400">
+                <p><strong>Current Regulation/ Requirement</strong></p>
+            </td>
+            <td width="400">
+                <p><strong>New Regulation/ Requirement</strong></p>
+            </td>
+            <td width="95">
+                <p><strong>Effective Dates</strong></p>
+            </td>
+            <td width="375">
+                <p><strong>Points for Consideration</strong></p>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td width="114">
+                <p><strong>New Definition</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="456">
+                <p>1. <a href="https://www.ontario.ca/laws/regulation/150137#BK1"><strong>(1)</strong></a> "Child with medical needs" means a child who has one or more chronic or acute medical conditions such that he or she requires additional supports, accommodations, or assistance</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="382">
+                <p>Medical needs could include chronic conditions, asthma, diabetes, seizure disorders such as epilepsy, or acute conditions such as concussions</p>
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="114">
+                <p><strong>New Definition</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="456">
+                <p>1. <a href="https://www.ontario.ca/laws/regulation/150137#BK1"><strong>(1)</strong></a> "Individualized plan" means, (a) an individualized plan required under <a href="https://www.ontario.ca/laws/regulation/150137#BK52"><strong>section 39</strong></a> for a child with an anaphylactic allergy; and (b) an individualized support plan required under <a href="https://www.ontario.ca/laws/regulation/150137#BK67"><strong>section 52</strong></a> for a child with special needs</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="382">
+                <p>Individualized plan needed for children who have an anaphylactic allergy or is a child with special needs</p>
+                <p><strong>Impact on: licensed child care centres home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="114">
+                <p><strong>New Definition</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="456">
+                <p>1. <a href="https://www.ontario.ca/laws/regulation/150137#BK1"><strong>(1)</strong></a> "Individualized plan" (a.1) a plan required under section 39 for a child with medical needs</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="382">
+                <p>This is added to 1. (1) &ldquo;Individualized plan&rdquo; between (a) and (b) on September 1, 2017</p>
+                <p><strong>Impact on: licensed child care centres home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="114">
+                <p><strong>New Definition</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="456">
+                <p>1. <a href="https://www.ontario.ca/laws/regulation/150137#BK1"><strong>(1)</strong></a> "Licensed family age group" is a group of children, whether or not from the same family, for which a licensee is licensed to provide child care at a child care centre in accordance with <a href="https://www.ontario.ca/laws/regulation/150137#BK15"><strong>section 8.1</strong></a></p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="382">
+                <p>New age category</p>
+                <p><strong>Impact on: licensed child care centres </strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="114">
+                <p><strong>New Definition</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="456">
+                <p>1. (1) &ldquo;Qualified employee&rdquo; means a person described in <a href="https://www.ontario.ca/laws/regulation/150137#BK70"><strong>section 54</strong></a></p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="382">
+                <p>Member of good standing with College of Early Childhood Educators, otherwise approved by a director. For Junior school age group- diploma or degree in child and youth care, recreation and leisure services, or in good standing with the Ontario College of Teachers</p>
+                <p><strong>Impact on: licensed child care centres </strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="114">
+                <p><strong>New Definition</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="456">
+                <p>1. (1) &ldquo;Schedule 1 child care centre&rdquo; means a child care centre that is determined under <a href="https://www.ontario.ca/laws/regulation/150137#BK13"><strong>subsection 7.1 (1)</strong></a> and &ldquo;Schedule 2 child care centre&rdquo; has a corresponding meaning</p>
+            </td>
+            <td width="90">
+                <p>1-Sept-17</p>
+            </td>
+            <td width="382">
+                <p>Schedule 2 child care centre has changed age and ratios</p>
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="114">
+                <p><strong>New Definition</strong></p>
+            </td>
+            <td width="402">
+                <p>1. (1) "serious occurrence" means, (a) the death of a child while receiving child care at a home child care premises or child care centre, whether it occurs on or off the premises, (b) any serious injury to a child while receiving child care at a home child care premises or child care centre, whether it occurs on or off the premises, (c) fire or other disaster occurring at a home child care premises or child care centre, (d) a complaint concerning operational, physical or safety standards at a home child care premises or child care centre, or (e) abuse of a child within the meaning of the <em>Child and Family Services Act</em> by a staff member of a child care centre, a home child care provider at a home child care premises or any other person while the child receives child care at a home child care premises or child care centre, whether it occurs on or off the premises</p>
+            </td>
+            <td width="456">
+                <p>1. (1) "Serious occurrence" means, (a) the death of child who received child care at a home child care premises or child care centre, (b) abuse, neglect or an allegation of abuse or neglect of a child while receiving child care at a home child care premises or child care centre, (c) a life-threatening injury to or a life-threatening illness of a child who receives child care at a home child care premises or child care centre, (d) an incident where a child who is receiving child care at a home child care premises or child care centre goes missing or is temporarily unsupervised, or (e) an unplanned disruption of the normal operations of a home child care premises or child care centre that poses a risk to the health, safety or well-being of children receiving child care at the home child care premises or child care centre care</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="382">
+                <p>&ldquo;Serious Occurrence&rdquo; has been narrowed to provide the sector with clarity on what constitutes as a serious occurrence</p>
+                <p><strong>Impact on: across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="114">
+                <p><strong>Exemptions: recreational and academic activities</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="456">
+                <p>2. <a href="https://www.ontario.ca/laws/regulation/150137#s2s1p1"><strong>(1.1)</strong></a> A program or service described in paragraph 7 of <a href="https://www.ontario.ca/laws/statute/14c11#s4s1"><strong>subsection 4 (1) of the Act</strong></a> is not provided in exempt circumstances for the purposes of <a href="https://www.ontario.ca/laws/statute/14c11#BK4"><strong>subsection 4 (1) of the Act</strong></a> if it is provided, (a) by a private school (within the meaning of the <a href="https://www.ontario.ca/laws/statute/90e02"><strong><em>Education Act</em></strong></a><em>),</em> or (b) as part of a camp that, (i) is not operated for more than 13 weeks in a calendar year, (ii) is not operated on days on which instruction is typically provided for pupils enrolled in schools, and (iii) provides care or supervision every weekday for at least two hours each day</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="382">
+                <p>Recreational programs or services are not exempt if they meet these criteria.</p>
+                <p><strong>Impact on: recreational programs and services</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="114">
+                <p><strong>Other exemptions: Preparation for JK</strong></p>
+            </td>
+            <td width="402">
+                <p>3. (1) 1. (iv) The program or service is provided only for pupils who are enrolled, or eligible to be enrolled, to begin junior kindergarten in a school, A. in September of the calendar year in which the program or service is provided, or B. if the program or service is provided after September 1 in a calendar year, in September of the following year</p>
+            </td>
+            <td width="456">
+                <p>3. <a href="https://www.ontario.ca/laws/regulation/150137#BK3"><strong>(1)</strong></a> 1. iv. The program or service is provided only for pupils who are enrolled, or eligible to be enrolled, to begin junior kindergarten in a school within 12 months after the day the program or service starts</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="382">
+                <p>In regards to preparation for Junior Kindergarten</p>
+                <p><strong>Impact on: programs offered to JK students or those enrolled or eligible for JK</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="114">
+                <p><strong>Other exemptions: Preparation for JK</strong></p>
+            </td>
+            <td width="402">
+                <p>3. (1) 4. (i) Care or supervision that is provided as part of a program or service that is not operated for more than three hours in a day and that, is operated by a family support program provided for children who are four years old or older or, if the care or supervision is provided on or after September 1 in a calendar year, will attain the age of four in that year</p>
+            </td>
+            <td width="456">
+                <p>3. <a href="https://www.ontario.ca/laws/regulation/150137#BK3"><strong>(1)</strong></a> 4. (i) Care or supervision that is provided as part of a program or service that is not operated for more than three hours in a day and that, is operated by a family support program provided for children who are four years or older or, if the care or supervision is provided on or after the first day of school in a calendar year, will attain the age of four in that year</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+                <p>Revoked 1-Jan-17</p>
+            </td>
+            <td width="382">
+                <p>On January 1, 2017 paragraph 4 of subsection 3 (1) is removed</p>
+                <p><strong>Impact on: family support programs</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="114">
+                <p><strong>Exemptions</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="456">
+                <p><a href="https://www.ontario.ca/laws/statute/s15002"><strong><em>Protecting Child Performers Act, 2015</em></strong></a><em>.</em> 3. <a href="https://www.ontario.ca/laws/regulation/150137#BK3"><strong>(1)</strong></a> 5. Care or supervision that is provided as part of a program or service for child performers when the child is at the workplace in accordance with the <em>Protecting Child Performers Act, 2015</em></p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="382">
+                <p>For children who perform under <em>Protecting Child Performers Act, 2015</em></p>
+                <p><strong>Impact on: program or services for child performers</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="114">
+                <p><strong>Exemptions</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="456">
+                <p><strong>Social Services or health-related services.</strong> 3. <a href="https://www.ontario.ca/laws/regulation/150137#BK3"><strong>(1)</strong></a> 6. Care or supervision that is provided as part of a program or service where, (i) the purpose of the program/service is to permit a parent of a child to have access to training, education, social or health services delivered by a community or health-related organization, and such services are provided on the same premises where the care or supervision is provided to the child, (ii) a parent of the child receiving the care or supervision remains on premises throughout the time the care or supervision is provided, and (iii) a parent of a child receiving the care or supervision is readily available to attend to the child if required</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="382">
+                <p>Exceptions of programs from the Act</p>
+                <p><strong>Impact on: program or service that is provided for parents </strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="114">
+                <p><strong>Exemptions</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="456">
+                <p><strong>Exception regarding other programs or services (transitional</strong>) <a href="https://www.ontario.ca/laws/regulation/150137#BK4"><strong>3.1</strong></a><a href="https://www.ontario.ca/laws/statute/14c11#BK7"><strong>Subsection 6 (1) of the Act</strong></a> does not apply in respect of the provision of child care if the child care is provided as part of a program that meets the following criteria: 1. The program operates on weekdays for no more than one period of three hours or fewer consecutive hours each day 2. The program is, (i) operated by the school board, a First Nation, the M&eacute;tis Nation of Ontario or a municipality, (ii) part of the Ontario's After School Program funded by the Ministry of Tourism, Culture and Sport, (iii) a member of YMCA Canada, of a Boys and Girls Club of Canada or of a provincial multi-sport organization recognized by the Ministry of Tourism, Culture and Sport, (iv) operated by an agency or attraction of the Ministry of Tourism, Culture and Sport, (v) authorized by the local service system manager to offer child care in their service area provided that the program can demonstrate to the local service system manager that it offers programming that supports the health, safety, and well-being of children, or (vi) authorized by a First Nation to offer child care on their territory provided that the program can demonstrate to the First Nation that it offers programming that supports the health, safety and well-being of children</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="382">
+                <p>Exceptions of programs from the Act,</p>
+                <p>Subsection 6 (1) of the Act: No person shall operate a premises where child care is provided except under the authority of a license to operate a child care centre</p>
+                <p><strong>Impact on: programs that meet this criteria in clause 3.1</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="114">
+                <p><strong>Exemptions</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="456">
+                <p>3.1. <strong>Authorized Recreational and Skill Building Programs.</strong><a href="https://www.ontario.ca/laws/statute/14c11#BK7"><strong>Subsection 6 (1)</strong></a> does not apply in respect of the provision of child care if the child care is provided as part of a program that meets the criteria set out in paragraphs 1 to 4 of <a href="https://www.ontario.ca/laws/statute/14c11#s6s4"><strong>subsection 6 (4) of the Act</strong></a> and the following criteria: 1. The program operates on weekdays for no more than one period of three or fewer consecutive hours each day 2. The program is, (i) operated by a school board, a First Nation, the M&eacute;tis Nation of Ontario or a municipality, (ii) part of Ontario's After School Program funded by the Ministry of Tourism, Culture and Sport, (iii) a member of YMCA Canada, of a Boys and Girls Club of Canada or of a provincial multi-sport organization recognized by the Ministry of Tourism, Culture and Sport, (iv) operated by an agency or attraction of the Ministry of Tourism, Culture and Sport, (v) authorized by the local service system manager to offer child care in their service area provided that the program can demonstrate to the local service system manager that it offers programming that supports the health, safety, and well-being of children, or (vi) authorized by a First Nation to offer child care on their territory provided that the program can demonstrate to the First Nation that it offers programming that supports the health, safety and well-being of children</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="382">
+                <p>3.1 Exception regarding other programs and services (transitional) is removed and Authorized Recreational and Skill Building Programs is in place</p>
+                <p><strong>Impact on: programs that meet this criteria in clause 3.1</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="114">
+                <p><strong>Counting children for home child care and unlicensed child care</strong></p>
+            </td>
+            <td width="402">
+                <p>4. (3) Subsection (4) sets out situations that are additional to those described in paragraphs 1 and 2 of subsection 6 (5) of the Act in which a child care provider&rsquo;s own child who is at a premises shall not be counted for the purposes of counting children at the premises under paragraphs 1 and 2 of subsection 6 (3) of the Act</p>
+            </td>
+            <td width="456">
+                <p>Not Applicable</p>
+            </td>
+            <td width="90">
+                <p>Revoked 31-Aug-17</p>
+            </td>
+            <td width="382">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="114">
+                <p><strong>Counting children for home child care and unlicensed child care</strong></p>
+            </td>
+            <td width="402">
+                <p>4. (4) If a child care provider provides care for fewer than two children who are younger than two years old and the child care provider meets the criteria mentioned in paragraph 1 of subsection (1), (a) a child who is younger than six years old who is enrolled in and regularly attends grade 1 in a school operated by a school board shall not be counted on any day within the school board&rsquo;s school year, as defined in the <em>Education Act</em>, other than weekends and any part of a weekday that is before 6 a.m. or after 7 p.m.; and (b) a child who is of an age such that he or she would meet the eligibility requirements for enrolment in grade 1 in a school operated by a school board and who is instead enrolled in and regularly attends a grade 1 program administered by a First Nation or by the Government of Canada for First Nation children shall not be counted on any day within the school year that applies for the purposes of the program, other than weekends and any part of the weekday that is before 6 a.m. or after 7 p.m.</p>
+            </td>
+            <td width="456">
+                <p>Not Applicable</p>
+            </td>
+            <td width="90">
+                <p>Revoked 31-Aug-17</p>
+            </td>
+            <td width="382">&nbsp;</td>
+        </tr>
+        </tbody>
+    </table>
+ </div>
+ </div>
+<div id="section2" class="container-fluid">
+  
+  <div class="panel panel-info">
+  <div class="panel-heading">
+  
+  <h3>Part II: Operation of Child Care Centres and Home Child Care</h3>
+  <h4><a name="section2"></a>General</h4></div>
+      <table>
+          <thead>
+          <tr>
+              <td width="100">
+                  <p><strong>Category in Regulation</strong></p>
+              </td>
+              <td width="400">
+                  <p><strong>Current Regulation/ Requirement</strong></p>
+              </td>
+              <td width="400">
+                  <p><strong>New Regulation/ Requirement</strong></p>
+              </td>
+              <td width="95">
+                  <p><strong>Effective Dates</strong></p>
+              </td>
+              <td width="375">
+                  <p><strong>Points for Consideration</strong></p>
+              </td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <td width="133">
+                  <p><strong>Licensee responsibilities</strong></p>
+              </td>
+              <td width="400">
+                  <p>6. (5) Unless otherwise approved by a director, every licensee of a home child care agency shall employ at least one full-time home child care visitor, who shall be a person described in section 56, for every 25 premises where the licensee oversees the provision of home child care, who shall provide support at each such premises and monitor each such premises, and who shall be responsible to the licensee</p>
+              </td>
+              <td width="454">
+                  <p>6. <a href="https://www.ontario.ca/laws/regulation/150137#s6s5"><strong>(5)</strong></a> Every licensee of a home child care agency shall employ at least one home child care visitor, who shall be a person described in <a href="https://www.ontario.ca/laws/statute/90e02#BK74"><strong>section 56</strong></a>, who shall provide support at and monitor each premises where the licensee oversees the provision of home child care, and who shall be responsible to the licensee</p>
+              </td>
+              <td width="90">
+                  <p>29-Aug-16</p>
+              </td>
+              <td width="376">
+                  <p>Section 56: A home child care visitor is a person who, (a) is a member in good standing of the College of Early Childhood Educators, has at least two years of experience working with children under 13 years old and is approved by a director; or in the opinion of the director, is capable of providing support and supervision at a home child care</p>
+                  <p><strong>Impact on: licensees and home child care visitors of a home child care centre </strong></p>
+              </td>
+          </tr>
+          <tr>
+              <td width="133">
+                  <p><strong>Implementation and review of policies, procedures, and individualized plans</strong></p>
+              </td>
+              <td width="400">
+                  <p>Not Applicable</p>
+              </td>
+              <td width="454">
+                  <p><strong>Implementation and Review of Policies, Procedures and Individualized Plans. </strong>6.1. <a href="https://www.ontario.ca/laws/regulation/150137#s6p1s1"><strong>(1)</strong></a> Every licensee shall ensure that the policies, procedures, and individualized plans it is required to have under this Regulation are implemented at each child care centre it operates and at each premises where it oversees the provision of home child care. <a href="https://www.ontario.ca/laws/regulation/150137#s6p1s2"><strong>(2)</strong></a> Every licensee shall review the policies, procedures, and individualized plans at least annually and ensure they are current. <a href="https://www.ontario.ca/laws/regulation/150137#s6p1s3"><strong>(3)</strong></a> Every licensee of a child care centre shall ensure that the policies, procedures and individualized plans are reviewed as follows at the child care centre: 1. With employees, before they begin their employment, 2. With volunteers or students who will be interacting with children at the child care centre, before they begin to volunteer or before they begin their educational placement. 3. With each person described in paragraphs 1 or 2, at least annually after the first review and at any other time when changes are made to a policy, procedure or individualized plan. <a href="https://www.ontario.ca/laws/regulation/150137#s6p1s4"><strong>(4)</strong></a> Every licensee of a home child care agency shall ensure that the policies, procedures and individualized plans are reviewed as follows at every premises where it oversees the provision of home child care: 1. With each provider before any child is placed at the premise, 2. With volunteers and students before they begin interacting with the children, 3. With individuals who are ordinarily residents of the premises before interacting with the children, 4. With home child care visitors before they begin their employment, 5. With every person described in paragraphs 1, 2, 3, or 3 annually after the first review. <a href="https://www.ontario.ca/laws/regulation/150137#s6p1s5"><strong>(5)</strong></a> Every licensee of a home child care agency shall ensure that the policies and procedures are reviewed by persons who work at the home child care agency before they begin their employment, at least annually, and at any time the changes are made. <a href="https://www.ontario.ca/laws/regulation/150137#s6p1s6"><strong>(6)</strong></a> Every licensee shall keep a record of each review and that the record is signed by who conducted and participated in the review. <a href="https://www.ontario.ca/laws/regulation/150137#s6p1s7"><strong>(7)</strong></a> Every licensee shall have a written process that sets out: how compliance, contraventions of the policies, procedures and individualized plans will be monitored, recorded, and addressed. Every licensee shall ensure that the records are kept in accordance with <a href="https://www.ontario.ca/laws/regulation/150137#BK106"><strong>section 82</strong></a></p>
+              </td>
+              <td width="90">
+                  <p>29-Aug-16</p>
+              </td>
+              <td width="376">
+                  <p>Every individual who will be in contact with children must review the policies, procedures and individualized plans,</p>
+                  <p>Section 82: A licensee required to keep a record, report, or other document, shall keep it in a secure location for at least 3 years from the date it is made, unless otherwise specified</p>
+                  <p><strong>Impact on: any person who will be in contact with children in any child care centre</strong></p>
+              </td>
+          </tr>
+          </tbody>
+      </table>
+
+ </div>
+
+ 
+<div class="panel panel-info">
+  <div class="panel-heading">
+<h4><a name= "section21"></a>Ratio of Employees to Children and Group Size</h4></div>
+    <table>
+        <thead>
+        <tr>
+            <td width="120">
+                <p><strong>Category in Regulation</strong></p>
+            </td>
+            <td width="402">
+                <p><strong>Current Regulation/ Requirement</strong></p>
+            </td>
+            <td width="450">
+                <p><strong>New Regulation/ Requirement</strong></p>
+            </td>
+            <td width="90">
+                <p><strong>Effective Dates</strong></p>
+            </td>
+            <td width="378">
+                <p><strong>Points for Consideration</strong></p>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td width="120">
+                <p><strong>Age categories</strong></p>
+            </td>
+            <td width="402">
+                <p>7. (1) For the purpose of this Part, children, other than children with special needs, are categorized and referred to using the age category names set out in Schedule 1</p>
+            </td>
+            <td width="450">
+                <p>7. <a href="https://www.ontario.ca/laws/regulation/150137#BK12"><strong>(1)</strong></a> In this Part, a reference to a child by an age category set out in Column 1 of Schedule 1, such as "infant" means a child whose age is within the range set out in Column 2 of Schedule 1</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>Younger than 18 months. Ratio 3 to 10 with a maximum of 10 children</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Age categories</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>7. <a href="https://www.ontario.ca/laws/regulation/150137#ys7s1"><strong>(1)</strong></a> For this part, a reference to a child by an age category, such as "infant", "infant/toddler", etc. means a child whose age is within the range set out in Schedule 1 or 2 for that age category</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>As of September 1, 2017, Schedule 1 and 2 child care centres begin</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Age categories</strong></p>
+            </td>
+            <td width="402">
+                <p>7. (2) Where this regulation sets out different rules based on a child's age, the following applies in respect of children in a group in which mixed-age grouping is used, with section 8: if a rule is stated as applying to a licensed age group in a specific age category or child in that group, the rule applies to each child in the group as if each child's age fell within the age category of the licensed age group. If a rule is stated that applies to a child of a specific age, the rule applies to each child in the group according to their age</p>
+            </td>
+            <td width="450">
+                <p>7. <a href="https://www.ontario.ca/laws/regulation/150137#s7s2"><strong>(2)</strong></a> Where this part sets out different rules for a child's age category, the following applies in respect of children in a group in which mixed-age grouping is used: (1) If a rule it stated as applying to an age group, or child in the age group, the rule applies to each child in the group as if the child's age fell within the age range of the licensed age group. (2) If a rule is stated that applies to a child of a specific age or age category, the rule applies to a child in the group according to whether their actual age is the specified age or is within the range for the age category</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p><strong>Impact on: child care centres that are using the mixed age grouping</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Schedule 1 or 2 child care centres</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>7.1 <a href="https://www.ontario.ca/laws/regulation/150137#ys7p1s1"><strong>(1)</strong></a> The following rules shall be used to determine whether a centre is a Schedule 1 child care centre or a Schedule 2 child care centre: 1. Every child care centre, other than a child care centre for children with special needs, that had a licence on August 31, 2017 is a Schedule 1 child care centre until the licensee makes an application described in paragraph 3. 2. If a licensee is issued a new licence to operate a child care centre on or after September 1, 2017 the child care centre shall be a Schedule 1 or Schedule 2 child care centre if it is so indicated on the licence. 3. If a licensee of a child care centre applies for a revision to its licence in order to become a Schedule 1 or Schedule 2 child care centre and the application is approved, the child care centre shall be a Schedule 1 or Schedule 2 child care centre, in accordance with the revised licence. <a href="https://www.ontario.ca/laws/regulation/150137#ys7p1s2"><strong>(2)</strong></a> The determination under subsection (1) that a child care centre is a Schedule 1 or Schedule 2 child care center, and any rule in this Regulation that applies to a Schedule 1 or Schedule 2 child care centre, does not apply with respect to any licensed family age groups that may receive child care in the child care centre or to any child in such a licensed family age group.</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Ratios and maximum group sizes, child care centre</strong></p>
+            </td>
+            <td width="402">
+                <p>8. (1). (c) For every licensed age group, the requirements set out in Schedule 1 or 2 that are applicable for the age group respecting the ratio of employees to children and the maximum group size are satisfied, whether children are on the premises or during activities off the premises, unless otherwise approved by a director.</p>
+            </td>
+            <td width="450">
+                <p>8. (1). (c). For every licensed age group, the requirements set out in Schedule 1 or 2 that are applicable for the age group respecting, (i) the ratio of employee to children, (ii) the maximum number of children in the group, and (iii) the proportion of employees that must be qualified employees</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>The number of qualified employees is changed for only a Schedule 2 Child Care Centre</p>
+                <p><strong>Impact on: licensed child care centres </strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Ratios and maximum group sizes, child care centre</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>8. <a href="https://www.ontario.ca/laws/regulation/150137#s8s1"><strong>(1)</strong></a> Every licensee shall ensure that in each child care centre it operates, (a) the children are placed in groups according to the age categories set out in Schedule 1, 2 or 3; (b) every licensed age group includes only children whose age falls within the age category of the group, subject to <a href="https://www.ontario.ca/laws/regulation/150137#s8s2"><strong>subsection (2)</strong></a>; (c) for every licensed age group, the requirements set out in Schedule 1, 2 or 3 that are applicable for the age group respecting, (i) the ratio of employees to children, (ii) the maximum number of children in the group, and (iii) the proportion of employees that must be qualified employees.</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>Infant/toddler is younger than 24 months; preschool is 24 months &ndash; 5 years. Both ratios are 2:3</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Ratios and maximum group sizes, child care centre</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>8. <a href="https://www.ontario.ca/laws/regulation/150137#ys8p1s1"><strong>(1.1)</strong></a> Despite subclause (1) (c) (i), if a licensed preschool group in a Schedule 2 child care centre includes four or more children who are under 30 months old, there shall be one additional employee for the group.</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>Additional employees needed for the group</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Ratios and maximum group sizes, child care centre</strong></p>
+            </td>
+            <td width="402">
+                <p>8. (2). A director may give approval for a child care centre to use mixed-age grouping for any licensed age group set out in Schedule 1, but if a child care centre has licensed infant, toddler, or preschool groups, child care centre may use mixed-age grouping for only one such group for each category</p>
+            </td>
+            <td width="450">
+                <p>8. (2). A director may give approval for a child care centre to use mixed-age grouping for any licensed age group set out in Schedule1</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>Approval by director for only Schedule 1</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Ratios and maximum group sizes, child care centre</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>8. <a href="https://www.ontario.ca/laws/regulation/150137#ys8s2"><strong>(2)</strong></a> A director may give approval for a child care centre to use mixed-age grouping for any licensed age group set out in Schedule 1 or 2</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>Replaces previous 8. (2) after September 1, 2017</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Ratios and maximum group sizes, child care centre</strong></p>
+            </td>
+            <td width="402">
+                <p>8. (3). Despite clause (1) (c), the ratio of employees to children and the maximum group size applicable to licensed age groups for which a director has approved the use of mixed-age grouping shall be determined as follows: 1. Subject to paragraphs 2, 3, and 4, (i) if a licensed age group includes no more than 20 per cent children from a younger age category, the ratio and maximum group size requirements set out in Schedule 1 for the licensed age group applies, and (ii) if a licensed age group includes more than 20 per cent children from a younger age category, the ratio and maximum group size requirements set out in Schedule 1 for the youngest child in the group applies. 2. If, in a licensed kindergarten group, no more than 25 per cent of the children are older than three years but younger than 44 months, and all other children are kindergarten children, then the ratio and maximum group size requirements set out in schedule 1 for kindergarten children apply. 3. If, in a licensed primary/junior school age group, no more than 25 per cent of the children are kindergarten children, and all other children are primary/junior school age children, the ratio and maximum group size requirements set out in Schedule 1 for primary/junior school age children apply. 4. If, in a licensed junior school age group, no more than 25 per cent of the children are 68 months or older but younger than nine years, and all other children are junior school age children, the ratio and maximum group size requirements set out in Schedule 1 for junior school age children apply.</p>
+            </td>
+            <td width="450">
+                <p>8. <a href="https://www.ontario.ca/laws/regulation/150137#s8s3"><strong>(3)</strong></a> Despite clause (1) (c), where a director has approved the use of mixed-age grouping for a licensed age group, the requirements applicable to the group in the following situations respecting the matters mentioned in subclauses (1) (c) (i), (ii) and (iii) shall be determined as follows: 1. If a licensed toddler or preschool group, (i) includes no more than 20 per cent children from a younger category, the requirements set out in Schedule 1 for toddlers or preschool children apply, and (ii) includes more than 20 per cent children from a younger age category, the requirements set out in Schedule 1 for the youngest child in the group apply. 2. If, in a licensed kindergarten group, no more than 25 per cent of the children are three years old, or if the child care is provided on or after the first day of school in a calendar year, will attain the age of three years in that year, and all other children are kindergarten children then the requirements set out in Schedule 1 for kindergarten apply. 3. If, in a licensed primary/junior school age group, no more than 25 per cent of the children are kindergarten children, and all other children are primary/junior school age children, the requirements set out in Schedule 1 for primary/junior school age children apply. 4. If, in a licensed junior school age group, no more than 25 per cent of children are 68 months or older but younger than nine years, and all other children are junior school age children, the requirements set out for junior school age in Schedule 1 apply. 5. If a licensed kindergarten, primary/junior school age or junior school age group includes more than 25 per cent children from a younger age category, the requirements set out n Schedule 1 for the youngest child in the group apply.</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>Depending on the age of children, ratios may be based on the youngest age of the group</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Ratios and maximum group sizes, child care centre</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>8. <a href="https://www.ontario.ca/laws/regulation/150137#ys8s3"><strong>(3)</strong></a> Despite clause (1) (c), where a director has approved the use of mixed-age grouping for a licensed age group, the requirements applicable to the group in the following situations respecting the matters mentioned in subclauses (1) (c) (i), (ii) and (iii) shall be determined as follows: 1. For a Schedule 1 child care centre, if a licensed toddler or preschool group, (i) includes no more than 20 per cent children from a younger age category, the requirements set out in Schedule 1 for toddlers or preschool children apply, and (ii) includes more than 20 per cent children from a younger age category, the requirements set out in Schedule 1 for the youngest child in the group apply. 2. For a Schedule 2 child care centre, (i) if, in a licensed infant/toddler group, no more than 20 per cent of the children are 10 months or older but younger than 12 months, and all other children are 12 months or older but younger than 24 months, then the requirements set out in Schedule 2 for children 12 months or older but younger than 24 months apply, (ii) if, in a licensed preschool group, no more than 20 per cent of the children are from a younger age group, then the requirements set out in Schedule 2 for preschool children apply, and (iii) if, in a licensed preschool group, more than 20 per cent of the children are from a younger age group, then the requirements set out in Schedule 2 for infant/toddler children apply. 3. If, in a licensed kindergarten group, no more than 25 per cent of the children are three years old, or if the child care is provided on or after the first day of school in a calendar year, will attain the age of three in that year, and all other children are kindergarten children, then the requirements set out in Schedule 1 or 2 for kindergarten children apply. 4. If, in a licensed primary/junior school age group, no more than 25 per cent of the children are kindergarten children, and all other children are primary/junior school age children, the requirements set out in Schedule 1 or 2 for primary/junior school age children apply. 5. If, in a licensed junior school age group, no more than 25 per cent of the children are 68 months or older but younger than nine years, and all other children are junior school age children, the requirements set out in Schedule 1 or 2 for junior school age children apply. 6. If a licensed kindergarten, primary/junior school age or junior school age group includes more than 25 per cent children from a younger age category, the requirements set out in Schedule 1 or 2 for the youngest child in the group apply.</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>Replaces 8. (3) as of September 1, 2017</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Ratios and maximum group sizes, child care centre </strong></p>
+            </td>
+            <td width="402">
+                <p>8. (4). Despite subsection (1) and (3), except where the group receiving child care is a licensed infant group, during the periods of arrival and departure of children and during the rest period, the ratio of employees to children at a child care centre may be reduced to less than the required under this section, if the observed ratio is not less than two-thirds of the required ratio.</p>
+            </td>
+            <td width="450">
+                <p>8. <a href="https://www.ontario.ca/laws/regulation/150137#s8s4"><strong>(4)</strong></a> Despite subsections (1) and (3), the ratio of employees to children for a licensed age group may be reduced to less than that required under those subsections, in accordance with the following: 1. The reduced ratio shall not be less than two-thirds of the required ratio. 2. The reduced ratio shall not apply in respect of a licensed infant group. 3. The reduced ratio shall not apply during outdoor play periods. 4. The reduced ratio shall be in effect only during the periods of arrival and departure of children and during the rest period.</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>Does not include infant groups</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Ratios and maximum group sizes, child care centre</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>8. <a href="https://www.ontario.ca/laws/regulation/150137#s8s4"><strong>(4)</strong></a> Despite subsections (1) and (3), the ratio of employees to children for a licensed age group may be reduced to less than that required under those subsections, in accordance with the following: 1. The reduced ratio shall not be less than two-thirds of the required ratio. 2. The reduced ratio shall not apply at any time in respect of a licensed infant group or in respect of children younger than 12 months in a licensed infant/toddler group. 3. The reduced ratio shall not apply during outdoor play periods. 4. For a child care centre that has a program that runs for six hours or more in a day, the reduced ratio shall be in effect for no more than ninety minutes after the program starts each day and no more than one hour before it ends. 5. For a child care centre that has a program that runs for less than six hours a day, the reduced ratio shall be in effect for no more than half an hour after the program starts each day and no more than half an hour before it ends.</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>This regulation replaces 8. (4) as of September 1, 2017</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Ratios and maximum group sizes, child care centre</strong></p>
+            </td>
+            <td width="402">
+                <p>8. (6). Every licensee shall ensure that each child care centre it operates, (a) where fewer than six children who are not in a licensed infant group receive child care, there is at least one adult in attendance; (b) where six or more children who are not in a licensed infant group receive child care, there are at least two adults in attendance; (c) where fewer than four children in a licensed infant group receive care, there is at least one adult in attendance; and (d) where four or more children in a licensed infant group receive child care, there are at least two adults in attendance</p>
+            </td>
+            <td width="450">
+                <p>8. <a href="https://www.ontario.ca/laws/regulation/150137#s8s6"><strong>(6)</strong></a> Every licensee shall ensure that, at each child care centre it operates, the following rules are satisfied regarding the attendance of adults: 1. Where fewer than six children who are not in a licensed infant group or licensed infant/toddler group receive child care, there is at least one adult in attendance. 2. Where six or more children who are not in a licensed infant group or licensed infant/toddler group receives child care, there are at least two adults in attendance. 3. Where fewer than four children in a licensed infant group or licensed infant/toddler group receive child care, there is at least one adult in attendance. 4. Where four or more children in a licensed infant group or licensed infant/toddler group receive child care, there are at least two adults in attendance.</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>Includes infant/toddler group</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Ratios and maximum group sizes, child care centre</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>8. <a href="https://www.ontario.ca/laws/regulation/150137#ys8s7"><strong>(7)</strong></a> The section of Ratios and Maximum Group Sizes, Child Care Centre does not apply in respect to licensed family age groups</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>Excludes family age groups</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Licensed family age groups</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>8.1 <a href="https://www.ontario.ca/laws/regulation/150137#BK15"><strong>(1)</strong></a> A licensee may be licensed to provide child care for a licensed family age group that meets the following age requirements: 1. The group shall not include more than 15 children. 2. The group shall not include more than six children who are younger than 24 months. <a href="https://www.ontario.ca/laws/regulation/150137#ys8p1s2"><strong>(2)</strong></a> Every licensee that provides child care for a licensed family age group shall ensure that the requirements determined as follows respecting the number and qualifications of employees who provide child care to the licensed family age group are satisfied, whether children are on the premises or during activities off the premises: 1. Classify each child according to his or her age category, as set out in Schedule 4. 2. Determine the total number of children in each age category. 3. For each age category, multiply the number of children in the age category by the ratio set out in Column 2 of Schedule 4 opposite the age category, expressed as a decimal. 4. Find the total of the numbers determined under paragraph 3 for all age categories. 5. Round the number determined under paragraph 4 up to the nearest whole number. 6. The number determined under paragraph 5 is the minimum number of employees required to provide child care to the group, unless one of the following applies: (i) if there are more than six children, there must be at least two employees providing child care to the group, (ii) if there are more than 10 children and one or more children are younger than 12 months, there must be at least three employees providing child care to the group, (iii) if there are six or fewer children, and no more than two children are younger than 24 months, only one employee is required to provide child care to the group. 7. The number of employees determined under paragraph 6 that must be qualified employees is, (i) if fewer than three employees are required under paragraph 6, then at least one employee must be a qualified employee, and (ii) if three or more employees are required under paragraph 6, then at least two of the employees must be qualified employees. <a href="https://www.ontario.ca/laws/regulation/150137#ys8p1s3"><strong>(3)</strong></a> If a licensed family age group includes children who are 44 months or older and, but for such children, the number of employees determined under paragraph 6 of subsection (2) would be lower, then the greater number of employees is required only when such children are present.</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>Specific to licensed family age group</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Resource Teacher</strong></p>
+            </td>
+            <td width="402">
+                <p>10. (1). Every licensee of an integrated child care centre or home child care agency shall employ one resource teacher to plan and implement individual and small group experiences for every four children with special needs who receive child care in the child care centre or at a premises where the licensee oversees the provision of home child care, and, in respect of whom funds are provided under the Act, unless otherwise approved by a director</p>
+            </td>
+            <td width="450">
+                <p>10. <a href="https://www.ontario.ca/laws/regulation/150137#BK17"><strong>(1)</strong></a> A licensee of an integrated child care centre or home child care agency may employ a resource teacher to plan and implement individual and small group experiences for children with special needs who receive child care in the child care centre or at a premises where the licensee oversees the provision of home child care, and in respect of whom funds are provided under the Act</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p><strong>Impact on: licensed child care centres or home child care agency</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Supervision of volunteers and students</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>11.1 <a href="https://www.ontario.ca/laws/regulation/150137#BK19"><strong>(1)</strong></a> Every licensee shall ensure that every volunteer or student at a child care centre it operates or at a premises where it oversees the provision of home child care is supervised by an employee or home child care provider at all times and is not permitted to be alone with any child who receives child care at the child care centre or home child care premises. <a href="https://www.ontario.ca/laws/regulation/150137#s11p1s2"><strong>(2)</strong></a> Every licensee shall ensure that there are written policies and procedures regarding volunteers and students that set out, at a minimum, (a) the requirement described in subsection (1); (b) the roles and responsibilities of the licensee and supervising employees; and (c) the roles and responsibilities of volunteers and students.</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>Added subsection to Section 11 &ldquo;Supervision by adults at all times&rdquo;</p>
+                <p><strong>Impact on: licensed child care centres and home child care </strong></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div> 
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+<h4><a name= "section22"></a>Building, Equipment and Playground - Child Care Centre</h4></div>
+    <table>
+        <thead>
+        <tr>
+            <td width="120">
+                <p><strong>Category in Regulation</strong></p>
+            </td>
+            <td width="402">
+                <p><strong>Current Regulation/ Requirement</strong></p>
+            </td>
+            <td width="450">
+                <p><strong>New Regulation/ Requirement</strong></p>
+            </td>
+            <td width="90">
+                <p><strong>Effective Dates</strong></p>
+            </td>
+            <td width="378">
+                <p><strong>Points for Consideration</strong></p>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td width="120">
+                <p><strong>Play activity space</strong></p>
+            </td>
+            <td width="402">
+                <p>16. (1). Subject to subsection (2) and (3), every licensee of a child care centre shall ensure that each child care centre it operates has play activity space of at least, (a) 2.8 square meters of unobstructed floor space for each child in a licensed infant, toddler, or preschool group, based on licensed capacity; and (b) 2.58 square meters of unobstructed floor space for each child in a licensed kindergarten, primary/junior, school age, or junior school age group, based on licensed capacity</p>
+            </td>
+            <td width="450">
+                <p>16. <a href="https://www.ontario.ca/laws/regulation/150137#BK25"><strong>(1)</strong></a> Subject to subsections (2), (3) and (4), every licensee of a child care centre shall ensure that each child care centre it operates has play activity space of at least, (a) 2.8 square meters of unobstructed floor space for each child in a licensed infant, infant/toddler, toddler, preschool or family age group, based on the licensed capacity; and (b) 2.58 square meters of unobstructed floor space for each child in a licensed kindergarten, primary/junior school age or junior school age group, based on the licensed capacity</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>For Schedule 2 child care centres</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Play activity space</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>16. <a href="https://www.ontario.ca/laws/regulation/150137#ys16s4"><strong>(4)</strong></a> A director may approve a smaller amount of space than required under clause (1) (a) for children in a licensed in an infant/toddler group in the following situations, provided that the amount of unobstructed floor space is at least 2.33 square meters per child: 1. The licensee previously operated a Schedule 1 child care centre and the room or area that was used for a licensed infant or toddler group is subsequently used for a licensed infant/toddler group, without any renovation of the room or area other than a renovation to create a separate sleeping area, if necessary. 2. The licensee submitted floor plans for the construction or renovation of a child care centre to the Director before June1, 2016, and the plans were approved. 3. The child care centre is located in a school and the construction for the child care centre was, (i) approved by the Ministry before June 1, 2016 in accordance with the requirements set out in the ministry&rsquo;s policy memorandum "2015: B11 Capital Funding for New Construction of Child Care", or (ii) included in a jointly approved plan submitted to the Ministry before June 1, 2016 in accordance with the requirements set out in the Ministry&rsquo;s policy memoranda "2012: EL3 Schools- First Child Care Capital Retrofit Policy", "2012: EL4: Schools-First Child Care Capital Retrofit Policy- Funding and Implementation", "2013: EY3 Schools-First Child Care Capital Retrofit Policy- Board by Board Allocations for 2013-14 and Policy Updates"</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>Play activity space; smaller play space can be used if approved</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Play activity rooms</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>17. <a href="https://www.ontario.ca/laws/regulation/150137#BK26"><strong>(1)</strong></a> (a.1) Each licensed infant/toddler group has a separate play activity room and, if the group requires cribs or cradles, has a separate sleeping area that is separated from any play area</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>Infants who are not yet able to walk do not have to be separated from other children as of August 29, 2016</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Play activity rooms</strong></p>
+            </td>
+            <td width="402">
+                <p>17. (1). (c) For licensed preschool groups, there is a separate play activity room for every 24 preschool children</p>
+            </td>
+            <td width="450">
+                <p>17. <a href="https://www.ontario.ca/laws/regulation/150137#BK26"><strong>(1)</strong></a> (c) Each licensed preschool group has a separate play activity room</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Play activity rooms</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>17. <a href="https://www.ontario.ca/laws/regulation/150137#BK26"><strong>(1)</strong></a> (e) Each licensed family age group has a separate play activity room and, if the group requires cribs or cradles, has a separate sleeping area that is separated from the play activity area</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Play activity rooms</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>17. <a href="https://www.ontario.ca/laws/regulation/150137#ys17s2"><strong>(2)</strong></a> For the purposes of clause (1) (a.1), two or more licensed infant/toddler groups may use the same sleeping area provided that there are no more 12 children sleeping in the room at any time</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>Applies to Schedule 2 child care centres</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Play materials, equipment and furnishings</strong></p>
+            </td>
+            <td width="402">
+                <p>19. (2). 1. A table or counter space for every group of up to 10 children in a licensed infant group, based on licensed capacity, that is adjacent to a sink and suitable for dressing or changing the diaper for one child at a time</p>
+            </td>
+            <td width="450">
+                <p>19. <a href="https://www.ontario.ca/laws/regulation/150137#s19s2"><strong>(2)</strong></a> 1. A table or counter space that is adjacent to a sink and suitable for dressing or changing the diaper of one child at a time for every licensed infant group, infant/toddler group, toddler group or family age group</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>Made this subsection applicable to all licensed age groups, except preschool and took out number of children</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Play materials, equipment and furnishings</strong></p>
+            </td>
+            <td width="402">
+                <p>19. (2). 2. A table or counter space for every of up to 15 children in a licensed toddler group, based on licensed capacity, that is adjacent to a sink and suitable for dressing or changing the diaper for one child at a time</p>
+            </td>
+            <td width="450">
+                <p>19. <a href="https://www.ontario.ca/laws/regulation/150137#s19s2"><strong>(2)</strong></a> 2. For every licensed preschool group in a Schedule 2 child care centre, a space that is suitable for dressing or changing the diaper of one child at a time and access to a sink</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>Only applicable for licensed preschool groups in Schedule 2 child care centres</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Play materials, equipment and furnishings</strong></p>
+            </td>
+            <td width="402">
+                <p>19. (2). 4. For each child in a licensed infant group who receives child care, a cradle or crib that complies with the standards for cradles and cribs in the regulations made under the <em>Canada Consumer Product Safety Act</em></p>
+            </td>
+            <td width="450">
+                <p>19. <a href="https://www.ontario.ca/laws/regulation/150137#s19s2"><strong>(2)</strong></a> 4. A cradle or crib that complies with the standards for cradles and cribs in the regulations made under the <em>Canada Consumer Product Safety Act</em> for each child who, (i) is younger than 18 months and receives child care in a Schedule 1 child care centre, (ii) is younger than 12 months and is in a licensed infant/toddler or family age group</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>A crib or cot is provided appropriately for each child</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Play materials, equipment and furnishings</strong></p>
+            </td>
+            <td width="402">
+                <p>19. (2) 5. For each child in a licensed toddler group who receives child care for six hours or more, a cot</p>
+            </td>
+            <td width="450">
+                <p>19. <a href="https://www.ontario.ca/laws/regulation/150137#s19s2"><strong>(2)</strong></a> 5. A crib or cot, in accordance with any written instruction from the child&rsquo;s parent, for each child in a licensed infant/toddler group or family age group who is 12 months or older but younger than 24 months and who receives care for six hours or more</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>A crib or cot is provided appropriately for each child</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Play materials, equipment and furnishings</strong></p>
+            </td>
+            <td width="402">
+                <p>19. (2). 6. For each child in a licensed preschool group who receives child care for six hours or more, a cot, unless otherwise approved by a director</p>
+            </td>
+            <td width="450">
+                <p>19. <a href="https://www.ontario.ca/laws/regulation/150137#s19s2"><strong>(2)</strong></a> 6. A cot for each child in a licensed toddler group who receives care for six hours or more</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>A cot is provided appropriately for each child</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Play materials, equipment and furnishings</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>19. <a href="https://www.ontario.ca/laws/regulation/150137#s19s2"><strong>(2)</strong></a> 7. Unless approved by a director, a cot for each child who receives child care for six hours or more and, (i) is in a licensed preschool group, or (ii) is 24 months or older but younger than five years and is in a licensed family age group</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>A cot is provided appropriately for each child</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Outdoor play space</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>24. <a href="https://www.ontario.ca/laws/regulation/150137#s24s4"><strong>(4)</strong></a> Every licensee shall ensure that, at each child care centre it operates, any outdoor play space, fixed play structure or surfacing under those structures that is constructed or renovated on or after August 29, 2016 meets the requirements set out in the Canadian Standards Association standard CAN/CSA-Z614-14, "Children's play spaces and equipment", as amended from time to time</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>Outdoor play space corresponds with Canadian Standards Association standard CAN/CSA- Z614-14 &ldquo;Children&rsquo;s play spaces and equipment</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Outdoor play space</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>24. <a href="https://www.ontario.ca/laws/regulation/150137#s24s5"><strong>(5)</strong></a> Every licensee shall ensure that, at each child care centre it operates, (a) a playground safety policy is developed that reflects the Canadian Standards Association standard mentioned in subsection (4) and indicates the roles and responsibilities of employees regarding safety on playgrounds; (b) daily, monthly and annual inspections of the outdoor play space, fixed play structures and surfacing are conducted in accordance with the requirements set out in the Canadian Standards Association standard mentioned in subsection (4); (c) a plan is developed on how issues or problems identified in a playground inspection will be addressed; and (d) a playground repair log is maintained</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>Create a playground safety policy, as well conduct daily, monthly, and annual inspections</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+<h4><a name= "section23"></a>Building, Equipment and Playground - Home Child Care</h4></div>
+    <table>
+        <thead>
+        <tr>
+            <td width="120">
+                <p><strong>Category in Regulation</strong></p>
+            </td>
+            <td width="402">
+                <p><strong>Current Regulation/ Requirement</strong></p>
+            </td>
+            <td width="450">
+                <p><strong>New Regulation/ Requirement</strong></p>
+            </td>
+            <td width="90">
+                <p><strong>Effective Dates</strong></p>
+            </td>
+            <td width="378">
+                <p><strong>Points for Consideration</strong></p>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td width="120">
+                <p><strong>Bodies of water</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>30.1 <a href="https://www.ontario.ca/laws/regulation/150137#BK41"><strong>(1)</strong></a> Every licensee shall ensure in each premises where the licensee oversees the provision of home child care, no children under six years old who receives home child care at the premises is permitted to use or have access to any standing or recreational body of water on the premises. <a href="https://www.ontario.ca/laws/regulation/150137#s30p1s2"><strong>(2)</strong></a> If a licensee that oversees the provision of home child care at a premises permits children who are six years old or older who receive home child care at a premises to use or have access to a standing or recreational body of water at the premises, the licensee shall, (a) ensure that, at all times when the children use or have access to the body of water, a lifeguard is present who meets the requirements of clauses 17 (6) (a) and (b) of <a href="https://www.ontario.ca/laws/regulation/900565"><strong>Regulation 565 of the Revised Regulation of Ontario, 1990</strong></a> (Public Pools) made under the <em>Health Protections and Promotion Act</em>; and (b) have written policies and procedures regarding children's use and access to the body of water</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>In regards to home child care; pools, ponds, lakes</p>
+                <p><strong>Impact on: home child care</strong></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+<h4><a name= "section24"></a>Health and Medical Supervision</h4></div>
+    <table>
+        <thead>
+        <tr>
+            <td width="120">
+                <p><strong>Category in Regulation</strong></p>
+            </td>
+            <td width="402">
+                <p><strong>Current Regulation/ Requirement</strong></p>
+            </td>
+            <td width="450">
+                <p><strong>New Regulation/ Requirement</strong></p>
+            </td>
+            <td width="90">
+                <p><strong>Effective Dates</strong></p>
+            </td>
+            <td width="378">
+                <p><strong>Points for Consideration</strong></p>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td width="120">
+                <p><strong>Sleep policies and supervision</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>33.1 <a href="https://www.ontario.ca/laws/regulation/150137#BK46"><strong>(1)</strong></a> Every licensee shall ensure that a child who is younger than 12 months who receives child care at a child care centre it operates or at a premises where it oversees the provision of home child care is placed for sleep in a manner consistent with the recommendations set out in the document entitled "Joint Statement on Safe Sleep: Preventing Sudden Infant Deaths in Canada", published by the Public Health Agency of Canada, as amended from time to time, unless the child's physician recommends otherwise in writing. <a href="https://www.ontario.ca/laws/regulation/150137#s33p1s2"><strong>(2)</strong></a> Every licensee shall ensure that, if child care is provided for a child who regularly sleeps at a child care centre the licensee operates or at a premises where it oversees the provision of home child care, (a) an employee or the home child care provider periodically performs a direct visual check of each sleeping child by being physically present beside the child whole the child is sleeping and looking for indicators of distress or unusual behaviours; (b) there is sufficient lighting in the sleeping area or room for visual checks; and (c) there are written policies and procedures at the child care centre or home child care premises with respect to sleep, and the policies and procedures, (i) provide that children will be assigned to individual cribs or cots in accordance with this Regulation, (ii) provide that parents will be consulted respecting a child&rsquo;s sleeping arrangements at the time the child is enrolled and at any other appropriate time, such as at transitions between programs or rooms or upon a parent&rsquo;s request, (iii) provide that parents of children younger than 12 months will be advised of the licensee&rsquo;s obligation under subsection (1), (iv) provide that parents of children who regularly sleep at the child care centre or home child care premises will be advised of the centre&rsquo;s or agency&rsquo;s policies and procedures regarding children&rsquo;s sleep, (v) provide that the observance of any significant changes in a child's sleeping patterns or behaviours during sleep will be communicated to parents and will result in adjustments to the manner in which the child is supervised during sleep, and (vi) include details regarding the performance of direct visual checks, including how frequently direct visual checks will be performed and how direct visual checks will be documented. <a href="https://www.ontario.ca/laws/regulation/150137#s33p1s3"><strong>(3)</strong></a> In determining the matters described in clause (2) (c) (vi) in respect of children who are enrolled with a home child care agency and who receive child care at a home child care premises, the licensee shall consider parents' input, the sleep environment at the premises and the proximity of the sleeping area or room to the child care provider when the child is sleeping. <a href="https://www.ontario.ca/laws/regulation/150137#s33p1s4"><strong>(4)</strong></a> Every licensee shall ensure that in each child care centre it operates that has a separate area or room for sleeping, there is a system in place to immediately identify which children are present in the area or room. <a href="https://www.ontario.ca/laws/regulation/150137#s33p1s5"><strong>(5)</strong></a> Every licensee shall ensure that if electronic sleep monitoring devices are used at a child care centre it operates or at a premises where it oversees the provision of home child care, (a) each electronic sleep monitoring device is able to detect and monitor the sounds and, if applicable, video images, of every sleeping child; (b) the receiver unit of the electronic sleep monitoring device is actively monitored by employees at the child care centre or the home child care provider at all times; (c) each electronic sleep monitoring device is checked daily to ensure it is functioning properly; and (d) electronic sleep monitoring devices are not used as a replacement for the direct visual checks required under clause (2) (a)</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>Sleep policies for both licensed child care and home child care; children up to 12 months of age must be placed on their backs for sleep, parents must be advised of this requirement, this requirement can only be waived if a note from a medical doctor is submitted to the licensee and kept in the child&rsquo;s record</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Immunization</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>35. <a href="https://www.ontario.ca/laws/regulation/150137#s35s3"><strong>(3)</strong></a> Objections and medical reasons under subsection (2) shall be submitted in a form approved by the Minister</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>Requirements related to Immunization of children exemptions were amended to align with what is currently required in schools, as of August 29, 2016,</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Immunization</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>35. <a href="https://www.ontario.ca/laws/regulation/150137#s35s4"><strong>(4)</strong></a> An exemption under section (2) that was made before August 29, 2016 shall expire on September 1, 2017 unless a new objection or medical reasons are submitted in a form approved by the Minister before that date</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>Licensees who already have exemptions on file for existing staff, home childcare providers, and children already enrolled will have until September 1, 2017 to replace any exemptions already on file with the ministry form</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Serious occurrences</strong></p>
+            </td>
+            <td width="402">
+                <p>38. (a) Every licensee shall ensure that there are written policies and procedure with respect to serious occurrences in each child care centre operated by the licensee and each premises where it oversees the provision of home child care, and that those policies and procedures are followed in the centre or premises</p>
+            </td>
+            <td width="450">
+                <p>38. (a) Every licensee shall ensure that there are written policies and procedures with respect to serious occurrences in each child care centre operated by the licensee and each premises where it oversees the provision of home child care that address, as a minimum, how to identify, respond to and report a serious occurrence</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Serious occurrences</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>38. <a href="https://www.ontario.ca/laws/regulation/150137#s38s2"><strong>(2)</strong></a> Every licensee of a child care centre or home child care agency shall, (a) conduct an annual analysis of all serious occurrences that occurred in the previous year at each child care centre operated by the licensee and at each premises where the licensee oversees the provision of home child care; and (b) keep records of the actions taken in response to the analysis</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>Refer to the child care centre licensing manual, found on the child care licensing portal, for more information on requirements related to serious occurrences</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Anaphylactic policy</strong></p>
+            </td>
+            <td width="402">
+                <p>39. (1) 3. Development of an individualized plan, with input from a parent of the child and the child's physician, for each child with anaphylactic allergy that includes emergency procedures in respect of the child.</p>
+            </td>
+            <td width="450">
+                <p>39. <a href="https://www.ontario.ca/laws/regulation/150137#BK52"><strong>(1)</strong></a> 3. Development of an individualized plan for each child with an anaphylactic allergy who (i) receives child care at a child care centre the licensee operates, or (ii) is enrolled with a home child care agency and receives child care at a premises where it oversees the provision of home child care or in-home services.</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Anaphylactic policy</strong></p>
+            </td>
+            <td width="402">
+                <p>39. (2). The anaphylactic policy, the individual plan for a child with anaphylaxis and the emergency procedures in respect of the child shall be reviewed as follows: 1. By all employees, before they begin their employment. 2. By volunteers and students who will be providing temporary care for or supervision of children at the child care centre, before they begin providing that care or supervision. 3. By the home child care provider of a home child care premises, before the child is placed at that premises. 4. By volunteers and students who will be providing temporary care for or supervision of children at a home child care premises, before they begin providing that care or supervision. 5. By persons who are ordinarily residents of a home child care premises, or who are regularly at the premises, before the child is placed at that premises. 6. By each person described in paragraphs 1 to 5, at least annually after the first review and at any other time when substantive changes are made to the policy, plan or procedure.</p>
+            </td>
+            <td width="450">
+                <p>39. <a href="https://www.ontario.ca/laws/regulation/150137#s39s2"><strong>(2)</strong></a> The individualized plan referred to in paragraph 3 of subsection (1) shall, (a) be developed in consultation with a parent of the child and with any regulated health professional who is involved in the child&rsquo;s health care and who, in the parent&rsquo;s opinion, should be included in the consultation and (b) include a description of the procedures to be followed in the event of an allergic reaction or other medical emergency.</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>An individualized plan should be created in consultation with a parent of the child and any regulated health professional who is involved in the child&rsquo;s health care, and who, in the opinion of the parent, should be included in the consultation</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Children with medical needs</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>39.1 <a href="https://www.ontario.ca/laws/regulation/150137#BK53"><strong>(1)</strong></a> Every licensee shall develop an individualized plan for each child with medical needs who, (a) receives care at a child care centre it operates; or (b) is enrolled with a home child care agency and receives child care at a premises where it oversees the provision of home child care or in-home services. <a href="https://www.ontario.ca/laws/regulation/150137#ys39p1s2"><strong>(2)</strong></a> The individualized plan shall be developed in consultation with a parent of the child and with any regulated health professional who is involved in the child&rsquo;s health care and who, in the parent&rsquo;s opinion, should be included in the consultation. <a href="https://www.ontario.ca/laws/regulation/150137#ys39p1s3"><strong>(3)</strong></a> The plan shall include, (a) steps to be followed to reduce the risk of the child being exposed to any causative agents or situations that may exacerbate a medical condition or cause an allergic reaction or other medical emergency; (b) a description of any medical devices used by the child and any instructions related to its use; (c) a description of the procedures to be followed in the event of an allergic reaction or other medical emergency; (d) a description of the supports that will be available to the child in the child care centre or premises where the licensee oversees the provision of home child care or in-home services; and (e) any additional procedures to be followed when a child with a medical condition is part of an evacuation or participating in an off-site field trip. <a href="https://www.ontario.ca/laws/regulation/150137#ys39p1s4"><strong>(4)</strong></a> Despite subsection (1), a licensee is not required to develop an individualized plan under this section for a child with an anaphylactic allergy if the licensee has developed an individualized plan for the child under <a href="https://www.ontario.ca/laws/regulation/150137#BK52"><strong>section 39</strong></a> and the child is not otherwise a child with medical needs.</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>If a child has anaphylaxis and another medical condition, as of September 1, 2017, two plans will be needed (one to address each of the conditions present). These plans could be combined in a single document, however, the licensee must ensure that all the required information for each plan is included in that document</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+<h4><a name= "section25"></a>Nutrition</h4></div>
+    <table>
+        <thead>
+        <tr>
+            <td width="120">
+                <p><strong>Category in Regulation</strong></p>
+            </td>
+            <td width="402">
+                <p><strong>Current Regulation/ Requirement</strong></p>
+            </td>
+            <td width="450">
+                <p><strong>New Regulation/ Requirement</strong></p>
+            </td>
+            <td width="90">
+                <p><strong>Effective Dates</strong></p>
+            </td>
+            <td width="378">
+                <p><strong>Points for Consideration</strong></p>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td width="120">
+                <p><strong>Posting of menus and allergies</strong></p>
+            </td>
+            <td width="402">
+                <p>43. (3). Every licensee of a child care centre shall ensure that a list is posted in each cooking and serving area of each child care centre it operates that sets out the names of the children receiving child care in the child care centre who have food allergies or other food restrictions and their respective allergies or restrictions.</p>
+            </td>
+            <td width="450">
+                <p>43. <a href="https://www.ontario.ca/laws/regulation/150137#s43s3"><strong>(3)</strong></a> Every licensee of a child care centre shall ensure that, in each child care centre it operates, a list setting out the names or the children receiving child care in the child care centre who have food allergies or other food restrictions, and their respective allergies or restrictions is posted, (a) in each coking and serving area; (b) in each play area or play room; and (c) in any other area in which children may be present.</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>All allergies and food restrictions must be posted in all areas in which children are present</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+<h4><a name= "section26"></a>Program for Children</h4></div>
+    <table>
+        <thead>
+        <tr>
+            <td width="120">
+                <p><strong>Category in Regulation</strong></p>
+            </td>
+            <td width="402">
+                <p><strong>Current Regulation/ Requirement</strong></p>
+            </td>
+            <td width="450">
+                <p><strong>New Regulation/ Requirement</strong></p>
+            </td>
+            <td width="90">
+                <p><strong>Effective Dates</strong></p>
+            </td>
+            <td width="378">
+                <p><strong>Points for Consideration</strong></p>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td width="120">
+                <p><strong>Parent handbook</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>45. <a href="https://www.ontario.ca/laws/regulation/150137#BK61"><strong>(1)</strong></a> (a.1) Every licensee shall have a parent handbook for each child care centre or home child care agency it operates which shall include information about the requirement regarding supervision of volunteers and students set out in <a href="https://www.ontario.ca/laws/regulation/150137#BK19"><strong>subsection 11.1 (1)</strong></a> and about the policies and procedures required under <a href="https://www.ontario.ca/laws/regulation/150137#s11p1s2"><strong>subsection 11.1 (2)</strong></a></p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>Information added to the parent handbook</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Parent handbook</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>45. <a href="https://www.ontario.ca/laws/regulation/150137#BK61"><strong>(1)</strong></a> (a.2) Every licensee shall have a parent handbook for each child care centre or home child care agency it operates which shall include a copy of the licensee&rsquo;s policies and procedures required under section 45.1 regarding how parent&rsquo;s issues and concerns will be addressed</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>Information added to the parent handbook</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Parent handbook</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>45. <a href="https://www.ontario.ca/laws/regulation/150137#BK61"><strong>(1)</strong></a> (d) Every licensee shall have a parent handbook for each child care centre or home child care agency it operates which shall include, for a child care centre, a statement that the child care centre has emergency management policies and procedures described in <a href="https://www.ontario.ca/laws/regulation/150137#BK88"><strong>section 68.1</strong></a> and a statement addressing how parents will be notified if an emergency occurs</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>Information added to the parent handbook</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Parent issues and concerns</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p><a href="https://www.ontario.ca/laws/regulation/150137#ys45p1"><strong>45.1</strong></a> Every licensee shall ensure that there are written policies and procedures that set out how parents' issues and concerns will be addressed, including details regarding, (a) the steps for parents to follow when they have an issue or concern to bring forward to the licensee; (b) the steps to be followed by a licensee and its employees in responding to an issue or concern brought forward by a parent; and (c) when an initial response to the issue or concern will be provided.</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>Information added in regards to addressing parent issues and concerns</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Program requirements regarding activity, rest, sleep, outdoor play, etc.</strong></p>
+            </td>
+            <td width="402">
+                <p>47. (1) (a). Every licensee shall ensure that the program in each child care centre it operates is arranged so that infants not yet able to talk are separated from other children during active indoor and outdoor play periods</p>
+            </td>
+            <td width="450">
+                <p>Not Applicable</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>Clause revoked</p>
+                <p>Infants who are not yet able to walk do not have to be separated from other children indoors or outdoors as of August 29, 2016</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Program requirements regarding activity, rest, sleep, outdoor play, etc.</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>47. <a href="https://www.ontario.ca/laws/regulation/150137#ys47s1p1"><strong>(1.1)</strong></a> Every licensee of a child care centre shall ensure that where it operates a child care program that operates only before or after school, the program is arranged so that it includes at least 30 minutes of outdoor time each day, weather permitting, unless otherwise approved by a director or a physician or parent of the child advises otherwise in writing.</p>
+            </td>
+            <td width="90">
+                <p>1-Jan-17</p>
+            </td>
+            <td width="378">
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Program requirements regarding activity, rest, sleep, outdoor play, etc.</strong></p>
+            </td>
+            <td width="402">
+                <p>47. (2) Every licensee shall ensure that the program in each child care centre it operates is arranged so that, (a) each child in a licensed toddler or preschool group who receives child care for six hours or more in a day has a rest period not exceeding two hours in length; and (b) a child in a licensed toddler, preschool or kindergarten group is permitted to sleep, rest or engage in quiet activities based on the child&rsquo;s needs.</p>
+            </td>
+            <td width="450">
+                <p>47. <a href="https://www.ontario.ca/laws/regulation/150137#s47s2"><strong>(2)</strong></a> Every licensee shall ensure that the program in each Schedule 1 child care centre it operates is arranged so that, (a) each child in a licensed toddler or preschool group who receives child care for six hours or more in a day has a rest period each day not exceeding two hours in length; and (b) each child in a licensed toddler, preschool, or kindergarten group is permitted to sleep, rest, or engage in quiet activities based on the child&rsquo;s needs.</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>Program requirements in regards to sleep</p>
+                <p><strong>Impact on: licensed child care centres </strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Program requirements regarding activity, rest, sleep, outdoor play, etc.</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>47. <a href="https://www.ontario.ca/laws/regulation/150137#ys47s2p1"><strong>(2.1)</strong></a> Every licensee shall ensure that the program in each Schedule 2 child care centre it operates is arranged so that, (a) each child in a licensed preschool group who receives child care for six hours or more in a day has a rest period each day not exceeding two hours in length; and (b) each child in a licensed preschool or kindergarten group is permitted to sleep, rest or engage in quiet activities based on the child&rsquo;s needs.</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>Program requirements in regards to sleep</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Program requirements regarding activity, rest, sleep, outdoor play, etc.</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>47. <a href="https://www.ontario.ca/laws/regulation/150137#ys47s2p2"><strong>(2.2)</strong></a> Every licensee shall ensure that for each licensed family age group for whom it provides child care, the program is arranged so that, (a) each child in the group who is 24 months or older but younger than five years who receives child care or six hours or more in a day has a rest period each day not exceeding two hours in length; (b) each child in the group who is 24 months or older but younger than seven years is permitted to sleep, rest or engage in quiet activities based on the child&rsquo;s needs; and (c) the program provided to the group, including the play activity space, reflects the safety and development of the needs of the children that are in the group.</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>Program requirements in regards to sleep</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Prohibited practices</strong></p>
+            </td>
+            <td width="402">
+                <p>48. (b) No licensee shall permit, with respect to a child receiving child care at a child care centre it operates or at a premises where it oversees the provision of child care, deliberate use of harsh or degrading measures on the child that would humiliate the child or undermine his or her self-respect</p>
+            </td>
+            <td width="450">
+                <p><a href="https://www.ontario.ca/laws/regulation/150137#BK65"><strong>48</strong></a>. (b) No licensee shall permit, with respect to a child receiving child care a ta child care centre it operates or at a premises where it oversees the provision of child care, physical restraint of the child, such as confining the child to a high chair, car seat, stroller or other device for the purposes of discipline or in lieu of supervision, unless the physical restraint is for the purpose of preventing a child from hurting himself, herself or someone else, and is used only as a least resort and only until the risk of injury is no longer imminent</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>Examples of prohibited actions: confining a child to a high chair, car seat, stroller, or other devices for the purpose discipline</p>
+                <p><strong>Impact on: Across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Prohibited practices</strong></p>
+            </td>
+            <td width="402">
+                <p>48. (c) No licensee shall permit, with respect to a child receiving child care at a child care centre it operates or at a premises where it oversees the provision of child care, depriving the child of basic needs including food, shelter, clothing, or bedding</p>
+            </td>
+            <td width="450">
+                <p><a href="https://www.ontario.ca/laws/regulation/150137#BK65"><strong>48</strong></a>. (c) No licensee shall permit, with respect to a child receiving child care at a child care centre it operates or at a premises where it oversees the provision of child care, locking the exits of the child care centre or home child care premises for the purpose of confining the child, or confining the child in an area or room without adult supervision, unless such confinement occurs during an emergency and is required as part of the licensee&rsquo;s emergency management policies and procedures</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>State the reasoning for confinement in emergency management policies and procedures</p>
+                <p><strong>Impact on: Across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Prohibited practices</strong></p>
+            </td>
+            <td width="402">
+                <p>48. (d) No licensee shall permit, with respect to a child receiving child care at a child care centre it operates or at a premises where it oversees the provision of child care, locking the exits of the child care centre or home child care premises for the purpose if confining the child</p>
+            </td>
+            <td width="450">
+                <p><a href="https://www.ontario.ca/laws/regulation/150137#BK65"><strong>48</strong></a>. (d) No licensee shall permit, with respect to a child receiving child care at a child care centre it operates or at a premises where it oversees the provision of child care, use of harsh or degrading measures or threats or use of derogatory language directed at or used in the presence of a child that would humiliate, shame or frighten the child or undermine his or her self-respect, dignity or self-worth</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p><strong>Impact on: Across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Prohibited practices</strong></p>
+            </td>
+            <td width="402">
+                <p>48. (e) No licensee shall permit, with respect to a child receiving child care at a child care centre it operates or at a premises where it oversees the provision of child care, using a locked or lockable room or structure to confine the child if he or she has been separated from other children</p>
+            </td>
+            <td width="450">
+                <p><a href="https://www.ontario.ca/laws/regulation/150137#BK65"><strong>48</strong></a>. (e) No licensee shall permit, with respect to a child receiving child care at a child care centre it operates or at a premises where it oversees the provision of child care, depriving the child of basic needs including food, drink, shelter, toilet use, clothing or bedding</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p><strong>Impact on: Across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Prohibited practices</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p><a href="https://www.ontario.ca/laws/regulation/150137#BK65"><strong>48</strong></a>. (f) No licensee shall permit, with respect to a child receiving child care at a child care centre it operates or at a premises where it oversees the provision of child care, inflicting any bodily harm on children including making children eat or drink against their will</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p><strong>Impact on: Across sector</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Review of policies and procedures</strong></p>
+            </td>
+            <td width="402">
+                <p>50. (1) Every licensee shall review the policies and procedures required under section 49 at least annually. (2) Every licensee of a child care centre shall ensure that the policies and procedures required under section 49 are reviewed as follows at every child care centre it operates: 1. With employees, before they begin their employment. 2. With volunteers or students who will be interacting with children at the child care centre, before they begin to volunteer or before they begin their educational placement. 3. With each person described in paragraph 1 or 2, at least annually after the first review and at any other time when substantive changes are made to the policies and procedures. (3) Every licensee of a home child care agency shall ensure that the policies and procedures required under section 49 are reviewed as follows: 1. With each home child care provider at a premises where the licensee oversees the provision of home child care, before any child is placed at that premises. 2. With volunteers or students who will be interacting with children at the child care centre, before they begin to volunteer or before they begin their educational placement. 3. With persons who are ordinarily residents of the premises or regularly at the premises, before they begin interacting with children. 4. With persons who work at the home child care agency or with home child care visitors, before they begin their employment. 5. With each person described in paragraph 1, 2, 3, or 4, at least annually after the first review and at any other time when substantive changes are made to the policies and procedures. (4) Every licensee shall ensure that a record is kept with the date of each review conducted under subsections (1), (2) and (3) and that each record is signed by the person who made the review, or in the case of a review made by a licensee that is a corporation, by an officer or employee of the corporation who had knowledge of the review</p>
+            </td>
+            <td width="450">
+                <p>Not Applicable</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p><strong>Clause Revoked</strong></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+<h4><a name= "section27"></a>Staff Qualifications</h4></div>
+    <table>
+        <thead>
+        <tr>
+            <td width="120">
+                <p><strong>Category in Regulation</strong></p>
+            </td>
+            <td width="402">
+                <p><strong>Current Regulation/ Requirement</strong></p>
+            </td>
+            <td width="450">
+                <p><strong>New Regulation/ Requirement</strong></p>
+            </td>
+            <td width="90">
+                <p><strong>Effective Dates</strong></p>
+            </td>
+            <td width="378">
+                <p><strong>Points for Consideration</strong></p>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td width="120">
+                <p><strong>Qualified employees</strong></p>
+            </td>
+            <td width="402">
+                <p>54. (1) Every licensee shall employ in each child care centre it operates at least one person described in subsection (2) for each licensed age group that is the maximum group size or less for that age category as set out in Schedule 1 or 2. (2) For the purposes of subsection (1), the person is, (a) a member in good standing of the College or Early Childhood Educators; or (b) otherwise approved by a director.</p>
+            </td>
+            <td width="450">
+                <p>54. <a href="https://www.ontario.ca/laws/regulation/150137#BK70"><strong>(1)</strong></a> The following are qualified employees for any age group: 1. An employee who is a member in good standing of the College of Early Childhood Educators. 2. An employee who is otherwise approved by a director. <a href="https://www.ontario.ca/laws/regulation/150137#s54s2"><strong>(2)</strong></a> With respect to a licensed junior school age group or a licensed primary/junior school age group that includes only children who are junior school age, the following are also qualified employees: 1. An employee who has a diploma or degree in child and youth care. 2. An employee who has a diploma or degree in recreation and leisure services. 3. A member in good standing with the Ontario College of Teachers</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>(2) Qualifications for the junior or primary/junior age group employees</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Qualified employees</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>54. <a href="https://www.ontario.ca/laws/regulation/150137#ys54s3"><strong>(3)</strong></a> Despite amendments made to this Regulation on September 1, 2017 respecting the proportion of employees at a child care centre that are required to be qualified employees, a licensee is not required to terminate the employment of any person who was employed prior to that date solely to satisfy the requirement.</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>Simply to meet the previous section</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Health assessments and immunization of staff</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>57. <a href="https://www.ontario.ca/laws/regulation/150137#s57s4"><strong>(4)</strong></a> Objections and medical reasons under subsection (3) must be submitted in a form to be approved by the Minister</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>In regards to employees</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Health assessments and immunization of staff</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>57. <a href="https://www.ontario.ca/laws/regulation/150137#s57s5"><strong>(5)</strong></a> An exemption under subsection (3) that was made before August 29, 2016 shall expire on September 1, 2017 unless a new objection or medical reasons are submitted in a form approved by the Minister before that date.</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>In regards to employees</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Staff training and development</strong></p>
+            </td>
+            <td width="402">
+                <p>58. (2) Every licensee shall ensure that every employee working at a child care centre and every provider of home child care or in-home services has a valid certification in standard first aid, including infant and child CPR, issued by a training agency recognized by the Workplace Safety and Insurance Board or otherwise approved by a director.</p>
+            </td>
+            <td width="450">
+                <p>58. <a href="https://www.ontario.ca/laws/regulation/150137#s58s2"><strong>(2)</strong></a> Every licensee of a child care centre or home child care agency shall ensure that the following persons have a valid certification in standard first aid, including infant and child CPR, issued by a training agency recognized by the Workplace Safety and Insurance board: 1. Every supervisor of a child care centre. 2. Every employee of a child care centre who may be counted for the purposes of meeting the ratios required under section 8. 3. Every provider of home child care or in-home services.</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>On Sept 1, 2017 &ldquo;or 8.1&rdquo; is added after &ldquo;section 8&rdquo; of subsection 58 (2).</p>
+                <p>This includes all volunteer parents such as duty parents at cooperative child care centres who are counted towards ratio requirements</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Staff training and development</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>58. <a href="https://www.ontario.ca/laws/regulation/150137#s58s3"><strong>(3)</strong></a> A person is not required to have the certification mentioned in <a href="https://www.ontario.ca/laws/regulation/150137#s58s2"><strong>subsection (2)</strong></a> if the director is satisfied that the person would not be able to obtain the certification due to a disability.</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>Administrative staff, custodians, and other employees who are not counted towards meeting ratio requirements do not have to meet the first aid certification requirements</p>
+                <p><strong>Impact on: licensed child care centres </strong></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+<h4><a name= "section28"></a>Staff Screening Measures and Criminal Reference Checks</h4></div>
+    <table>
+        <thead>
+        <tr>
+            <td width="120">
+                <p><strong>Category in Regulation</strong></p>
+            </td>
+            <td width="402">
+                <p><strong>Current Regulation/ Requirement</strong></p>
+            </td>
+            <td width="450">
+                <p><strong>New Regulation/ Requirement</strong></p>
+            </td>
+            <td width="90">
+                <p><strong>Effective Dates</strong></p>
+            </td>
+            <td width="378">
+                <p><strong>Points for Consideration</strong></p>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td width="120">
+                <p><strong>Other persons at child care centre</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>61.1 <a href="https://www.ontario.ca/laws/regulation/150137#BK79"><strong>(1)</strong></a> Every licensee of a child care centre shall obtain, in respect of any person who provides child care or other services to a child who receives child care at the child care centre, other than a person described in subsection 60 (1): (a) an offence declaration form the person; or (b) an attestation from the person&rsquo;s employer or from the person or entity who retained the person&rsquo;s services that, (i) the employer, person or entity has obtained and reviewed a vulnerable sector check from that person, (ii) the vulnerable sector check did not list any convictions for any offences under the <a href="http://laws-lois.justice.gc.ca/eng/acts/c-46/"><strong><em>Criminal Code (Canada)</em></strong></a> listed in subparagraph 1 (ii) of <a href="https://www.ontario.ca/laws/statute/14c11#BK10"><strong>subsection 9 (1) of the <em>Child Care and Early Years Act, 2014</em></strong></a><em>.</em><a href="https://www.ontario.ca/laws/regulation/150137#ys61p1s2"><strong>(2)</strong></a> A licensee shall obtain the offence declaration or attestation described in subsection (1) in respect of a person, (a) before the person begins interacting with children at the child care centre; and (b) every year thereafter, no later than 15 days after the anniversary date of the most recent offence declaration or attestation, if the person continues to provide such child care or other services</p>
+            </td>
+            <td width="90">
+                <p>1-Jan-17</p>
+            </td>
+            <td width="378">
+                <p>In regards to subsection 61.1 (2)(b), every year thereafter cannot be later than 15 days after the anniversary date of the most recent offence declaration or confirmation</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>When new reference check or offence declaration needed</strong></p>
+            </td>
+            <td width="402">
+                <p>62. (2) Each offence declaration shall be current within 15 days of the anniversary date of the previous offence declaration or vulnerable sector check and shall address the period since the most recent offence declaration or vulnerable sector check.</p>
+            </td>
+            <td width="450">
+                <p>62. <a href="https://www.ontario.ca/laws/regulation/150137#s62s2"><strong>(2)</strong></a> Each offence declaration shall address the period since the most recent offence declaration or vulnerable sector check and must be obtained by the licensee no later than 15 days after the anniversary date of the most recent offence declaration or vulnerable sector check</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>Offence declaration must state the period of most recent police check or declaration, and be obtained no later than 15 days after the anniversary</p>
+                <p><strong>Impact on: licensed child care centres</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Policies and procedures regarding reference checks</strong></p>
+            </td>
+            <td width="402">
+                <p>65. (a) Every licensee shall ensure that there are written policies and procedures that address the process of obtaining a vulnerable sector check</p>
+            </td>
+            <td width="450">
+                <p><a href="https://www.ontario.ca/laws/regulation/150137#BK83"><strong>65</strong></a>. (a) Every licensee shall ensure that there are written policies and procedures that address the process for obtaining a vulnerable sector check or attestation.</p>
+            </td>
+            <td width="90">
+                <p>1-Jan-17</p>
+            </td>
+            <td width="378">
+                <p>Written policies and procedures that address this process</p>
+                <p><strong>Impact on: licensed child care centres </strong></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+<h4><a name= "section29"></a>Emergency Preparedness</h4></div>
+    <table>
+        <thead>
+        <tr>
+            <td width="120">
+                <p><strong>Category in Regulation</strong></p>
+            </td>
+            <td width="402">
+                <p><strong>Current Regulation/ Requirement</strong></p>
+            </td>
+            <td width="450">
+                <p><strong>New Regulation/ Requirement</strong></p>
+            </td>
+            <td width="90">
+                <p><strong>Effective Dates</strong></p>
+            </td>
+            <td width="378">
+                <p><strong>Points for Consideration</strong></p>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td width="120">
+                <p><strong>Emergency management</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>68.1 <a href="https://www.ontario.ca/laws/regulation/150137#BK88"><strong>(1)</strong></a> In this section, "emergency&rdquo; at a child care centre means an urgent or pressing situation in which immediate action is required to ensure the safety of children and adults in the child care centre. <a href="https://www.ontario.ca/laws/regulation/150137#ys68p1s2"><strong>(2)</strong></a> Subject to subsection (3), every licensee shall ensure that each child care centre it operates has written policies and procedures regarding the management of emergencies that, (a) set out the roles and responsibilities of staff in case of an emergency; (b) require that additional support, including consideration of special medical needs, be provided in respect of any child or adult who needs it in case of an emergency; (c) identify the location of a safe and appropriate off-site meeting place, in case of evacuation; (d) set out the procedures that will be followed to ensure children&rsquo;s safety and maintain appropriate levels of supervision; (e) set out requirements regarding communications with parents; (f) set out requirements regarding contacting appropriate local emergency response agencies; and (g) address recovery from an emergency, including, (i) requiring that staff, children and parents be debriefed after the emergency, (ii) setting out how to resume normal operations of the child care centre, and (iii) setting out how to support children and staff who may have experienced distress during the emergency.<a href="https://www.ontario.ca/laws/regulation/150137#ys68p1s3"><strong>(3)</strong></a> Despite subsection (2), a licensee is not required to have emergency management policies and procedures described in that subsection if, (a) the child care centre is located in a school, the licensee uses or adopts the school&rsquo;s emergency management policies and procedures and those policies and procedures address the same matters as described in subsection (2); or (b) the licensee is otherwise required to have a plan that addresses the same matters as described in subsection (2).</p>
+            </td>
+            <td width="90">
+                <p>1-Sep-17</p>
+            </td>
+            <td width="378">
+                <p>If the licensee is already subject to requirements for emergency management plans or captured under any other legislated federal, provincial, or municipal requirements for emergency management plans, then the licensee will not be subject to the new requirements</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+<h4><a name= "section221"></a>Administrative Matters</h4></div>
+    <table>
+        <tbody>
+        <tr>
+            <td width="120">
+                <p><strong>Category in Regulation</strong></p>
+            </td>
+            <td width="402">
+                <p><strong>Current Regulation/ Requirement</strong></p>
+            </td>
+            <td width="450">
+                <p><strong>New Regulation/ Requirement</strong></p>
+            </td>
+            <td width="90">
+                <p><strong>Effectives Dates</strong></p>
+            </td>
+            <td width="378">
+                <p><strong>Points for Consideration</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Records regarding children</strong></p>
+            </td>
+            <td width="402">
+                <p>72. (1) 8. The child&rsquo;s previous history of communicable diseases, conditions requiring medical attention and, in the case of a child who is not in attendance at a school within the meaning of the <em>Education Act</em>, immunization or any statement from a parent or legally qualified medical practitioner as to why the child should not be immunized</p>
+            </td>
+            <td width="450">
+                <p>72. <a href="https://www.ontario.ca/laws/regulation/150137#s72s1"><strong>(1)</strong></a> 8. The child&rsquo;s previous history of communicable diseases, conditions requiring medical attention and, in the case of a child who is not in attendance at a school or private school within the meaning of the <a href="https://www.ontario.ca/laws/statute/90e02"><strong><em>Education Act</em></strong></a><strong>,</strong> immunization or any statement or required form completed by a parent or legally qualified medical practitioner as to why the child should not be immunized</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>Added private school to the section</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Records regarding children</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>72. <a href="https://www.ontario.ca/laws/regulation/150137#s72s1"><strong>(1)</strong></a> 9.1. A copy of any individualized plan</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>To be part of an up-to-date record for inspection of an inspector or program advisor</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Records regarding children</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>72. <a href="https://www.ontario.ca/laws/regulation/150137#s72s1"><strong>(1)</strong></a> 12. A copy of written recommendation referred to in <a href="https://www.ontario.ca/laws/regulation/150137#BK46"><strong>subsection 33.1 (1)</strong></a> from a child&rsquo;s physician regarding the placement of a child for sleep</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>To be part of an up-to-date record for inspection of an inspector or program advisor</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+ 
+</div>
+
+<div id="section3" class="container-fluid">
+<div class="panel panel-info">
+  <div class="panel-heading">  
+  
+<h3>Part III: Administrative Penalties</h3></div>
+<div class="panel panel-info">
+  <div class="panel-heading">  
+<h4><a name="section31">Table 1</a></h4></div>
+    <table>
+        <tbody>
+        <tr>
+            <td width="480">
+                <p><strong>Column 1- Contravened provisions</strong></p>
+            </td>
+            <td width="480">
+                <p><strong>Column 2- Description of Contravention</strong></p>
+            </td>
+            <td width="480">
+                <p><strong>Column 3- Amount of penalty, in dollars</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="480">
+                <p>Regulation, s. 8</p>
+            </td>
+            <td width="480">
+                <p>Ratios and maximum groups sizes, child care centre</p>
+            </td>
+            <td width="480">
+                <p>2000 x number of children that exceed the number specified in section 8</p>
+            </td>
+        </tr>
+        <tr>
+            <td width="480">
+                <p>Regulation, s. 8.1</p>
+            </td>
+            <td width="480">
+                <p>Licensed family age groups</p>
+            </td>
+            <td width="480">
+                <p>2000 x number of children that exceed the number specified in section 8.1</p>
+            </td>
+        </tr>
+        <tr>
+            <td width="480">
+                <p>Regulation, s. 9</p>
+            </td>
+            <td width="480">
+                <p>Home child care group size</p>
+            </td>
+            <td width="480">
+                <p>2000 x number of children that exceed the number specified in section 9</p>
+            </td>
+        </tr>
+        <tr>
+            <td width="480">
+                <p>Regulation, s. 11</p>
+            </td>
+            <td width="480">
+                <p>Supervision by adult at all times</p>
+            </td>
+            <td width="480">
+                <p>2,000</p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="panel panel-info">
+  <div class="panel-heading">  
+<h4><a name="section32">Table 2</a></h4></div>
+    <table>
+        <thead>
+        <tr>
+            <td width="480">
+                <p><strong>Column 1- Contravened Provisions</strong></p>
+            </td>
+            <td width="480">
+                <p><strong>Column 2- Description of Contravention</strong></p>
+            </td>
+            <td width="480">
+                <p><strong>Column 3- Amount of penalty, in dollars</strong></p>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td width="480">
+                <p>Regulation, clause 38 (b)</p>
+            </td>
+            <td width="480">
+                <p>Reporting of serious occurrence</p>
+            </td>
+            <td width="480">
+                <p>2,000</p>
+            </td>
+        </tr>
+        <tr>
+            <td width="480">
+                <p>Regulation, subclause 40 (1) (b) (ii) and clause 40 (1) (d)</p>
+            </td>
+            <td width="480">
+                <p>Administration of drugs or medications</p>
+            </td>
+            <td width="480">
+                <p>2,000</p>
+            </td>
+        </tr>
+        <tr>
+            <td width="480">
+                <p>Regulation, s. 48</p>
+            </td>
+            <td width="480">
+                <p>Prohibited practices</p>
+            </td>
+            <td width="480">
+                <p>2,000</p>
+            </td>
+        </tr>
+        <tr>
+            <td width="480">
+                <p>Regulation, s. 72 (1), (2). (3)</p>
+            </td>
+            <td width="480">
+                <p>Records regarding children</p>
+            </td>
+            <td width="480">
+                <p>750</p>
+            </td>
+        </tr>
+        <tr>
+            <td width="480">
+                <p>Regulation, s. 74</p>
+            </td>
+            <td width="480">
+                <p>Records regarding home child care providers</p>
+            </td>
+            <td width="480">
+                <p>750</p>
+            </td>
+        </tr>
+        <tr>
+            <td width="480">
+                <p>Regulation, s. 75</p>
+            </td>
+            <td width="480">
+                <p>Copies of agreements</p>
+            </td>
+            <td width="480">
+                <p>750</p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="section4" class="container-fluid">
+<div class="panel panel-info">
+  <div class="panel-heading">  
+  
+<h3>Part IV: Miscellaneous</h3></div>
+    <table>
+        <thead>
+        <tr>
+            <td width="120">
+                <p><strong>Category in Regulation</strong></p>
+            </td>
+            <td width="402">
+                <p><strong>Current Regulation/ Requirement</strong></p>
+            </td>
+            <td width="450">
+                <p><strong>New Regulation/ Requirement</strong></p>
+            </td>
+            <td width="90">
+                <p><strong>Effective Dates</strong></p>
+            </td>
+            <td width="378">
+                <p><strong>Points for Consideration</strong></p>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td width="120">
+                <p><strong>Fee for licence</strong></p>
+            </td>
+            <td width="402">
+                <p>81. (1) The fee payable by an applicant for a license other than a renewal is $15. (2) The fee payable for the renewal of a licence is (a) $10, where the application for the renewal of the licence is made on or before the anniversary date in the year in which the licence or the last renewal expires; and (b) $25, where the application for the renewal of the licence is made after the anniversary date in the year in which the licence or the last renewal expires.</p>
+            </td>
+            <td width="450">
+                <p>81. <a href="https://www.ontario.ca/laws/regulation/150137#BK105"><strong>(1)</strong></a> The fees payable in respect of an application for a licence to operate a child care centre shall be determined by reference to the maximum number of children for whom child care may be provided at the child care centre, as set out in Column 1 of the Table to this subsection, and are as follows: 1. For an application for a new licence, the fee is the amount set out in Column 2 of the Table. 2. For an application for a renewal of a licence, which may include revisions to the licence, the fee is the amount set out in Column 3 of the Table. For an application for a revised licence at any time other than upon renewal, the fee is, (i) $25, or (ii) if in the opinion of the program adviser, the revision requires him or her to visit the child care centre, the mount set out in Column 4 of the Table.</p>
+            </td>
+            <td width="90">
+                <p>1-Jul-16</p>
+            </td>
+            <td width="378">
+                <p>This regulation is in regards to a child care centre</p>
+                <p><strong>Impact on: licensed child care centres </strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Fee for licence</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>81. <a href="https://www.ontario.ca/laws/regulation/150137#s81s2"><strong>(2)</strong></a> The fees payable in respect of an application for a licence to operate a home child care agency shall be determined by reference to the number of premises where the agency oversees the provision of home child care, as set out in Column 1 of the Table to this subsection, and are as follows: 1. For an application for a new licence, the fee is the amount set out in Column 2 of the Table. 2. For an application for a renewal of a licence, which may include revisions to the licence, the fee is the amount set out in Column 3 of the Table. 3. For an application for a revised licence at any time other than upon renewal, the fee is, (i) $25, or (ii) if in the opinion of the program adviser, the revision requires him or her to visit the home child care agency, the amount set out in Column 4 of the Table.</p>
+            </td>
+            <td width="90">
+                <p>1-Jul-16</p>
+            </td>
+            <td width="378">
+                <p>This regulation is in regards to a home child care agency</p>
+                <p><strong>Impact on: licensed home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Fee for licence</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>81. <a href="https://www.ontario.ca/laws/regulation/150137#s81s3"><strong>(3)</strong></a> If the licensee does not apply to renew a licence and submit the renewal fee before its expiry, the fees applicable to a new licence shall apply.</p>
+            </td>
+            <td width="90">
+                <p>1-Jul-16</p>
+            </td>
+            <td width="378">
+                <p>If home child care provider does not apply for renewal before expiry, new licence fees will apply</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Publication of information</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p><a href="https://www.ontario.ca/laws/regulation/150137#BK110"><strong>85. 1</strong></a> For the purposes of paragraph 3 of <a href="https://www.ontario.ca/laws/statute/14c11#s19s2"><strong>subsection 19 (2) of the Act</strong></a>, the following is prescribed as information the Minister may publish on a government website. 1. Information compiled in connection with a licensing inspection. 2. Information about verified complaints filed n respect of unlicensed child care providers.</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>The Minister may publish information that connects to a licensing inspection and/or any complaints of an unlicensed child care</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Term of licence</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p><a href="https://www.ontario.ca/laws/regulation/150137#BK111"><strong>85. 2</strong></a> For the purposes of clause 22 (1) (a) of the Act, a director may issue or renew a licence for a maximum of two years</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Child care and early years program and services plans</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p>87.1 <a href="https://www.ontario.ca/laws/regulation/150137#BK114"><strong>(1)</strong></a> For the purposes of clause 51 (2) (c) of the Act, child care and early year&rsquo;s programs and services plans shall include steps to implement the plan. <a href="https://www.ontario.ca/laws/regulation/150137#s87p1s2"><strong>(2)</strong></a> For the purposes of <a href="https://www.ontario.ca/laws/statute/14c11#s51s3"><strong>subsection 51 (3) of the Act</strong></a>, child care and early years programs and services plans shall be updated at least every five years. <a href="https://www.ontario.ca/laws/regulation/150137#s87p1s3"><strong>(3)</strong></a> For the purposes of <a href="https://www.ontario.ca/laws/statute/14c11#s51s4"><strong>subsection 51 (4) of the Act</strong></a>, the service system manager shall consult with family support programs.</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>Child care and early years programs and services plans must be updated at least every five years</p>
+                <p><strong>Impact on: child care and early years programs</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="120">
+                <p><strong>Prescribed offences</strong></p>
+            </td>
+            <td width="402">
+                <p>Not Applicable</p>
+            </td>
+            <td width="450">
+                <p><a href="https://www.ontario.ca/laws/regulation/150137#BK116"><strong>88.1</strong></a> The following provisions are prescribed for the purposes of paragraph 13 of <a href="https://www.ontario.ca/laws/statute/14c11#s78s1"><strong>Subsection 78 (1) of the Act</strong></a><strong>: </strong> (Duty to disclose if not licensed and to retain record of disclosure). 2. <a href="https://www.ontario.ca/laws/statute/14c11#BK16"><strong>Section 15 of the Act</strong></a> (Duty to provide receipt for payment). 3. <a href="https://www.ontario.ca/laws/regulation/150137#BK14"><strong>Section 8 of this Regulation</strong></a> (Ratios and maximum group sizes, child care centre). 4. <a href="https://www.ontario.ca/laws/regulation/150137#BK18"><strong>Section 11 of this Regulation</strong></a> (Supervision by adult at all times). 5. <a href="https://www.ontario.ca/laws/regulation/150137#BK65"><strong>Section 48 of this Regulation</strong></a> (Prohibited practices). 6. <a href="https://www.ontario.ca/laws/regulation/150137#BK77"><strong>Section 60 of this Regulation</strong></a> (Duty to obtain initial reference check)</p>
+            </td>
+            <td width="90">
+                <p>29-Aug-16</p>
+            </td>
+            <td width="378">
+                <p>List of prescribed offences</p>
+                <p><strong>Impact on: licensed child care centres and home child care</strong></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">  
+  
+<h3><a name="section41">Child Care License Fees</a></h3></div>
+    <table>
+        <tbody>
+        <tr>
+            <td colspan="4" width="1439">
+                <p><strong>Effective January 1, 2016</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="360">
+                <p><strong>Column 1- Maximum number of children</strong></p>
+            </td>
+            <td width="360">
+                <p><strong>Column 2- Fee for a new license, in dollars</strong></p>
+            </td>
+            <td width="360">
+                <p><strong>Column 3- Fee for renewal of a license, in dollars</strong></p>
+            </td>
+            <td width="360">
+                <p><strong>Column 4- Revision fee, in dollars</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="360">
+                <p>0-24</p>
+            </td>
+            <td width="360">
+                <p>200</p>
+            </td>
+            <td width="360">
+                <p>100</p>
+            </td>
+            <td width="360">
+                <p>50</p>
+            </td>
+        </tr>
+        <tr>
+            <td width="360">
+                <p>25-49</p>
+            </td>
+            <td width="360">
+                <p>250</p>
+            </td>
+            <td width="360">
+                <p>120</p>
+            </td>
+            <td width="360">
+                <p>65</p>
+            </td>
+        </tr>
+        <tr>
+            <td width="360">
+                <p>50-74</p>
+            </td>
+            <td width="360">
+                <p>300</p>
+            </td>
+            <td width="360">
+                <p>140</p>
+            </td>
+            <td width="360">
+                <p>75</p>
+            </td>
+        </tr>
+        <tr>
+            <td width="360">
+                <p>75-99</p>
+            </td>
+            <td width="360">
+                <p>350</p>
+            </td>
+            <td width="360">
+                <p>170</p>
+            </td>
+            <td width="360">
+                <p>90</p>
+            </td>
+        </tr>
+        <tr>
+            <td width="360">
+                <p>100-124</p>
+            </td>
+            <td width="360">
+                <p>400</p>
+            </td>
+            <td width="360">
+                <p>200</p>
+            </td>
+            <td width="360">
+                <p>100</p>
+            </td>
+        </tr>
+        <tr>
+            <td width="360">
+                <p>125 or more</p>
+            </td>
+            <td width="360">
+                <p>450</p>
+            </td>
+            <td width="360">
+                <p>230</p>
+            </td>
+            <td width="360">
+                <p>115</p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+
+            <h3><a name="section42">Home Child Care License Fees</a></h3></div>
+        <table>
+            <tbody>
+            <tr>
+                <td colspan="4" width="1439">
+                    <p><strong>Effective January 1, 2016</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td width="360">
+                    <p><strong>Column 1- Number of premises</strong></p>
+                </td>
+                <td width="360">
+                    <p><strong>Column 2- Fee for a new license, in dollars</strong></p>
+                </td>
+                <td width="360">
+                    <p><strong>Column 3- Fee for renewal of a license, in dollars</strong></p>
+                </td>
+                <td width="360">
+                    <p><strong>Column 4- Revision fee, in dollars</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td width="360">
+                    <p>0-25</p>
+                </td>
+                <td width="360">
+                    <p>200</p>
+                </td>
+                <td width="360">
+                    <p>100</p>
+                </td>
+                <td width="360">
+                    <p>50</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="360">
+                    <p>26-50</p>
+                </td>
+                <td width="360">
+                    <p>250</p>
+                </td>
+                <td width="360">
+                    <p>120</p>
+                </td>
+                <td width="360">
+                    <p>65</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="360">
+                    <p>51-75</p>
+                </td>
+                <td width="360">
+                    <p>300</p>
+                </td>
+                <td width="360">
+                    <p>140</p>
+                </td>
+                <td width="360">
+                    <p>75</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="360">
+                    <p>76-100</p>
+                </td>
+                <td width="360">
+                    <p>350</p>
+                </td>
+                <td width="360">
+                    <p>170</p>
+                </td>
+                <td width="360">
+                    <p>90</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="360">
+                    <p>101-125</p>
+                </td>
+                <td width="360">
+                    <p>400</p>
+                </td>
+                <td width="360">
+                    <p>200</p>
+                </td>
+                <td width="360">
+                    <p>100</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="360">
+                    <p>126 or more</p>
+                </td>
+                <td width="360">
+                    <p>450</p>
+                </td>
+                <td width="360">
+                    <p>230</p>
+                </td>
+                <td width="360">
+                    <p>115</p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+
+            <h3><a name="section43">Schedule 1</a></h3></div>
+        <table>
+            <tbody>
+            <tr>
+                <td colspan="5" width="1439">
+                    <p><strong>Schedule 1: Effective August 29, 2016</strong></p>
+                    <p><strong>Schedule 1 Child Care Centre</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td width="288">
+                    <p><strong>Column 1- Name of age category</strong></p>
+                </td>
+                <td width="288">
+                    <p><strong>Column 2- Age range</strong></p>
+                </td>
+                <td width="288">
+                    <p><strong>Column 3- Ratio of employees to children</strong></p>
+                </td>
+                <td width="288">
+                    <p><strong>Column 4- Maximum number of children in group</strong></p>
+                </td>
+                <td width="288">
+                    <p><strong>Column 5- Number of qualified employees needed</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td width="288">
+                    <p>Infant</p>
+                </td>
+                <td width="288">
+                    <p>Younger than 18 month</p>
+                </td>
+                <td width="288">
+                    <p>3 to 10</p>
+                </td>
+                <td width="288">
+                    <p>10</p>
+                </td>
+                <td width="288">
+                    <p>1/3</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="288">
+                    <p>Toddler</p>
+                </td>
+                <td width="288">
+                    <p>18 months or older but younger than 30 months</p>
+                </td>
+                <td width="288">
+                    <p>1 to 5</p>
+                </td>
+                <td width="288">
+                    <p>15</p>
+                </td>
+                <td width="288">
+                    <p>1/3</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="288">
+                    <p>Preschool</p>
+                </td>
+                <td width="288">
+                    <p>30 months or older but younger than 6 years</p>
+                </td>
+                <td width="288">
+                    <p>1 to 8</p>
+                </td>
+                <td width="288">
+                    <p>24</p>
+                </td>
+                <td width="288">
+                    <p>2/3</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="288">
+                    <p>Kindergarten</p>
+                </td>
+                <td width="288">
+                    <p>44 months or older but younger than 7 years</p>
+                </td>
+                <td width="288">
+                    <p>1 to 13</p>
+                </td>
+                <td width="288">
+                    <p>26</p>
+                </td>
+                <td width="288">
+                    <p>1 /2</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="288">
+                    <p>Primary/ Junior School Age</p>
+                </td>
+                <td width="288">
+                    <p>68 months or older but younger than 13 years</p>
+                </td>
+                <td width="288">
+                    <p>1 to 15</p>
+                </td>
+                <td width="288">
+                    <p>30</p>
+                </td>
+                <td width="288">
+                    <p>1 /2</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="288">
+                    <p>Junior School Age</p>
+                </td>
+                <td width="288">
+                    <p>9 years or older but younger than 13 years</p>
+                </td>
+                <td width="288">
+                    <p>1 to 20</p>
+                </td>
+                <td width="288">
+                    <p>20</p>
+                </td>
+                <td width="288">
+                    <p>1/1</p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <p>Schedule 2</p>
+        <table>
+            <tbody>
+            <tr>
+                <td colspan="4" width="1439">
+                    <p><strong>Schedule 2: Effective August 29, 2016</strong></p>
+                    <p><strong>Child Care Centre for Children with Special Needs</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td width="360">
+                    <p><strong>Column 1- Age range of age category</strong></p>
+                </td>
+                <td width="360">
+                    <p><strong>Column 2- Ratio to employees to children</strong></p>
+                </td>
+                <td width="360">
+                    <p><strong>Column 3- Maximum number of children in group</strong></p>
+                </td>
+                <td width="360">
+                    <p><strong>Column 4- Number of qualified employees needed</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td width="360">
+                    <p>2 years or older but younger than 6 years</p>
+                </td>
+                <td width="360">
+                    <p>1 to 4</p>
+                </td>
+                <td width="360">
+                    <p>4</p>
+                </td>
+                <td width="360">
+                    <p>1/1</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="360">
+                    <p>6 years or older by younger than 13 years</p>
+                </td>
+                <td width="360">
+                    <p>1 to 3</p>
+                </td>
+                <td width="360">
+                    <p>3</p>
+                </td>
+                <td width="360">
+                    <p>1/1</p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table>
+            <tbody>
+            <tr>
+                <td colspan="5" width="1439">
+                    <p><strong>Schedule 2: Effective September 1, 2017</strong></p>
+                    <p><strong>Schedule 2 Child Care Centre</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td width="288">
+                    <p><strong>Column 1- Name of age category</strong></p>
+                </td>
+                <td width="288">
+                    <p><strong>Column 2- Age range</strong></p>
+                </td>
+                <td width="288">
+                    <p><strong>Column 3- Ratio of employees to children</strong></p>
+                </td>
+                <td width="288">
+                    <p><strong>Column 4- Maximum number of children in group</strong></p>
+                </td>
+                <td width="288">
+                    <p><strong>Column 5- Number of qualified employees needed</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td width="288">
+                    <p><strong>Infant/ Toddler</strong></p>
+                </td>
+                <td width="288">
+                    <p>Younger than 24 months</p>
+                </td>
+                <td width="288">
+                    <p>Younger than 12 months: 1 to 3</p>
+                    <p>12 months or older but younger than 24 months: 1 to 4</p>
+                </td>
+                <td width="288">
+                    <p>12</p>
+                </td>
+                <td width="288">
+                    <p>2/3</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="288">
+                    <p><strong>Preschool</strong></p>
+                </td>
+                <td width="288">
+                    <p>24 months or older but younger than 5 years</p>
+                </td>
+                <td width="288">
+                    <p>1 to 8</p>
+                </td>
+                <td width="288">
+                    <p>24</p>
+                </td>
+                <td width="288">
+                    <p>2/3</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="288">
+                    <p><strong>Kindergarten</strong></p>
+                </td>
+                <td width="288">
+                    <p>44 months or older but younger than 7 years</p>
+                </td>
+                <td width="288">
+                    <p>1 to 13</p>
+                </td>
+                <td width="288">
+                    <p>26</p>
+                </td>
+                <td width="288">
+                    <p>1/2</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="288">
+                    <p><strong>Primary/ Junior School Age</strong></p>
+                </td>
+                <td width="288">
+                    <p>68 months or older but younger than 13 years</p>
+                </td>
+                <td width="288">
+                    <p>1 to 15</p>
+                </td>
+                <td width="288">
+                    <p>30</p>
+                </td>
+                <td width="288">
+                    <p>1/2</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="288">
+                    <p><strong>Junior School Age</strong></p>
+                </td>
+                <td width="288">
+                    <p>9 years or older but younger than 13 years</p>
+                </td>
+                <td width="288">
+                    <p>1 to 20</p>
+                </td>
+                <td width="288">
+                    <p>20</p>
+                </td>
+                <td width="288">
+                    <p>1/1</p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3><a name="reference"></a>References</h3> </div>
+        <table>
+            <td>
+                <p>&nbsp Ontario, G. o. (2015, December 3). Child Care and Early Years Act, 2014, S.O. 2014, c. 11, Sched. 1. Retrieved July 9, 2016, from Government of Ontario:
+                    https://www.ontario.ca/laws/statute/14c11
+
+                </p>
+                <p>&nbsp Ontario, G. o. (2016, July 1). O.Reg. 137/15: General. Retrieved July 9, 2016, from Government of Ontario: https://www.ontario.ca/laws/regulation/150137</p>
+            </td>
+        </table>
+    </div>
+<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+	    
+          
+  
+<footer>
+  <p><br><b>Created as partial fulfillment of the SSHRC project; by Bachelor of Early Program Development Students & Bachelor of Health Information Science Students, January-December 2016</p>
+  <br>Page Author: Tommy Le</b></p>
+</footer> 
+</div>
+</body>
+
+    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+
+	<script src="bootstrap3/js/bootstrap.js" type="text/javascript"></script>
+	
+	<!--  Plugins -->
+	<script src="assets/js/ct-paper-checkbox.js"></script>
+	<script src="assets/js/ct-paper-radio.js"></script>
+	<script src="assets/js/bootstrap-select.js"></script>
+	<script src="assets/js/bootstrap-datepicker.js"></script>
+	
+	<script src="assets/js/ct-paper.js"></script>    
+</html>

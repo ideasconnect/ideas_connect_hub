@@ -1,0 +1,818 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="assets/img/whitelogo.jpg">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<title>Recent Changes to 138/15</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    
+    <link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/ct-paper.css" rel="stylesheet"/>
+    <link href="assets/css/demo.css" rel="stylesheet" /> 
+        
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <script src="jquery-3.1.1.js"></script>
+      <link rel="icon" 
+      type="image/png" 
+      href="/assets/img/final5.png" />   
+</head>
+
+<script>
+  $(document).ready(function() {
+        
+                
+	/*Menu-toggle*/
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+
+    /*Scroll Spy*/
+    $('body').scrollspy({ target: '#spy', offset:80});
+
+    /*Smooth link animation*/
+    $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+                return false;
+            }
+        }
+    });
+        
+        });	
+        
+$(document).ready(function(){
+     $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('#back-to-top').fadeIn();
+            } else {
+                $('#back-to-top').fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        $('#back-to-top').click(function () {
+            $('#back-to-top').tooltip('hide');
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+        
+        $('#back-to-top').tooltip('show');
+
+});
+
+$(document).ready(function () {
+  var trigger = $('.hamburger'),
+      overlay = $('.overlay'),
+     isClosed = false;
+
+    trigger.click(function () {
+      hamburger_cross();      
+    });
+
+    function hamburger_cross() {
+
+      if (isClosed == true) {          
+        overlay.hide();
+        trigger.removeClass('is-open');
+        trigger.addClass('is-closed');
+        isClosed = false;
+      } else {   
+        overlay.show();
+        trigger.removeClass('is-closed');
+        trigger.addClass('is-open');
+        isClosed = true;
+      }
+  }
+  
+  $('[data-toggle="offcanvas"]').click(function () {
+        $('#wrapper').toggleClass('toggled');
+  });  
+});
+
+</script>
+
+<style>
+
+.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display:none;
+}
+
+
+body {
+	margin-top: -40px;
+	height: 100%
+}
+
+footer {
+    width: 100%;
+   
+}
+
+#header {
+	margin-left: 20px;
+	text-align: center;
+}
+
+.navbar-fixed-top {
+    height: 60px; /* Whatever you want. */
+}
+
+/* .thumbnail {
+    border: 0 none;
+    box-shadow: none;
+} */ 
+
+ #wrapper {
+  padding-left: 250px;
+  transition: all 0.4s ease 0s;
+}
+
+.well {
+	width: 1150px;
+	margin: auto;
+	background-color: white;
+	border: 15px solid;
+}
+
+#welloutside{
+  border: 0px;
+}
+
+#sidebar-wrapper {
+  margin-left: -251px;
+  left: 250px;
+  width: 250px;
+  background: #000;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+}
+
+#wrapper.active {
+  padding-left: 0;
+}
+
+#wrapper.active #sidebar-wrapper {
+  left: 0;
+}
+
+#page-content-wrapper {
+  width: 100%;
+}
+
+#logo {
+  margin-left: -25px;
+  margin-top: -20px;
+}
+
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    position: relative; 
+    line-height: 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+.sidebar-nav li:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 3px;
+    background-color: #1c1c1c;
+    -webkit-transition: width .2s ease-in;
+      -moz-transition:  width .2s ease-in;
+       -ms-transition:  width .2s ease-in;
+            transition: width .2s ease-in;
+
+}
+
+.sidebar-nav li:nth-child(2):before {
+    background-color: #ec1b5a;   
+}
+.sidebar-nav li:nth-child(3):before {
+    background-color: #79aefe;   
+}
+.sidebar-nav li:nth-child(4):before {
+    background-color: #314190;   
+}
+.sidebar-nav li:nth-child(5):before {
+    background-color: #279636;   
+}
+.sidebar-nav li:nth-child(6):before {
+    background-color: #7d5d81;   
+}
+.sidebar-nav li:nth-child(7):before {
+    background-color: #ead24c;   
+}
+.sidebar-nav li:nth-child(8):before {
+    background-color: #2d2366;   
+}
+.sidebar-nav li:nth-child(9):before {
+    background-color: #35acdf;   
+}
+
+.sidebar-nav li:hover:before,
+.sidebar-nav li.open:hover:before {
+    width: 100%;
+    -webkit-transition: width .2s ease-in;
+      -moz-transition:  width .2s ease-in;
+       -ms-transition:  width .2s ease-in;
+            transition: width .2s ease-in;
+
+}
+
+.sidebar-nav li a {
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    padding: 10px 15px 10px 30px;    
+}
+
+
+.sidebar-nav li a:hover,
+.sidebar-nav li.active {
+  color: #fff;
+  background: rgba(255,255,255,0.2);
+  text-decoration: none;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  line-height: 60px;
+  font-size: 18px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+
+
+.content-header {
+  height: 65px;
+  line-height: 65px;
+}
+
+.content-header h1 {
+  margin: 0;
+  margin-left: 20px;
+  line-height: 65px;
+  display: inline-block;
+}
+
+#menu-toggle {
+
+}
+
+.btn-menu {
+  color: #000;
+} 
+
+.inset {
+  padding: 20px;
+}
+
+@media (max-width:767px) {
+
+#wrapper {
+  padding-left: 0;
+}
+
+#sidebar-wrapper {
+  left: 0;
+}
+
+#wrapper.active {
+  position: relative;
+  left: 250px;
+}
+
+#wrapper.active #sidebar-wrapper {
+  left: 250px;
+  width: 250px;
+  transition: all 0.4s ease 0s;
+}
+
+#menu-toggle {
+  display: inline-block;
+}
+
+.inset {
+  padding: 15px;
+}
+
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 3px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+#helpbtn {
+  margin-left: 65px;
+    width: 50%;
+}
+
+h2 {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 48px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+
+}
+
+</style>
+
+<body id="wrapper" data-spy="scroll" data-target="#spy" >
+  <div class="">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper" class="">
+        <nav id="spy">
+            <ul class="sidebar-nav nav">
+                <li class="sidebar-brand active">  <a href="" onclick="return false" disabled><img src="assets/img/changes22111.png" id ="logo" width="242" height="67" align="center"></a>
+
+		<li><a href="#section1">Part II: Schools Subject to Section 259 or 259.1 of the Act</a></li>
+          <li><a href="#section2">Part III: Determinations Regarding Extended Day and Third Party Programs</a></li>
+             <li><a href="#section3">Part IV: Extended Day Programs - Calculation of Fees</a></li>
+                <li><a href="#section4">Part VI: Third Party Programs - Miscellaneous</a></li>
+                <li><a href="#reference">References</a></li>
+          <li><a href="assets/pdf/changes22111.pdf"><font color="orange"><span class="glyphicon glyphicon-save"></span> Download PDF</font></a></li>
+          <li><a href="charts.html"><font color="orange"><span class="glyphicon glyphicon-align-justify"></span> Back to Charts</font></a></li>
+         <br><br>
+          
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" id="helpbtn">
+              Help Guide
+          </button>   <br><br>
+          <center><a href="/"> <img src="assets/img/drkgreenvariant.png" width="200" height="200"></a></center>
+      <!--    <a href ="http://www.eceprc.ca/contact-us.html"><button type="button" class="btn btn-warning " data-toggle="modal" data-target="#myModal" id="helpbtn">
+              Contact Us
+          </button></a>  --> 
+            </ul>
+        </nav>
+    </div>
+ 
+    
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Help Guide</h4>
+      </div>
+   
+      
+      <div class="modal-body">
+        <b>Difference between Act and Regulations:</b><br>
+        An <b>Act</b> is a legal document providing a general or broad description of legal policies.<br><br>
+
+        <b>Regulations</b> are guidelines associated with an Act that guide how provisions of an Act are applied and should be followed.
+       <br><br>
+      <b>Difference between Legislation and Regulation:</b><br>
+       <b>Legislation</b> is law passed by a legislative body.<br>
+<b>Regulation</b> is a set of rules or guidelines issued by an executive body such as government agencies or regulatory boards in compliance with the law. 
+<br><br>
+•	Parliaments pass laws. They are called legislation. <br>
+•	Then government regulators have to enforce the law. They look at the law and work out the nitty-gritty details that need to be followed in order for the law to be followed.
+
+ <hr>
+     
+     
+     
+        The original document can be viewed <a href="https://www.ontario.ca/laws/regulation/110221"><b>here</b></a>.
+        We also provide a downloadable PDF of this chart <a href="assets/pdf/changes22111.pdf"><b>here</b></a>. The PDF version will allow users to input their comments.
+        <br><b>Note:</b> To view headings in a PDF file click the ribbon icon on the left <img src="assets/img/bookmark.png">
+       <hr>
+     
+      
+      
+      The navigation bar on the left side is sectioned off in two parts. The white text allows users to instantly jump to the Parts found within the <i>Child Care and Early Years Act, 2014</i>. The orange text provides the reader with options to further aid them. <br>
+      <br>
+      Hyperlinks have been placed throughout the document that will link back to specific sections within the <i>Child Care and Early Years Act, 2014</i>. 
+      These links will be indicated by their <font color =  #68B3C8><b>blue colouring and bold lettering.</b></font>
+       <hr>
+      
+      
+    
+     
+      <b>Windows:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!-- <b>Mac:</b> --> <br>  
+      Press <button type="button" class="btn btn-secondary">Ctrl</button> and <button type="button" class="btn btn-secondary">+</button> to zoom in. 	<!-- &nbsp;	&nbsp;Press <button type="button" class="btn btn-secondary">Cmd</button> and <button type="button" class="btn btn-secondary">+</button> to zoom in. --> <br><br>
+      Press <button type="button" class="btn btn-secondary">Ctrl</button> and <button type="button" class="btn btn-secondary">-</button> to zoom out. <!--	&nbsp; Press <button type="button" class="btn btn-secondary">Cmd</button> and <button type="button" class="btn btn-secondary">-</button> to zoom out. --> <br><br>
+      
+      <b>Mac:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!-- <b>Mac:</b> --> <br>  
+      Press <button type="button" class="btn btn-secondary">Cmd</button> and <button type="button" class="btn btn-secondary">+</button> to zoom in.<br><br>
+      Press <button type="button" class="btn btn-secondary">Cmd</button> and <button type="button" class="btn btn-secondary">-</button> to zoom out.  <br><br>
+      
+      
+      <!--
+      <div class="modal-body" id="mac">
+      <b>Mac:</b><br>  
+      Press the <button type="button" class="btn btn-secondary">Cmd</button> and <button type="button" class="btn btn-secondary">+</button> to zoom in. <br><br>
+      Press the <button type="button" class="btn btn-secondary">Cmd</button> and <button type="button" class="btn btn-secondary">-</button> to zoom out. <br><br>
+      </div>-->
+      
+      <b>Warning:</b> This may readjust and hide sections on the navigation bar to the left. If this occurs, the navigation bar becomes scrollable. You may also zoom out in order to see the rest of the navigation bar.
+       </div>
+    
+      <div class="modal-footer">
+      	<br>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <br><br>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- Page content -->
+    <div id="page-content-wrapper" class="">
+
+       
+<div class="page-header" id="header">
+  <div class="well" id="welloutside">
+	<div class ="well">
+     <h2>Summary of Most Recent Changes to the Education Act<br><small>Ontario Regulation 221/11: Extended Day and Third Party Programs</small></h2>
+ </div>
+ </div>
+ </div>
+
+    
+<div id="section1" class="container-fluid">
+  
+<div class="panel panel-info">
+  <div class="panel-heading">
+  <h3>Part II: Schools Subject to Section 259 or 259.1 of the Act</h3></div>
+<!-- <h3><a name ="part1"></a>Part I: Purposes and Interpretation</h3> -->
+<table>
+    <thead>
+    <tr>
+        <td width="102">
+            <p><strong>Category in Regulation</strong></p>
+        </td>
+        <td width="414">
+            <p><strong>Current Regulation/ Requirement</strong></p>
+        </td>
+        <td width="456">
+            <p><strong>New Regulation/ Requirement</strong></p>
+        </td>
+        <td width="90">
+            <p><strong>Effective Dates</strong></p>
+        </td>
+        <td width="382">
+            <p><strong>Points for Consideration</strong></p>
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td width="102">
+            <p><strong>Schools subject to s.259 (1) of the Act</strong></p>
+        </td>
+        <td width="414">
+            <p>Not Applicable</p>
+        </td>
+        <td width="456">
+            <p><a href="https://www.ontario.ca/laws/regulation/110221#BK3"><strong>2</strong></a>. <a href="https://www.ontario.ca/laws/regulation/110221#s2s1p1"><strong>(1.1)</strong></a> Every board shall, beginning in the 2017-18 school year in every elementary school of the board in which instruction is given in any part of the primary division or junior division, operate an extended day program or ensure the operation of a third party program under <a href="https://www.ontario.ca/laws/statute/90e02#BK413"><strong>subsection 259.1 (1) of the Act</strong></a> for pupils of the board who are enrolled in grades 1 to 6.</p>
+        </td>
+        <td width="90">
+            <p>29-Aug-16</p>
+        </td>
+        <td width="382">
+            <p><strong><a href="https://www.ontario.ca/laws/statute/90e02#BK413">Subsection 259.1 (1) of the Education Act</a></strong>: Subject to the regulations, policies and guidelines made under this Part, every board shall do one of the following on every school day, other than professional activity days, outside the time when classes are operated in the school, for each student enrolled in grades 1 to 6: 1. Operate an extended day program. 2. Ensure that a third party program is operated by a person or entity other than a board, on every school day,</p>
+            <p><strong>Impact on: elementary schools in Ontario</strong></p>
+        </td>
+    </tr>
+    <tr>
+        <td width="102">
+            <p><strong>Exceptions</strong></p>
+        </td>
+        <td width="414">
+            <p><a href="https://www.ontario.ca/laws/regulation/110221#s3s1"><strong>3. (1)</strong></a> Despite <a href="https://www.ontario.ca/laws/regulation/110221#BK3"><strong>section 2</strong></a>, a board is not required in a school year to operate or ensure the operation of the before school portion, the after school portion, or both portions of an extended day program or a third party program in a school of the board if the board concludes under section 3.1 that it is exempt from the requirement with respect to the portion or portions for that school year with respect to the school. <a href="https://www.ontario.ca/laws/regulation/110221#s3s2"><strong>(2)</strong></a> REVOKED: O.Reg. 343/11, s. 3 (2). <a href="https://www.ontario.ca/laws/regulation/110221#s3s3"><strong>(3)</strong></a> A board is not required to operate an extended day program or ensure the operation of a third party program in the following circumstances: 1. A board is not required to operate an extended day program for pupils in junior kindergarten in a school or ensure the operation of a third party program for such pupils in the school if, pursuant to a policy of the board approved on or before June 26<sup>th</sup>, 2014, the school offers only French immersion, starting in kindergarten or later. 2. A board is not required to operate an extended day program for pupils in kindergarten in a school or ensure the operation of a third party program for such pupils in the school if, pursuant to a policy of the board approved on or before June 26, 2014, the school offers only French immersion, starting in grade 1 or later. 3. A board is not required to operate an extended day program or ensure the operation of a third party program in a school in a school year if the school is identified in a policy or guideline issued by the Minister pursuant to paragraph 3.0.0.1 of <a href="https://www.ontario.ca/laws/statute/90e02#BK10"><strong>subsection 8 (1)</strong></a> of the Act, and published on a Government of Ontario website, as a school that is not required to operate full day junior kindergarten or kindergarten for the school year, due to facility or other operational barriers to the board&rsquo;s ability to operate full day junior kindergarten or kindergarten in that school in that school year. 4. The Toronto District School Board is not required to operate an extended day program or ensure the operation of a third party program in Thorncliffe Park Public School. 5. The Hastings and Prince Edward District School Board is not required to operate an extended day program or ensure the operation of a third party program in Harry J. Clarke Public School.</p>
+        </td>
+        <td width="456">
+            <p><a href="https://www.ontario.ca/laws/regulation/110221#ys3s1"><strong>3. (1)</strong></a> Despite <a href="https://www.ontario.ca/laws/regulation/110221#BK3"><strong>section 2</strong></a>, a board is not required in a school year to operate or ensure the operation of the before school portion, the after school portion or both portions of an extended day program or a third party program in a school of the board if there is an agreement that such operation is not needed or the school year in the school between, (a) the board; (b) any First Nation that has an agreement, under <a href="https://www.ontario.ca/laws/statute/90e02#BK166"><strong>section 188 of the Act</strong></a>, with the board relating to one or more pupils in the school; and (c) the service system manager designated under the <a href="https://www.ontario.ca/laws/statute/14c11"><strong><em>Child Care and Early Years Act, 2014</em></strong></a> for the service area where the school is located. <a href="https://www.ontario.ca/laws/regulation/110221#ys3s2"><strong>(2)</strong></a> Before coming to an agreement described in subsection (1), the board shall carry out consultations in accordance with section 4 in order to assess the viability of and demand for the portion or portions that would be affected by such an agreement. <a href="https://www.ontario.ca/laws/regulation/110221#ys3s3"><strong>(3)</strong></a> Despite subsection (1), if a board is not able to enter into an agreement described in subsection (1) by the last day of April in each year, the board shall operate or ensure the operation of the before school portion, the after school portion, or both portions of an extended day program or a third party program in the next school year. <a href="https://www.ontario.ca/laws/regulation/110221#ys3s4"><strong>(4)</strong></a> Despite subsections (1) and (2), section 3 and 3.1, as they read on March 30, 2017, continue to apply to a board that is not operating an extended day program or ensuring the operation of a third party program in the 2016-17 school year until the end of the school year.</p>
+        </td>
+        <td width="90">
+            <p>1-Apr-17</p>
+        </td>
+        <td width="382">
+            <p><strong><a href="https://www.ontario.ca/laws/statute/90e02#BK166">Section 188 of Education Act</a></strong>: A board may enter into an agreement with,</p>
+            <p>(a) the Crown in right of Canada; or</p>
+            <p>(b) a band, the council of the band, or an education authority where such band is authorized by the Crown in right of Canada to provide education for Indians,</p>
+            <p>to provide for Indian pupils, for the period specified in the agreement, accommodation, instruction and special services in the schools of the board, and such agreement shall provide for the payment by the Crown in right of Canada, the band, the council of the band or the education authority, as the case may be, of fees calculated in accordance with the regulation governing the fees payable by Canada.</p>
+            <p><strong>Impact on: elementary schools in Ontario</strong></p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</div>
+
+    <div class="panel panel-info" id="section2">
+        <div class="panel-heading">
+            <h3>Part III: Determinations Regarding Extended Day and Third Party Programs</h3></div>
+        <table>
+            <tbody>
+            <tr>
+                <td width="102">
+                    <p><strong>Category in Regulation</strong></p>
+                </td>
+                <td width="414">
+                    <p><strong>Current Regulation/ Requirement</strong></p>
+                </td>
+                <td width="456">
+                    <p><strong>New Regulation/ Requirement</strong></p>
+                </td>
+                <td width="90">
+                    <p><strong>Effective Dates</strong></p>
+                </td>
+                <td width="384">
+                    <p><strong>Points for Consideration</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td width="102">
+                    <p><strong>Plans for provision of extended day or third party programs</strong></p>
+                </td>
+                <td width="414">
+                    <p><a href="https://www.ontario.ca/laws/regulation/110221/v9#BK9"><strong>4. (2)</strong></a> (d) Parents whose children are enrolled in junior kindergarten or kindergarten and, if relevant, whose children are enrolled in the primary or junior divisions, or parents who intend to enrol their children in junior kindergarten or kindergarten and, if relevant, in the primary or junior divisions, in the next school year, and who have provided their contact information to the board</p>
+                </td>
+                <td width="456">
+                    <p><a href="https://www.ontario.ca/laws/regulation/110221/#s4s2"><strong>4. (2)</strong></a> (d) Parents whose children are enrolled in junior kindergarten to grade 6 or who intend to enrol their children in junior kindergarten to grade 6 in the next school year, and who have provided their contact information to the board</p>
+                </td>
+                <td width="90">
+                    <p>29-Aug-16</p>
+                </td>
+                <td width="384">
+                    <p>Board to consult with these parents</p>
+                    <p><strong>Impact: school boards and parents</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td width="102">
+                    <p><strong>Determinations</strong></p>
+                </td>
+                <td width="414">
+                    <p><a href="https://www.ontario.ca/laws/regulation/110221/v9#BK10"><strong>5. (1)</strong></a> 2. The schools in which the board will ensure that a third party program will be operated in the next school year for pupils enrolled in junior kindergarten or kindergarten</p>
+                </td>
+                <td width="456">
+                    <p><a href="https://www.ontario.ca/laws/regulation/110221/#BK9"><strong>5. (1) </strong></a>2. The schools in which the board will ensure that a third party program will be operated in the next school year for pupils enrolled in junior kindergarten to grade 6</p>
+                </td>
+                <td width="90">
+                    <p>29-Aug-16</p>
+                </td>
+                <td width="384">
+                    <p>Paragraph 2 of subsection 5 (1) of the Regulation is amended by striking out &ldquo;junior kindergarten or kindergarten&rdquo; and substituting &ldquo;junior kindergarten to grade 6&rdquo;</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="102">
+                    <p><strong>Determinations</strong></p>
+                </td>
+                <td width="414">
+                    <p><a href="https://www.ontario.ca/laws/regulation/110221/v9#BK10"><strong>5. (1)</strong></a> 3. (iv) any non-instructional days on which the board anticipates it will operate the program for pupils enrolled in junior kindergarten or kindergarten and, if relevant, other pupils enrolled in the primary or junior divisions</p>
+                </td>
+                <td width="456">
+                    <p><a href="https://www.ontario.ca/laws/regulation/110221/#BK9"><strong>5. (1)</strong></a> 3. (iv) any non-instructional days on which the board anticipates it will operate the program for pupils enrolled in junior kindergarten to grade 6</p>
+                </td>
+                <td width="90">
+                    <p>29-Aug-16</p>
+                </td>
+                <td width="384">
+                    <p>Subparagraph 3. (iv) of subsection 5 (1) of the Regulation is amended by striking out &ldquo;junior kindergarten or kindergarten and, if relevant, other pupils enrolled in the primary or junior divisions&rdquo; and substituting &ldquo;junior kindergarten to grade 6&rdquo;.</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="102">
+                    <p><strong>Posting of fees and other information</strong></p>
+                </td>
+                <td width="414">
+                    <p><a href="https://www.ontario.ca/laws/regulation/110221/v9#BK12"><strong>7. (5)</strong></a> If a board will not operate an extended day program or ensure the operation of a third party program in a school of the board in the next school year due to its conclusion under <a href="https://www.ontario.ca/laws/regulation/110221/v9#BK7"><strong>section 3.1</strong></a> that it is exempt from the requirement to do so, the board shall, before the last day of April, do the following: 1. Post that information on the board&rsquo;s website 2. Provide that information in writing to those parents described in clause 4 (2) (d) who have enrolled or intend to enroll their children in the school.</p>
+                </td>
+                <td width="456">
+                    <p><a href="https://www.ontario.ca/laws/regulation/110221/#s7s5">7. <strong>(5)</strong></a> If a board will not operate an extended day program or ensure the operation of a third party program in a school of the board in the next school year due to an agreement described in <a href="https://www.ontario.ca/laws/regulation/110221/#BK6"><strong>subsection 3 (1)</strong></a>, the board shall, before the last day of April, do the following: 1. Post that information on the board&rsquo;s website 2. Provide that information in writing to those parents described in clause 4 (2) (d) who have enrolled or intend to enroll their children in the school</p>
+                </td>
+                <td width="90">
+                    <p>1-Apr-17</p>
+                </td>
+                <td width="384">
+                    <p>Subsection 7 (5) of the Regulation is amended by striking out &ldquo;due to its conclusion under section 3.1 that it is exempt from the requirement to do so&rdquo; in the portion before paragraph 1 and substituting &ldquo;due to an agreement described in subsection 3 (1)&rdquo;</p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3><a name="section3"></a>Part IV: Extended Day Programs - Calculation of Fees</h3> </div>
+            <table>
+                <tbody>
+                <tr>
+                    <td width="102">
+                        <p><strong>Category in Regulation</strong></p>
+                    </td>
+                    <td width="420">
+                        <p><strong>Current Regulation/ Requirement</strong></p>
+                    </td>
+                    <td width="450">
+                        <p><strong>New Regulation/ Requirement</strong></p>
+                    </td>
+                    <td width="90">
+                        <p><strong>Effective Dates</strong></p>
+                    </td>
+                    <td width="384">
+                        <p><strong>Points for Consideration</strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="102">
+                        <p><strong>Extended Day Programs- Calculation of Fees</strong></p>
+                    </td>
+                    <td width="420">
+                        <p><strong>See </strong><a href="https://www.ontario.ca/laws/regulation/110221/v9#BK14"><strong>subsections 16</strong></a><strong> &ndash; </strong><a href="https://www.ontario.ca/laws/regulation/110221/v9#BK19"><strong>20.1</strong></a></p>
+                    </td>
+                    <td width="450">
+                        <p>Not Applicable</p>
+                    </td>
+                    <td width="90">
+                        <p>1-July-17</p>
+                    </td>
+                    <td width="384">
+                        <p>Part IV of the Regulation is revoked</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3><a name="section4"></a>Part VI: Third Party Programs - Miscellaneous</h3> </div>
+        <table>
+            <tbody>
+            <tr>
+                <td width="102">
+                    <p><strong>Category in Regulation</strong></p>
+                </td>
+                <td width="420">
+                    <p><strong>Current Regulation/ Requirement</strong></p>
+                </td>
+                <td width="450">
+                    <p><strong>New Regulation/ Requirement</strong></p>
+                </td>
+                <td width="90">
+                    <p><strong>Effective Dates</strong></p>
+                </td>
+                <td width="384">
+                    <p><strong>Points for Consideration</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td width="102">
+                    <p><strong>Criteria regarding third party programs</strong></p>
+                </td>
+                <td width="420">
+                    <p><a href="https://www.ontario.ca/laws/regulation/110221/v9#BK28"><strong>27. (1)</strong></a> For the purposes of paragraph 3 of section 259.1 of the Act, a board shall ensure that a third party program operated in a school of the board meets the criteria prescribed by this section</p>
+                </td>
+                <td width="450">
+                    <p><a href="https://www.ontario.ca/laws/regulation/110221/#BK27"><strong>27. (1)</strong></a>For the purposes of section 259.1 of the Act, a board shall ensure that a third party program operated in a school of the board meets the criteria prescribed by this section</p>
+                </td>
+                <td width="90">
+                    <p>29-Aug-16</p>
+                </td>
+                <td width="384">
+                    <p>Subsection 27 (1) of the Regulation is amended by striking out &ldquo;paragraph 3 of&rdquo;.</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="102">
+                    <p><strong>Criteria regarding third party programs</strong></p>
+                </td>
+                <td width="420">
+                    <p><a href="https://www.ontario.ca/laws/regulation/110221/v9#BK28"><strong>27. (2)</strong></a> 2. The operator is a corporation that has an agreement with the Minister under the <a href="https://www.ontario.ca/laws/statute/14c11"><strong><em>Child Care and Early Years Act, 2014</em></strong></a><strong> f</strong>or the establishment of a child care centre.</p>
+                </td>
+                <td width="450">
+                    <p><a href="https://www.ontario.ca/laws/regulation/110221/#s27s2"><strong>Section 27. (2)</strong></a> 2. The operator provides an authorized recreational and skill building program which offers only an after school program which does not exceed three hours in duration each day.</p>
+                </td>
+                <td width="90">
+                    <p>29-Aug-16</p>
+                </td>
+                <td width="384">
+                    <p>Third Party criteria; only after school program</p>
+                    <p><strong>Impact on: Third Party programs</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td width="102">
+                    <p><strong>Definition</strong></p>
+                </td>
+                <td width="420">
+                    <p>Not Applicable</p>
+                </td>
+                <td width="450">
+                    <p><a href="https://www.ontario.ca/laws/regulation/110221/#s27s4"><strong>Section 27. (4)</strong></a> In this section, &ldquo;authorized recreational and skill building programs" means authorized recreational and skill building programs as defined in <a href="https://www.ontario.ca/laws/statute/14c11/#s2s1"><strong>subsection 2 (1) of the <em>Child Care and Early Years Act, 2014</em>.</strong></a></p>
+                </td>
+                <td width="90">
+                    <p>29-Aug-16</p>
+                </td>
+                <td width="384">
+                    <p>In <a href="https://www.ontario.ca/laws/statute/14c11/#s2s1"><strong>subsection 2 (1)</strong></a> &ldquo;authorized recreational and skill building programs" means programs that meet the description set out in subsection 6 (4).</p>
+                    <p>Subsection 6 (4) includes programs: 1. Primary purpose is to provide child care, 2. The program includes activities that promote recreational, artistic, musical, or athletic skills or provide religious, cultural, or linguistic instruction, 3. The program is not operated at a person&rsquo;s home, 4. The child care is provided for children who are six years or older or if the child care is provided on or after September 1 in a calendar year, and the child will become six years of age in that year, 5. The program meets any other criteria prescribed by the regulations&nbsp;</p>
+                    <p><strong>Impact on: recreational and skill building programs</strong></p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3><a name="references"></a>References</h3> </div>
+        <table>
+            <td>
+            <p>Ontario, G. o. (2015, December 3). <em>Child Care and Early Years Act, 2014, S.O. 2014, c. 11, Sched. 1.</em> Retrieved July 9, 2016, from Government of Ontario: https://www.ontario.ca/laws/statute/14c11</p>
+            <p>Ontario, G. o. (2016, June 9). <em>Education Act, R.S.O. 1990, c. E.2.</em> Retrieved June 12, 2016, from Government of Ontario: https://www.ontario.ca/laws/statute/90e02</p>
+            <p>Ontario, G. o. (2016, May 9). <em>Ontario Regulation 221/11 Extended Day and Third Party Programs.</em> Retrieved from Government of Ontario: https://www.ontario.ca/laws/regulation/110221</p>
+            </td>
+        </table>
+    </div>
+</div>
+<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+	    
+          
+  
+<footer>
+  <p><br><b>Created as partial fulfillment of the SSHRC project; by Bachelor of Early Program Development Students & Bachelor of Health Information Science Students, January-December 2016</p>
+  <br>Page Author: Tommy Le</b></p>
+</footer> 
+</div>
+</body>
+
+    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+
+	<script src="bootstrap3/js/bootstrap.js" type="text/javascript"></script>
+	
+	<!--  Plugins -->
+	<script src="assets/js/ct-paper-checkbox.js"></script>
+	<script src="assets/js/ct-paper-radio.js"></script>
+	<script src="assets/js/bootstrap-select.js"></script>
+	<script src="assets/js/bootstrap-datepicker.js"></script>
+	
+	<script src="assets/js/ct-paper.js"></script>    
+</html>

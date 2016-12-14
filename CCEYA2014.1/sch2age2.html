@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Family Age Grouping - Sch 2: 12 months and older but younger than 24 months</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
+    <link href="css/ct-paper.css" rel="stylesheet"/>
+    <link href="css/demo.css" rel="stylesheet" />
+
+    <link rel="icon"
+          type="image/png"
+          href="../assets/img/final5.png" />
+
+</head>
+<style>
+    @import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
+    /* HERE STARTS THE MAGIC */
+    header {
+        text-align: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        margin: auto;
+        background-image: url("assets/img/mount.jpeg");
+
+        position: fixed;
+        width:100%;
+        z-index: 1;
+        height: 88%;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+    }
+
+    .content-wrapper{
+        background-color: white;
+        top: 87%;
+        min-height: 12%;
+        position:absolute;
+        z-index: 2;
+        width: 100%;
+    }
+    /* HERE ENDS THE MAGIC */
+    header .container {
+        padding-top: 150px;
+        padding-bottom: 50px;
+    }
+
+    header img {
+        display: block;
+        margin: 0 auto 20px;
+    }
+
+    header .intro-text .name {
+        display: block;
+        text-transform: uppercase;
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 2em;
+        font-weight: 700;
+    }
+
+    header .intro-text .skills {
+        font-size: 1.25em;
+        font-weight: 300;
+    }
+
+    section {
+        padding: 100px 0;
+        width: 100%;
+    }
+
+    section h2 {
+        margin: 0;
+        font-size: 3em;
+    }
+    hr.star-light,
+    hr.star-primary {
+        margin: 25px auto 30px;
+        padding: 0;
+        max-width: 250px;
+        border: 0;
+        border-top: solid 5px;
+        text-align: center;
+    }
+
+    hr.star-light:after,
+    hr.star-primary:after {
+        content: "\f005";
+        display: inline-block;
+        position: relative;
+        top: -.8em;
+        padding: 0 .25em;
+        font-family: FontAwesome;
+        font-size: 2em;
+    }
+    body {
+        overflow-x: hidden;
+        background: white; /* For browsers that do not support gradients */
+        background: -webkit-linear-gradient(lightblue, white); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(lightblue, white); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(lightblue, white); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(lightblue, white); /* Standard syntax (must be last) */
+        background-repeat: no-repeat;
+    }
+
+    #info {
+        background-color: #F1E2C5;
+        color: black;
+    }
+
+    #partnership {
+        color: black;
+    }
+
+    section.success{
+        background-color: #18bc9c;
+        color: #fff;
+    }
+    .overlay {
+        display: none;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(250,250,250,.8);
+        z-index: 1;
+    }
+    #jumbotron {
+        background-image: url("assets/img/mountsm.jpg");
+        background-repeat: no-repeat;
+        background-size:cover;
+        color: white;
+        margin: auto;
+        margin-top: -90px;
+    }
+
+    .jumbotron {
+        background-color: white;
+    }
+
+    #logo {
+        margin-top: -14px;
+    }
+
+    #home {
+        margin-top: 4px;
+    }
+
+    .image_off, #home:hover .image_on{
+        display:none;
+        margin-top: -14px;
+    }
+    .image_on, #home:hover .image_off{
+        display:block;
+        margin-top: -14px;
+    }
+
+    .container-full {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    img {
+        margin: 0 auto;
+        border:0;
+    }
+
+    .imgContainer{
+        float:left;
+    }
+
+    .thumbnail {
+        border: 0px solid;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .container-full {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    #menudown {
+        text-align: center;
+    }
+
+    .hr {
+        border-color: black;
+    }
+
+
+    #cal {
+        margin-top:75px;
+    }
+
+    h2 {
+        font-family:Century Gothic;
+        color: black;
+    }
+    .alert {
+        color:black;
+    }
+
+    .btn-neutral {
+        color: dimgray;
+        font-weight: bold;
+        overflow: visible;
+        background-color: lightyellow;
+    }
+
+    .nav-tabs > li > a:hover{
+        background-color: white !important;
+        border: medium none;
+        border-radius: 0;
+        color: black;
+    }
+    .alert-danger {
+        background-color: whitesmoke;
+        font-size: 18px;
+        color: red;
+    }
+    .alert-warning {
+        color: black;
+        font-weight: bold;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+</style>
+
+<body>
+<div class="row">
+    <div class="col-md-12">
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="header" role="navigation">
+            <div class="navbar-header">
+
+
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+
+                        <li>   <a id="home"><img class="image_on" src="test5.png" alt=logo width="35" height="35" /><img class="image_off" src="final4.png" alt="logo" width="35" height="35"/></a> </li>
+
+                        <li>
+                            <a href="../index.html" style="font-family:Century Gothic;">Home</a>
+                        </li>
+
+                        <!--    <li> <a class="navbar-brand" a href="index.html" class="navbar-left"><img src="assets/img/test5.png" width = "50" height = "50" id="logo"></a></li> -->
+
+                        <li>
+                            <a href="../charts.html" style="font-family:Century Gothic;">CCEYA Charts</a>
+                        </li>
+
+                        <li class="active" onclick="return false;">
+                            <a href="planning.html" style="font-family:Century Gothic;">Planning and Design for Child Care Centres</a>
+                        </li>
+                        <li>
+                            <a href="http://www.eceprc.ca" style="font-family:Century Gothic;">Professional Resource Centre</a>
+                        </li>
+
+                        <!--	<li>
+                                <a href="https://www.ontario.ca/laws/statute/14c11" style="font-family:Century Gothic;">Original Act</a>
+                            </li> -->
+
+
+                        <li><a href="http://www.eceprc.ca/contact.html" style="font-family:Century Gothic;">Contact Us</a></li>
+
+                    </ul>
+
+        </nav>
+    </div>
+
+<div class="container" id="cal">
+    <div class="container">
+     <h2>Planning and Design for Child Care Centres&nbsp;<a href="age2.html" class="btn btn-neutral" role="button" style="float: right;" data-toggle="tooltip" data-placement="right" title="Click to change schedule. You're currently in schedule 1.">Schedule 2</a></h2>
+<ul class="nav nav-tabs">
+  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" >Space Requirement<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="sch2classroomspc.html" style="color:white">Classroom Space</a></li>
+          <li><a href="sch2outdoorspc.html" style="color:white">Outdoor Space</a></li>
+        </ul>
+      </li>
+  <li role="presentation"><a href="sch2rent.html">Rent</a></li>
+  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" >Children to Staff Ratio<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="sch2ratio1.html" style="color:white">Infant/Toddler Younger Than<br>12 Months</a></li>
+            <li><a href="sch2ratio2.html" style="color:white">Infant/Toddler Between 12-14<br>Months</a></li>
+            <li><a href="sch2ratio3.html" style="color:white">Preschooler</a></li>
+        </ul>
+      </li>
+
+  <li class="dropdown active"><a class="dropdown-toggle" data-toggle="dropdown" >Family Age Grouping<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="sch2age1.html" style="color:white">Younger than 12 months</a></li>
+            <li><a href="sch2age2.html" style="color:white">12 months and older but<br>younger than 24 months</a></li>
+            <li><a href="sch2age3.html" style="color:white">24 months and older but<br>younger than 13 years</a></li>
+        </ul>
+      </li>
+  <li role="presentation"><a href="staff.html">Payroll Calculator</a></li>
+</ul>
+
+        <div class="well">
+<h3>Family Age Grouping - Sch 2: 12 months and older but younger than 24 months</h3>
+            <hr>
+            <p><b>Please enter the number of children 12 months and older but younger than 24 months.</b></p>
+            <div id="agegroup">
+                <label for="width" class="col-xs-2"># of Children</label>
+                <input type="number" id="width" class="form-control" style="WIDTH: 190px; HEIGHT: 22px" size="11" autofocus>
+                <span id="subtotal_message"></span><br/>
+
+                <label for="totalsqm" class="col-xs-2">Staff Needed</label>
+                <input type="text" id="totalsqm" disabled class="form-control" style="WIDTH: 190px; HEIGHT: 22px" size="11"><br>
+                <div class="alert alert-danger" style="WIDTH: 350px;">
+                    Maximum # of Children per Room: 15
+                </div>
+
+
+                        <a class="btn btn-info active" id="calculate" value="calculate">Calculate</a>
+                        <a class="btn btn-danger" id="clear" value="clear" >Clear</a>
+                    </div>
+
+            <script>
+                var $ = function (id) {
+                    return document.getElementById(id);
+                }
+                var calculateSpace = function () {
+                    var width = parseFloat ($("width").value);
+
+                    var totalsqm = document.getElementById("totalsqm");
+                    var age = document.getElementById("agegroup")
+                    if (width ==0){
+                        $("totalsqm").value = "Please input a number";
+                    }
+                    else if (width <=4){
+                        $("totalsqm").value = "1 Staff Needed";
+                    }
+                    else if (width <=8){
+                        $("totalsqm").value = "2 Staff Needed";
+                    }
+                    else if (width <=12){
+                        $("totalsqm").value = "3 Staff Needed";
+                    }
+                    else if (width <=15){
+                        $("totalsqm").value = "4 Staff Needed"
+                    }
+                    else{
+                        $("totalsqm").value = "Additional Room Req.";
+                    }
+                    $("width").focus();
+                }
+
+
+                var clear = function () {
+                    $("width").value = "";
+                    $("totalsqm").value = "";
+                    $("width").focus();
+                }
+
+                var clearwidth = function () {
+                    $("width").value = "";
+                }
+
+                window.onload = function () {
+                    $("calculate").onclick = calculateSpace;
+                    $("clear").onclick = clear;
+                    $("width").onclick = clearwidth;
+                }
+            </script>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
