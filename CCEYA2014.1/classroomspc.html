@@ -223,6 +223,9 @@ h3 {
     border-width: 2px;
 }
 
+label {
+    margin-top: 13px;
+}
 
 </style>
 
@@ -302,7 +305,7 @@ h3 {
 
     <div class="well">
 
-        <h3>Classroom Space - Schedule 1</h3>
+        <h3>Classroom Space - Schedule 1</h3><hr>
       <!--  <div class="alert alert-info">
     <strong>Alert! </strong>These calculations are intended for unobstructed space, please allow considerations for objects, furniture and materials that will be in the rooms.
   </div> -->
@@ -331,28 +334,28 @@ h3 {
         <div class="form-group">
         <label for="width" class="col-xs-2">Width:</label>
         <div class="col-xs-10">
-        <input type="number" id="width" class="form-control" style="WIDTH: 150px; HEIGHT: 22px" size=11 autofocus>
+        <input type="number" id="width" class="form-control" style="WIDTH: 150px; HEIGHT: 45px" autofocus>
         <span id="width_message">Enter width in feet</span>
         </div></div>
         
         <div class="form-group">
         <label for="length" class="col-xs-2">Length:</label>
         <div class="col-xs-10">
-        <input type="number" id="length" class="form-control" style="WIDTH: 150px; HEIGHT: 22px" size=11>
+        <input type="number" id="length" class="form-control" style="WIDTH: 150px; HEIGHT: 45px" >
         <span id="length_message">Enter length in feet</span><br />
         </div></div>
         
         <div class="form-group">
         <label for="totalsqft" class="col-xs-2">Total Sq Ft:</label>
         <div class="col-xs-10">
-        <input type="text" id="totalsqft" class="form-control" disabled style="WIDTH: 150px; HEIGHT: 22px" size=11><br />
+        <input type="text" id="totalsqft" class="form-control" disabled style="WIDTH: 150px; HEIGHT: 45px"><br />
         </div></div>
         
         
         <div class="form-group">
         <label for="children" class="col-xs-2"># of Children:</label>
         <div class="col-xs-10">
-        <input type="text" id="children" disabled class="form-control" style="WIDTH: 150px; HEIGHT: 22px" size=11><br>
+        <input type="text" id="children" disabled class="form-control" style="WIDTH: 150px; HEIGHT: 45px"><br>
         </div></div>
           <br><br>
 
@@ -386,20 +389,21 @@ var calculateSpace = function () {
     $("totalsqft").value = totalsqft.toFixed(2);
     
     var totalsqm = totalsqft / 10.764;
-        $("totalsqm").value = totalsqm.toFixed(2);
+        
     
     var children = totalsqm / 2.8;
         $("children").value = children.toFixed(0);
     
         $("width").focus();
         
+      
 }
+
 
 var clear = function () {
     $("length").value = "";
     $("width").value = "";
     $("totalsqft").value = "";
-    $("totalsqm").value = "";
     $("children").value = "";
     $("width").focus();
     $("demo").value ="";
@@ -413,11 +417,20 @@ var clearlength = function () {
     $("length").value = "";
 }
 
+var clearchildren = function () {
+    $("children").value = "";
+}
+
 window.onload = function () {
     $("calculate").onclick = calculateSpace;
     $("clear").onclick = clear;
     $("length").onclick = clearlength;
     $("width").onclick = clearwidth;
+    $("children").onclick = clearchildren;
+    
+
+    
+    
 }
 
 </script>
