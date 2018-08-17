@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Family Age Grouping - Sch 1: 24 months and older but younger than 13 years</title>
+	<title>Family Age Grouping - Sch 1: 12 months and older but younger than 24 months</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -102,6 +102,7 @@
     body {
         overflow-x: hidden;
         background: white; /* For browsers that do not support gradients */
+    }
 
     #info {
         background-color: #F1E2C5;
@@ -197,6 +198,7 @@
     h2 {
         color: black;
     }
+
     .btn-neutral {
         color: dimgray;
         font-weight: bold;
@@ -210,7 +212,6 @@
         border-radius: 0;
         color: black;
     }
-
     .alert-danger {
         background-color: whitesmoke;
         font-size: 18px;
@@ -233,6 +234,7 @@
 </style>
 
 <body>
+
 <div class="container" id="cal">
     <div class="container">
      <h2>Planning and Design for Child Care Centres&nbsp;<a href="sch2age3.html" class="btn btn-neutral" role="button" style="float: right;" data-toggle="tooltip" data-placement="right" title="Click to change schedule. You're currently in schedule 1.">Schedule 1</a></h2>
@@ -263,10 +265,9 @@
 </ul>
 
         <div class="well">
-<h3>Family Age Grouping - Sch 1: 24 months and older but younger than 13 years</h3>
-           <hr>
-
-            <p><b>Please enter the number of children 24 months and older but younger than 13 years.</b></p>
+            <h3>Family Age Grouping - Sch 1: 24 months and older but younger than 13 years</h3>
+<hr>
+            <p><b>Please enter the number of children 12 months and older but younger than 24 months.</b></p>
             <div id="agegroup">
                 <label for="width" class="col-xs-2"># of Children</label>
                 <input type="number" id="width" class="form-control" style="WIDTH: 250px; HEIGHT: 31px" size="11" autofocus>
@@ -278,11 +279,10 @@
                     Maximum # of Children per Room: 15
                 </div>
 
-                <div class="form-group">
-                    <div class="col-xs-10">
+
                         <a class="btn btn-info active" id="calculate" value="Calculate">Calculate</a>
                         <a class="btn btn-danger" id="clear" value="Clear" >Clear</a>
-                    </div></div><br><br></div>
+                    </div></div>
             <script>
                 var $ = function (id) {
                     return document.getElementById(id);
@@ -321,7 +321,7 @@
                     $("width").onclick = clearwidth;
                 }
             </script>
-        </div>
+       </div>
     </div>
 </div>
 </div>
